@@ -1,10 +1,16 @@
 import React from 'react'
+import classNames from 'classnames'
 import style from './style.module.css'
 
 const Button = (props) => {
   return (
-    <button className={style.button}>
-      {props.text}
+    <button 
+      className={classNames(style.button, {
+        [style.buttonOutline]: props.outline
+      })}
+      onClick={props.action}
+    >
+      {props.children}
     </button>
   )
 }
