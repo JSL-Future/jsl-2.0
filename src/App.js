@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Button from './Components/Button'
 
-function App() {
+const App = () => {
+  const save = () => {
+    console.log('Dados salvos!')
+  }
+
+  const remove = () => {
+    console.log('Dados excluidos!')
+  }
+
+  const change = () => {
+    console.log('Dados alterados!')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Button action={save} outline >Salvar</Button>
+      <Button action={remove}>Deletar</Button>
+      <Button action={change}>Alterar</Button>
     </div>
-  );
-}
+  )
+} 
 
-export default App;
+export default App

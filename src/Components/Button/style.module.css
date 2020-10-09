@@ -1,0 +1,27 @@
+@import '../../assets/css/colors.css';
+
+.button {
+  background: var(--mountain-meadow-color);
+  border: solid 1px var(--mountain-meadow-color);
+  color: var(--white-color);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+  transition-duration: 0.4s;
+  width: 100%;
+}
+
+.buttonOutline {
+  background: transparent;
+  color: var(--mountain-meadow-color);
+}
+
+.button:hover {
+  background: transparent;
+  color: var(--mountain-meadow-color);
+}
+
+.buttonOutline:hover {
+  background: var(--mountain-meadow-color);
+  color: var(--white-color);
+}
