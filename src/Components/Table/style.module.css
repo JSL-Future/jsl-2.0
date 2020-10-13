@@ -11,11 +11,11 @@ th {
   text-align: left;
 }
 
-td{
+td {
   padding: 16px;
 }
 
-tr{
+tr {
   border-bottom: solid 1px var(--gray-color);
 }
   
