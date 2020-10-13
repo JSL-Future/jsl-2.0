@@ -8,8 +8,8 @@ const selectOption = (props) => {
         {props.options.map(option => (
               <option 
                 value={option.value} 
-                hidden={option.diseble} 
-                diseble={option.diseble}
+                hidden={option.hidden} 
+                disabled={option.disabled}
               >
                 {option.name}
               </option>
