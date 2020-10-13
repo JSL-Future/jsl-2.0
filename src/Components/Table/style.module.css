@@ -2,7 +2,7 @@
 
 .table {
   border-collapse: collapse;
-  color: #595A63;
+  color: var(--mid-gray-color);
   width: 100%;
 }
 
@@ -16,6 +16,6 @@ td{
 }
 
 tr{
-  border-bottom: solid 1px #818181;
+  border-bottom: solid 1px var(--gray-color);
 }
   
