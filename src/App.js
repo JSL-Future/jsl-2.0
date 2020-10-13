@@ -1,17 +1,11 @@
 import React from 'react'
-import SelectOption from './Components/SelectOption'
+import SelectOption from './Components/EmptyState'
 
 const App = () => {
 
-  const options = [
-    {name: "Selecione", value: "", hidden: true, disabled: false},
-    {name: "Preventiva", value: "", hidden: false, disabled: true},
-    {name: "Corretiva", value: "", hidden: false, disabled: false},
-    {name: "Estacionamento", value: "", hidden: false, disabled: false}
-  ]
 
   return(
-    <SelectOption options={options}/>
+    <SelectOption title="Erro" description="404" />
   )
 } 
 
