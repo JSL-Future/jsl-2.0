@@ -6,7 +6,11 @@ const selectOption = (props) => {
     <div className={style.select}>
       <select className={style.selectOptions}>
         {props.options.map(option => (
-              <option value={option.value}>
+              <option 
+                value={option.value} 
+                hidden={option.diseble} 
+                diseble={option.diseble}
+              >
                 {option.name}
               </option>
             )
