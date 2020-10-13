@@ -1,25 +1,17 @@
 import React from 'react'
-import Button from './Components/Button'
+import SelectOption from './Components/SelectOption'
 
 const App = () => {
-  const save = () => {
-    console.log('Dados salvos!')
-  }
 
-  const remove = () => {
-    console.log('Dados excluidos!')
-  }
+  const options = [
+    {name: "Selecione", value: "", hidden: true, disabled: false},
+    {name: "Preventiva", value: "", hidden: false, disabled: true},
+    {name: "Corretiva", value: "", hidden: false, disabled: false},
+    {name: "Estacionamento", value: "", hidden: false, disabled: false}
+  ]
 
-  const change = () => {
-    console.log('Dados alterados!')
-  }
-
-  return (
-    <div>
-      <Button action={save} outline >Salvar</Button>
-      <Button action={remove}>Deletar</Button>
-      <Button action={change}>Alterar</Button>
-    </div>
+  return(
+    <SelectOption options={options}/>
   )
 } 
 
