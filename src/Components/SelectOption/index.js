@@ -1,15 +1,17 @@
 import React from 'react'
 import style from './style.module.css'
 
-const selectOption = () => {
+const selectOption = (props) => {
   return(
     <div className={style.select}>
-      <h1>Evento</h1>
       <select className={style.selectOptions}>
-        <option value="" disabled selected hidden>Selecione um evento</option>
-        <option value="0">Preventiva</option>
-        <option value="1">Corretiva</option>
-        <option value="2">Estacionamneto</option>
+        {props.options.map(option => (
+              <option value={option.value}>
+                {option.name}
+              </option>
+            )
+          )
+        }
       </select>
     </div>
   )
