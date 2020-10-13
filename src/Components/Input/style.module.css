@@ -1,0 +1,10 @@
+@import '../../assets/css/colors.css';
+
+input {
+  background: none;
+  border: none;
+  border-bottom: solid 1px var(--gray-color);
+  font-size: 18px;
+  padding: 16px 4px;
+  width: 100%;
+}
