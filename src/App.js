@@ -1,10 +1,11 @@
 import React from 'react'
-import Input from './Components/Input'
+import Card from './Components/Card'
 
 const App = () => {
 
   return(
-    <Input label="Placa" type="text" id="text" onChange="" />
+    <Card title="Adicionar Assinatura" text="Verifique as informações inseridas e
+    peça para o motorista assinar!"/>
   )
 }
 export default App
