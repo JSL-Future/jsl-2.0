@@ -3,16 +3,15 @@ import style from './style.module.css'
 
 const input = (props) => {
   return (
-    <div>
-      <label>
-        {props.children}
-        <input className={style}
-          type={props.type} 
-          name={props.type} 
-          id={props.type}
-        />
-      </label>
-    </div>
+    <label>
+      {props.label}
+      <input className={style}
+        type={props.type} 
+        name={props.name} 
+        id={props.name}
+        onChange={props.onchange}
+      />
+    </label>
   )
 }
 

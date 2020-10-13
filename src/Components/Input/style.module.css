@@ -1,7 +1,7 @@
 @import '../../assets/css/colors.css';
 
 input {
-  background: none;
+  background: transparent;
   border: none;
   border-bottom: solid 1px var(--gray-color);
   font-size: 18px;
