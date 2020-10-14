@@ -1,0 +1,21 @@
+@import '../../assets/css/colors.css';
+
+.table {
+  border-collapse: collapse;
+  color: var(--mid-gray-color);
+  width: 100%;
+}
+
+th {
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 16px;
+}
+
+tr {
+  border-bottom: solid 1px var(--gray-color);
+}
+  
