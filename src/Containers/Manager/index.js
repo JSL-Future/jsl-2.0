@@ -14,7 +14,7 @@ const Manager = () => {
     return (
       <div className={style.container}>
         <Header />
-        <Card className={style.cardAdd}>
+        <Card>
           <h1>Gerenciamento de implementos</h1>
           <p>Adicione um novo implemento para a gestão da entrada e saída em cada operação</p>
           <Button action="" outline>
@@ -30,7 +30,7 @@ const Manager = () => {
     return (
       <div className={style.container}>
         <Header />
-        <Card className={style.cardAdd}>
+        <Card>
           <h1>Gerenciamento de implementos</h1>
           <p>Adicione um novo implemento para a gestão da entrada e saída em cada operação</p>
           <Button action="" outline>
