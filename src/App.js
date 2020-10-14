@@ -1,10 +1,7 @@
 import React from 'react'
-import Input from './Components/Input'
 
 const App = () => {
-
-  return(
-    <Input label="Placa" type="text" id="text" onChange="" />
-  )
+  return ()
 }
+
 export default App
