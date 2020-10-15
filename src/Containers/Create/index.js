@@ -18,7 +18,8 @@ const createEntry = () => {
         <p>Para adicionar novos implementos preencha as informações abaixo:</p>
       </Card>
       <Card>
-        <SelectOption option={listSelect}/>
+        <h1>Evento</h1>
+        <SelectOption options={listSelect}/>
       </Card>
     </div>
   )
