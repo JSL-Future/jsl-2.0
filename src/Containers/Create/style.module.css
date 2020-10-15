@@ -2,5 +2,7 @@
 
 .container {
   background-color: var(--mercury-color);
+  background-image: url(../../assets/Images/fundo-container-create.svg);
+  background-repeat: no-repeat;
   padding: 50px;
 }
