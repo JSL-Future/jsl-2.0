@@ -25,17 +25,18 @@ const createEntry = () => {
       
       <Card>
         <h1>Adicionando Implementos</h1>
-        <p>Para adicionar novos implementos preencha as informações abaixo:</p>
+        <p>Para adicionar novos implementos preencha</p>
+        <p>as informações abaixo:</p>
       </Card>
       
       <Card>
         <h1>Operação</h1>
-        <SelectOption options={listSelectOper}/>
+        <SelectOption options={listSelectOper} />
       </Card>
       
       <Card>
         <h1>Evento</h1>
-        <SelectOption options={listSelectEvent}/>
+        <SelectOption options={listSelectEvent} />
       </Card>
       
       <Card>
