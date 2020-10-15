@@ -3,7 +3,6 @@ import style from './style.module.css'
 
 const selectOption = (props) => {
   return(
-    <div className={style.select}>
       <select className={style.selectOptions}>
         {props.options.map(option => (
               <option 
@@ -17,7 +16,6 @@ const selectOption = (props) => {
           )
         }
       </select>
-    </div>
   )
 }
 
