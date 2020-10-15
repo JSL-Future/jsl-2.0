@@ -3,7 +3,6 @@ import Create from './Containers/Create'
 
 const App = () => {
   return (
-    // <Manager />
     <Create />
   )
 }
