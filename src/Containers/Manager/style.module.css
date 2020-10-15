@@ -1,6 +1,0 @@
-@import '../../assets/css/colors.css';
-
-.container {
-  background-color: var(--mercuty-color);
-  padding: 50px;
-}
