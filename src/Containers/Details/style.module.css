@@ -1,0 +1,8 @@
+.cardDetails {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cardDetails > *{
+  margin: 10px 200px 0 0;
+}
