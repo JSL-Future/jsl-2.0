@@ -1,8 +1,10 @@
 import React from 'react'
-import Card from './Components/Card'
+import Details from './Containers/Details'
 
 const App = () => {
-  return ()
+  return (
+    <Details />
+  )
 }
 
 export default App
