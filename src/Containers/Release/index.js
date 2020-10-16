@@ -1,27 +1,31 @@
 import React from 'react'
 import { Button, Card, Header, Input } from '../../Components/'
+import Style from './style.module.css'
 
 const Release = () => {
   return (
-    <div>
+    <div className={Style.container}>
       <Header />
       <Card>
         <h1>Liberar implemento</h1>
         <p>Adicione as informações do motorista</p>
       </Card>
+
       <Card>
         <h1>informações Gerais</h1>
-        <div>
-          <h1>Placa</h1>
-          <p>DSG2100</p>
-        </div>
-        <div>
-          <h1>Evento</h1>
-          <p>Corretiva</p>
-        </div>
-        <div>
-          <h1>Data</h1>
-          <p>02/10/2020 às 08:00</p>
+        <div className={Style.informationAll}>
+          <div>
+            <p>Placa</p>
+            <h1>DSG2100</h1>
+          </div>
+          <div>
+            <p>Evento</p>
+            <h1>Corretiva</h1>
+          </div>
+          <div>
+            <p>Data</p>
+            <h1>02/10/2020 às 08:00</h1>
+          </div>
         </div>
         <Input 
           label="Mototista"
@@ -31,7 +35,11 @@ const Release = () => {
           onChange=""
         />
       </Card>
-      <Button />
+
+      <Button>
+        Liberar implemento
+      </Button>
+      
     </div>
   )
 }

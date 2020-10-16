@@ -1,0 +1,14 @@
+@import '../../assets/css/colors.css';
+
+.container {
+  padding: 50px;
+}
+
+.informationAll {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.informationAll > * {
+  margin: 0px 200px 0 2px; 
+}
