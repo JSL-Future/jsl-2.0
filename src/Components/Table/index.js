@@ -1,9 +1,11 @@
 import React from 'react'
+import BUtton from '../Button'
 import style from './style.module.css'
 
 const table = (props) => {
   return(
     <div>
+      <h1>Implementos</h1>
       <table class={style.table}>
         <thead>
           <th>Placa</th>
@@ -17,6 +19,11 @@ const table = (props) => {
                   <td>{line.placa}</td>
                   <td>{line.date}</td>
                   <td>{line.event}</td>
+                  <td>
+                    <BUtton>
+                      Liberar
+                    </BUtton>                  
+                  </td>
                 </tr>
               )
             )
