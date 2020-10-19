@@ -1,8 +1,10 @@
 import React from 'react'
-import Card from './Components/Card'
+import InputSearch from './Components/InputSearch'
 
 const App = () => {
-  return ()
+  return (
+    <InputSearch placeholder="Pesquisar"/>
+  )
 }
 
 export default App
