@@ -1,0 +1,24 @@
+@import '../../assets/css/colors.css';
+
+div {
+  background: var(--mercuty-color);
+  border-radius: 20px;
+  display: flex;
+  padding: 5px;
+  width: 100%;
+}
+
+input {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+}
+
+input:focus {   
+  outline: none;
+}
+
+div img {
+  width: 20px;
+  margin-right: 20px;
+}
