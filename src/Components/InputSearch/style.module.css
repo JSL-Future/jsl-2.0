@@ -1,24 +1,26 @@
 @import '../../assets/css/colors.css';
 
-div {
-  background: var(--mercuty-color);
+.container {
+  position: relative;
+}
+
+.input {
+  background: var(--mercury-color);
+  border: none;
   border-radius: 20px;
+  box-sizing: border-box;
   display: flex;
-  padding: 5px;
+  font-size: 18px;
+  padding: 14px 14px 14px 42px;
   width: 100%;
 }
 
-input {
-  background: transparent;
-  border: none;
-  font-size: 18px;
-}
-
-input:focus {   
+.input:focus {
   outline: none;
 }
 
-div img {
-  width: 20px;
-  margin-right: 20px;
+.iconSearch {
+  padding: 12px;
+  position: absolute;
+  pointer-events: none;
 }
