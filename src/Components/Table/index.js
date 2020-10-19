@@ -14,11 +14,11 @@ const table = (props) => {
           <th></th>
         </thead>
         <tbody>
-          {props.line.map(line =>(
+          {props.data.map(item =>(
                 <tr>
-                  <td>{line.placa}</td>
-                  <td>{line.date}</td>
-                  <td>{line.event}</td>
+                  <td>{item.placa}</td>
+                  <td>{item.date}</td>
+                  <td>{item.event}</td>
                   <td>
                     <BUtton>
                       Liberar
