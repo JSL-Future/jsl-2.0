@@ -1,9 +1,9 @@
 import React from 'react'
-import InputSearch from './Components/InputSearch'
+import Manager from './Containers/Manager'
 
 const App = () => {
   return (
-    <InputSearch placeholder="Pesquisar"/>
+    <Manager />
   )
 }
 
