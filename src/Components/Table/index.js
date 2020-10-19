@@ -1,12 +1,19 @@
 import React from 'react'
-import BUtton from '../Button'
-import style from './style.module.css'
+import Button from '../Button'
+import InputSearch from '../InputSearch'
+import Style from './style.module.css'
 
 const table = (props) => {
   return(
-    <div>
+    <div className={Style.container}>
       <h1>Implementos</h1>
-      <table class={style.table}>
+      <InputSearch  
+        name=""
+        onChange=""
+        type=""
+        placeholder="Pesquisar"
+      />
+      <table class={Style.table}>
         <thead>
           <th>Placa</th>
           <th>Data Entrada</th>
@@ -20,9 +27,9 @@ const table = (props) => {
                   <td>{item.date}</td>
                   <td>{item.event}</td>
                   <td>
-                    <BUtton>
+                    <Button>
                       Liberar
-                    </BUtton>                  
+                    </Button>                  
                   </td>
                 </tr>
               )
