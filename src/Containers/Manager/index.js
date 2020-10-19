@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button, Card, EmptyState, Header, Table } from '../../Components'
-import style from './style.module.css'
+import Style from './style.module.css'
 
 const Manager = (props) => {
   return (
-    <div className={style.container}>
+    <div className={Style.container}>
       <Header />
       <Card>
         <h1>Gerenciamento de implementos</h1>
@@ -14,7 +14,7 @@ const Manager = (props) => {
         </Button>
       </Card>
       <Card>
-        {props.data.length > 0 
+        {props.dataLength > 0 
           ? (
             <Table data={props.data} />
           )
