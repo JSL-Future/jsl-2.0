@@ -30,14 +30,14 @@ const createEntry = (props) => {
           type="text"
           name="placa"
           id="textPlaca"
-          onChange=""
+          onChange={props.boardOnChage}
         />
         <Input 
           label="Motorista"
           type="text"
           name="motorista"
           id="textMotorista"
-          onChange=""
+          onChange={props.driverOnChage}
         />
       </Card>
 
