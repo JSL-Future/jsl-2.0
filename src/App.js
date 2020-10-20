@@ -1,9 +1,9 @@
 import React from 'react'
-import InputSearch from './Components/InputSearch'
+import Release from './Containers/Release'
 
 const App = () => {
   return (
-    <InputSearch placeholder="Pesquisar"/>
+    <Release />
   )
 }
 
