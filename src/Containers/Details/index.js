@@ -1,46 +1,64 @@
 import React from 'react'
-import { Card, Header } from '../../Components'
+import { Button, Card, Header } from '../../Components'
 import Style from './style.module.css'
 
-const Details = () => {
+const Details = (props) => {
   return (
-    <div>
+    <div className={Style.container}>
       <Header />
       <Card>
         <h1>Detalhes do Implemento</h1>
         <p>Aqui você tem acesso as informações</p>
         <p>de entrada e saída do implemnto</p>
       </Card>
-
+      
       <Card>
         <h1>Detalhes do implemento</h1>
         <div className={Style.cardDetails}> 
           <div>
-            <p>Placa</p>
-            <h1>DSG2100</h1>
-            <p>Placa</p>
-            <h1>DSG2100</h1>
+            <h5>Placa</h5>
+            <p>{props.placa}</p>
+            <h5>Placa</h5>
+            <p>{props.placa}</p>
           </div>
 
           <div>
-            <p>Motorista</p>
-            <h1>Thiago Ramalho de Souza</h1>
-            <p>Motorista</p>
-            <h1>Alexandre Soares</h1>
+            <h5>Motorista</h5>
+            <p>{props.driverRelease}</p>
+            <h5>Motorista</h5>
+            <p>{props.driverExit}</p>
           </div>
 
           <div>
-            <p>Evento</p>
-            <h1>Corretiva</h1>
-            <p>Evento</p>
-            <h1>Liberado</h1>
+            <h5>Evento</h5>
+            <p>{props.event}</p>
+            <h5>Evento</h5>
+            <p>{props.eventExit}</p>
           </div>
 
           <div>
-            <p>Data Entrada</p>
-            <h1>02/10/2020 às 08:00</h1>
-            <p>Data Saída</p>
-            <h1>02/10/2020 às 08:00</h1>
+            <h5>Data Entrada</h5>
+            <p>{props.dateRelease}</p>
+            <h5>Data Saída</h5>
+            <p>{props.dateExit}</p>
+          </div>
+      
+          <div className={Style.button}>
+            <h5>Assinatura</h5>
+            <Button
+              action={props.viewSignatureRelease}
+              outline
+            >
+              ver
+            </Button>
+
+            <h5>Assinatura</h5>
+            <Button
+              action={props.viewSignatureExit}
+              outline
+            >
+              ver
+            </Button>
           </div>
         </div>
       </Card>
