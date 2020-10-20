@@ -9,11 +9,11 @@ const Details = (props) => {
       <Card>
         <h1>Detalhes do Implemento</h1>
         <p>Aqui você tem acesso as informações</p>
-        <p>de entrada e saída do implemnto</p>
+        <p>de entrada e saída do implemento</p>
       </Card>
       
       <Card>
-        <h1>Detalhes do implemento</h1>
+        <h4>Detalhes do implemento</h4>
         <div className={Style.cardDetails}> 
           <div>
             <h5>Placa</h5>

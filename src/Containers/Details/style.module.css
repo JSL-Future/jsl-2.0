@@ -11,7 +11,7 @@
   margin: 1.5px;
 }
 
-.container > * p, h1 {
+.container > * p, h1, h4 {
   color: var(--mako-color);
 }
 
