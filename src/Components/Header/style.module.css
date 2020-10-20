@@ -11,7 +11,8 @@
 }
   
 .header h1 {
-  font-family: Lato;
+  color: var(--tundora-color);
+  font-family: Lato, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -26,7 +27,7 @@
   bottom: 30px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 80px;
-  left: 46.2%;
+  left: 46.6%;
   overflow: hidden;
   padding: 2px;
   position: absolute;
