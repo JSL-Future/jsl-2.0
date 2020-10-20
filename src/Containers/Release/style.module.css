@@ -1,6 +1,7 @@
 @import '../../assets/css/colors.css';
 
 .container {
+  background-color: var(--mercury-color);
   padding: 50px;
 }
 
