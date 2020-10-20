@@ -1,17 +1,19 @@
 import React from 'react'
-<<<<<<< HEAD
 import Details from './Containers/Details'
 
 const App = () => {
   return (
-    <Details />
-=======
-import InputSearch from './Components/InputSearch'
-
-const App = () => {
-  return (
-    <InputSearch placeholder="Pesquisar"/>
->>>>>>> 8b106949cca144b414a698a95c2de517cb9fff55
+    <Details 
+      placa="DSG2100"
+      driverRelease="Thiago Ramalho de Souza"
+      driverExit="Alexandre dos Santos Soares"
+      event="Corretiva"
+      eventExit="Liberado"
+      dateRelease="01/10/2020 às 08:00"
+      dateExit="02/10/2020 às 10:00"
+      viewSignatureRelease={console.log('Assinatura entrada')}
+      viewSignatureExit={console.log('Assinatura saída')}
+    />
   )
 }
 
