@@ -7,14 +7,21 @@
   margin-bottom: 10px;
 }
 
+.headerContainer h2 {
+  color: var(--mid-gray-color);
+}
+
 .table {
   border-collapse: collapse;
   color: var(--mid-gray-color);
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   width: 100%;
 }
 
 th {
-  padding: 10px;
+  padding: 10px 10px 10px 15px;
   text-align: left;
 }
 

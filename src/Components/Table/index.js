@@ -8,7 +8,7 @@ const table = (props) => {
   return(
     <div className={Style.container}>
       <div className={Style.headerContainer}>
-        <h1>Implementos</h1>
+        <h2>Implementos</h2>
         <InputSearch  
           name="pesquisa"
           onChange={props.search}
