@@ -1,6 +1,16 @@
 @import '../../assets/css/colors.css';
 
 .container {
-  background-color: var(--mercuty-color);
+  background-color: var(--mercury-color);
   padding: 50px;
+}
+
+.cardAdd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardAdd p {
+  margin: 0;
 }
