@@ -6,11 +6,15 @@
 }
 
 .cardAdd {
+  color: var(--tundora-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .cardAdd p {
-  margin: 0;
+  margin: 1.5px;
 }
