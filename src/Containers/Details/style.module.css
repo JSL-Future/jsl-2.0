@@ -4,7 +4,7 @@
   background-color: var(--mercury-color);
   font-family: Lato, sans-serif;
   font-style: normal;
-  padding: 30px;
+  padding: 50px;
 }
 
 .container p {
@@ -23,7 +23,7 @@
 }
 
 .cardDetails > * {
-  margin-right: 144px; 
+  margin-right: 140px; 
 }
 
 .cardDetails h5 {
