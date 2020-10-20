@@ -6,3 +6,7 @@
   background-repeat: no-repeat;
   padding: 50px;
 }
+
+.container p {
+  margin: 1.5px;
+}
