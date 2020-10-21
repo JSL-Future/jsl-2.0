@@ -11,7 +11,7 @@ const App = () => {
   ]
 
   return (
-    <Manager data={data} dataLength={data.length}/>
+    <Manager data={data} />
   )
 }
 
