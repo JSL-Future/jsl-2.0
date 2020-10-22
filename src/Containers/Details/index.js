@@ -17,36 +17,36 @@ const Details = (props) => {
         <div className={Style.cardDetails}> 
           <div>
             <h5>Placa</h5>
-            <p>{props.placa}</p>
+            <p>{props.details.plate}</p>
             <h5>Placa</h5>
-            <p>{props.placa}</p>
+            <p>{props.details.plate}</p>
           </div>
 
           <div>
             <h5>Motorista</h5>
-            <p>{props.driverRelease}</p>
+            <p>{props.details.checkin.driver}</p>
             <h5>Motorista</h5>
-            <p>{props.driverExit}</p>
+            <p>{props.details.checkout.driver}</p>
           </div>
 
           <div>
             <h5>Evento</h5>
-            <p>{props.event}</p>
+            <p>{props.details.checkin.event}</p>
             <h5>Evento</h5>
-            <p>{props.eventExit}</p>
+            <p>{props.details.checkout.event}</p>
           </div>
 
           <div>
             <h5>Data Entrada</h5>
-            <p>{props.dateRelease}</p>
+            <p>{props.details.checkin.createdAt}</p>
             <h5>Data Saída</h5>
-            <p>{props.dateExit}</p>
+            <p>{props.details.checkout.createdAt}</p>
           </div>
       
           <div className={Style.button}>
             <h5>Assinatura</h5>
             <Button
-              action={props.viewSignatureRelease}
+              action={props.viewSignature}
               outline
             >
               ver
@@ -54,7 +54,7 @@ const Details = (props) => {
 
             <h5>Assinatura</h5>
             <Button
-              action={props.viewSignatureExit}
+              action={props.viewSignature}
               outline
             >
               ver
