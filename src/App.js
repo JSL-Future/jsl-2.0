@@ -1,9 +1,10 @@
 import React from 'react'
-import InputSearch from './Components/InputSearch'
+import Signature from './Containes/Signature'
 
 const App = () => {
+
   return (
-    <InputSearch placeholder="Pesquisar"/>
+    <Signature />
   )
 }
 
