@@ -15,30 +15,36 @@ const Signature = (props) => {
 
       <Card>
         <h3>Detalhes do implemento</h3>
-        <div>
-          <h5>Placa</h5>
-          <p></p>
-        </div>
+        <div className={Style.cardDetails}>
+          <div>
+            <h5>Placa</h5>
+            <p>{props.checkin.plate}</p>
+          </div>
 
-        <div>
-          <h5>Motorista</h5>
-          <p></p>
-        </div>
+          <div>
+            <h5>Motorista</h5>
+            <p>{props.checkin.driver}</p>
+          </div>
 
-        <div>
-          <h5>Evento</h5>
-          <p></p>
-        </div>
+          <div>
+            <h5>Evento</h5>
+            <p>{props.checkin.event}</p>
+          </div>
 
-        <div>
-          <h5>Data Entrada</h5>
-          <p></p>
+          <div>
+            <h5>Data Entrada</h5>
+            <p>{props.checkin.createdAt}</p>
+          </div>
         </div>
       </Card>
       
       <Card>
-        <h2>Assinatura</h2>
-        <p></p>
+        <div className={Style.cardSignature}>
+          <h1>Assinatura</h1>
+          <div className={Style.signature}>
+          </div>
+          <p>{props.checkin.driver}</p>
+        </div>
       </Card>
 
       <Button

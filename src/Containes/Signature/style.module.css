@@ -1,5 +1,49 @@
 @import '../../assets/css/colors.css';
 
 .container {
+  background-color: var(--mercury-color);
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   padding: 50px;
+}
+
+.container h1, h3 {
+  color: var(--tundora-color);
+}
+
+.container p {
+  color: var(--mako-color);
+  margin: 1.5px;
+}
+
+.cardDetails {
+  display: flex;
+  justify-content: flex-start;
+  overflow: auto;
+}
+
+.cardDetails > div {
+  margin-right: 140px;
+}
+
+.cardDetails h5 {
+  color: var(--storm-gray);
+}
+
+.cardSignature {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 130px;
+}
+
+.signature {
+  border-bottom: solid 1px var(--mako-color);
+  height: 400px;
+  width: 100%;
+}
+
+.cardSignature p {
+  padding-top: 15px;
 }
