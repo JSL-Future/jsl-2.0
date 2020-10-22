@@ -8,23 +8,23 @@ const Release = (props) => {
       <Header />
       <Card>
         <h1>Liberar implemento</h1>
-        <p>Adicione as informações do motorista</p>
+        <p>Adicione as informações do motorista!</p>
       </Card>
 
       <Card>
         <h1>informações Gerais</h1>
         <div className={Style.informationAll}>
           <div>
-            <p>Placa</p>
-            <h1>DSG2100</h1>
+            <h5>Placa</h5>
+            <p>{props.plate}</p>
           </div>
           <div>
-            <p>Evento</p>
-            <h1>Corretiva</h1>
+            <h5>Evento</h5>
+            <p>{props.checkin.event}</p>
           </div>
           <div>
-            <p>Data</p>
-            <h1>02/10/2020 às 08:00</h1>
+            <h5>Data</h5>
+            <p>{props.checkin.createdAt}</p>
           </div>
         </div>
         <Input 
