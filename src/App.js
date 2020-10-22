@@ -3,7 +3,7 @@ import Signature from './Containes/Signature'
 
 const App = () => {
 
-  const checkin = {
+  const details = {
     plate: 'DSG2100',
     driver: 'Thiago Ramalho de Souza',
     event: 'Corretiva',
@@ -12,7 +12,7 @@ const App = () => {
   }
 
   return (
-    <Signature checkin={checkin} />
+    <Signature details={details} />
   )
 }
 
