@@ -43,7 +43,7 @@ const Signature = (props) => {
           <h1>Assinatura</h1>
           <div className={Style.signature}>
           </div>
-          <p>{props.checkin.driver}</p>
+          <p>{props.details.driver}</p>
         </div>
       </Card>
 
