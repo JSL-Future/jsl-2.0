@@ -16,7 +16,7 @@ const Release = (props) => {
         <div className={Style.informationAll}>
           <div>
             <h5>Placa</h5>
-            <p>{props.plate}</p>
+            <p>{props.checkin.plate}</p>
           </div>
           <div>
             <h5>Evento</h5>
