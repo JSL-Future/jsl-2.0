@@ -18,22 +18,22 @@ const Signature = (props) => {
         <div className={Style.cardDetails}>
           <div>
             <h5>Placa</h5>
-            <p>{props.checkin.plate}</p>
+            <p>{props.details.plate}</p>
           </div>
 
           <div>
             <h5>Motorista</h5>
-            <p>{props.checkin.driver}</p>
+            <p>{props.details.driver}</p>
           </div>
 
           <div>
             <h5>Evento</h5>
-            <p>{props.checkin.event}</p>
+            <p>{props.details.event}</p>
           </div>
 
           <div>
             <h5>Data Entrada</h5>
-            <p>{props.checkin.createdAt}</p>
+            <p>{props.details.createdAt}</p>
           </div>
         </div>
       </Card>
