@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Card, Header, Input } from '../../Components/'
 import Style from './style.module.css'
 
-const Release = () => {
+const Release = (props) => {
   return (
     <div className={Style.container}>
       <Header />
@@ -32,11 +32,13 @@ const Release = () => {
           type="text" 
           name="motorista"
           id="textMotorista"
-          onChange=""
+          onChange={props.driver}
         />
       </Card>
 
-      <Button>
+      <Button
+        action={props.release}
+      >
         Liberar implemento
       </Button>
       
