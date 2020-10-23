@@ -7,13 +7,13 @@
 }
 
 .cardAdd {
+  align-items: center;
   color: var(--tundora-color);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-family: Lato, sans-serif;
   font-style: normal;
   font-weight: normal;
+  justify-content: space-between;
 }
 
 .cardAdd p {

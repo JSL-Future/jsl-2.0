@@ -21,7 +21,7 @@ const Manager = (props) => {
         </div>
       </Card>
       <Card>
-        {props.data != null 
+        {props.data.length > 0
           ? (
             <Table data={props.data} />
           )
