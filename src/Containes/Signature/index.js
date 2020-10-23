@@ -23,17 +23,17 @@ const Signature = (props) => {
 
           <div>
             <h5>Motorista</h5>
-            <p>{props.details.driver}</p>
+            <p>{props.details.checkin.driver}</p>
           </div>
 
           <div>
             <h5>Evento</h5>
-            <p>{props.details.event}</p>
+            <p>{props.details.checkin.event}</p>
           </div>
 
           <div>
             <h5>Data Entrada</h5>
-            <p>{props.details.createdAt}</p>
+            <p>{props.details.checkin.createdAt}</p>
           </div>
         </div>
       </Card>
@@ -43,7 +43,7 @@ const Signature = (props) => {
           <h1>Assinatura</h1>
           <div className={Style.signature}>
           </div>
-          <p>{props.details.driver}</p>
+          <p>{props.details.checkin.driver}</p>
         </div>
       </Card>
 
