@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button, Card, Header, Input, SelectOption } from '../../Components'
-import style from './style.module.css'
+import Style from './style.module.css'
 
 const createEntry = (props) => {  
   return(
-    <div className={style.container}>
+    <div className={Style.container}>
       <Header />
       
       <Card>
@@ -15,12 +15,18 @@ const createEntry = (props) => {
       
       <Card>
         <h1>Operação</h1>
-        <SelectOption options={props.dataListOper} />
+        <SelectOption 
+          onChange={props.onChange} 
+          options={props.dataListOper} 
+        />
       </Card>
       
       <Card>
         <h1>Evento</h1>
-        <SelectOption options={props.dataListEvent} />
+        <SelectOption  
+          onChange={props.onChange} 
+          options={props.dataListEvent} 
+        />
       </Card>
       
       <Card>
@@ -28,16 +34,16 @@ const createEntry = (props) => {
         <Input 
           label="Placa"
           type="text"
-          name="placa"
-          id="textPlaca"
-          onChange={props.boardOnChage}
+          name="plate"
+          id="textPlate"
+          onChange={props.onChange}
         />
         <Input 
           label="Motorista"
           type="text"
-          name="motorista"
-          id="textMotorista"
-          onChange={props.driverOnChage}
+          name="driver"
+          id="textDriver"
+          onChange={props.onChange}
         />
       </Card>
 
