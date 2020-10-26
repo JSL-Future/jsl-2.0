@@ -1,5 +1,5 @@
 import React from 'react'
-import Signature from './Containes/Signature'
+import Signature from './Containers/Signature'
 
 const App = () => {
 
@@ -23,7 +23,7 @@ const App = () => {
   }
 
   return (
-    <Signature details={details} />
+    <Signature details={details}/>
   )
 }
 
