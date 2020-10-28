@@ -6,6 +6,7 @@ const input = (props) => {
     <label>
       {props.label}
       <input className={style}
+        value={props.value}
         type={props.type} 
         name={props.name} 
         id={props.name}

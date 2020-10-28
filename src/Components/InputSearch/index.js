@@ -8,6 +8,7 @@ const InputSearch = (props) => {
       <img className={Style.iconSearch} src={IconSearch} alt="Pesquisa"/>
       <input
         className={Style.input}
+        value={props.value}
         name={props.name}
         onChange={props.onchange}
         placeholder={props.placeholder}

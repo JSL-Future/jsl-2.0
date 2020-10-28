@@ -5,10 +5,13 @@ const selectOption = (props) => {
   return(
       <select 
         className={Style.selectOptions}
-        onChange={props.onChange}
+        onchange={props.onChange}
+        value={props.selectValue}
+        name={props.selectName}
       >
-        {props.options.map(option => (
+        {props.options.map((option, index) => (
               <option 
+                key={index}
                 value={option.value} 
                 hidden={option.hidden} 
                 disabled={option.disabled}
