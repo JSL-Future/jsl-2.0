@@ -1,26 +1,17 @@
 import React from 'react'
-import Create from './Containers/Create'
+import Manager from './Containers/Manager'
 
 const App = () => {
 
-  const listSelectEvent = [
-    {value: "", hidden: true, disabled: false, name: "Selecione uma opção"},
-    {value: "0", hidden: false, disabled: false, name: "Preventiva"},
-    {value: "1", hidden: false, disabled: false, name: "Corretiva"},
-    {value: "2", hidden: false, disabled: false, name: "Estacionamento"},
-  ]
-
-  const listSelectOper = [
-    {value: "", hidden: true, disabled: false, name: "Selecione uma opção"},
-    {value: "0", hidden: false, disabled: false, name: "Mercedes-Benz"},
-    {value: "1", hidden: false, disabled: false, name: "Ford Motor"},
-    {value: "2", hidden: false, disabled: false, name: "GM Interplantas"},
-    {value: "2", hidden: false, disabled: false, name: "GM Cegonha"},
-    {value: "2", hidden: false, disabled: false, name: "Lear Corporation"},
+  const data = [
+    {placa: "DSG2100", date: "03/11/1990 às 08:00", event: "Preventiva" , permanence: "80 horas", preventiva: "preventiva", corretiva: false, estacionamento: false},
+    {placa: "DSG2100", date: "03/11/1990 às 08:00", event: "Corretiva" , permanence: "80 horas", preventiva: false, corretiva: true, estacionamento: false},
+    {placa: "DSG2100", date: "03/11/1990 às 08:00", event: "Estacionamento" , permanence: "80 horas", preventiva: false, corretiva: false, estacionamento: true},
+    {placa: "DSG2100", date: "03/11/1990 às 08:00", event: "Preventiva" , permanence: "80 horas", preventiva: true, corretiva: false, estacionamento: false},
   ]
 
   return (
-    <Create dataListOper={listSelectEvent} dataListEvent={listSelectOper} />
+    <Manager data={data} />
   )
 }
 
