@@ -7,11 +7,11 @@
 .input {
   background: var(--mercury-color);
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   box-sizing: border-box;
   display: flex;
   font-size: 18px;
-  padding: 14px 14px 14px 42px;
+  padding: 14px 14px 14px 50px;
   width: 100%;
 }
 
