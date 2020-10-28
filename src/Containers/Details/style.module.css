@@ -1,0 +1,37 @@
+@import '../../assets/css/colors.css';
+
+.container {
+  background-color: var(--mercury-color);
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  padding: 50px;
+}
+
+.container p {
+  margin: 1.5px;
+}
+
+.container > * p, h1, h4 {
+  color: var(--mako-color);
+}
+
+.cardDetails {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.cardDetails > * {
+  margin-right: 140px; 
+}
+
+.cardDetails h5 {
+  color: var(--storm-gray-color);
+  font-weight: normal;
+}
+
+.button h5 {
+  margin-bottom: 8px;
+}
