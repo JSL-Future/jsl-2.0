@@ -1,13 +1,27 @@
 @import '../../assets/css/colors.css';
 
+.headerContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.headerContainer h2 {
+  color: var(--mid-gray-color);
+}
+
 .table {
   border-collapse: collapse;
   color: var(--mid-gray-color);
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   width: 100%;
 }
 
 th {
-  padding: 10px;
+  padding: 10px 10px 10px 15px;
   text-align: left;
 }
 
@@ -15,7 +29,23 @@ td {
   padding: 16px;
 }
 
-tr {
+tr, th {
   border-bottom: solid 1px var(--gray-color);
+}
+
+.event {
+  font-weight: bold;
+}
+
+.preventiva {
+  color: #ECB31F;
+}
+
+.corretiva {
+  color: #E7079A;
+}
+
+.estacionamento {
+  color: #1F32D8;
 }
   

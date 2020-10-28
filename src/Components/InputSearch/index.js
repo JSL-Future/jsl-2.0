@@ -1,13 +1,13 @@
 import React from 'react'
-import style from './style.module.css'
+import Style from './style.module.css'
 import IconSearch from '../../assets/Images/icon-search.svg'
 
 const InputSearch = (props) => {
   return (
-    <div className={style.container}>
-      <img className={style.iconSearch} src={IconSearch} alt="Pesquisa"/>
+    <div className={Style.container}>
+      <img className={Style.iconSearch} src={IconSearch} alt="Pesquisa"/>
       <input
-        className={style.input}
+        className={Style.input}
         name={props.name}
         onChange={props.onchange}
         placeholder={props.placeholder}
