@@ -5,6 +5,7 @@ import Header from './Header'
 import Input from './Input'
 import InputSearch from './InputSearch'
 import SelectOption from './SelectOption'
+import SignaturePad from './Signature'
 import Table from './Table'
 
 export {
@@ -15,5 +16,6 @@ export {
   Input,
   InputSearch,
   SelectOption,
+  SignaturePad,
   Table,
 }

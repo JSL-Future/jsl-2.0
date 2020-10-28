@@ -1,0 +1,21 @@
+@import '../../assets/css/colors.css';
+
+.container {
+  background-color: var(--mercury-color);
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.cardAdd {
+  align-items: center;
+  color: var(--tundora-color);
+  display: flex;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  justify-content: space-between;
+}
+
+.cardAdd p {
+  margin: 1.5px;
+}

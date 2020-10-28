@@ -1,10 +1,12 @@
 import React from 'react'
-import style from './style.module.css'
+import Style from './style.module.css'
 
 const selectOption = (props) => {
   return(
-    <div className={style.select}>
-      <select className={style.selectOptions}>
+      <select 
+        className={Style.selectOptions}
+        onChange={props.onChange}
+      >
         {props.options.map(option => (
               <option 
                 value={option.value} 
@@ -17,7 +19,6 @@ const selectOption = (props) => {
           )
         }
       </select>
-    </div>
   )
 }
 

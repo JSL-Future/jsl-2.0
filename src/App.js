@@ -1,29 +1,17 @@
 import React from 'react'
-import Details from './Containers/Details'
+import Manager from './Containers/Manager'
 
 const App = () => {
 
-  const details = {
-    plate: 'DSG2100',
-    checkin: {
-      driver: 'Thiago Ramalho de Souza',
-      event: 'Corretiva',
-      createdAt: '01/10/2020 às 08:00',
-      updatedAt: '',
-      signature: ''
-    },
-    
-    checkout: {
-      driver: 'Alexandre dos Santos Soares',
-      event: 'Liberado',
-      createdAt: '02/10/2020 às 10:00',
-      updatedAt: '',
-      signature: ''
-    }
-  }
+  const data = [
+    {placa: "DSG2100", date: "03/11/1990 às 08:00", event: "Preventiva" , permanence: "80 horas", preventiva: "preventiva", corretiva: false, estacionamento: false},
+    {placa: "DSG2100", date: "03/11/1990 às 08:00", event: "Corretiva" , permanence: "80 horas", preventiva: false, corretiva: true, estacionamento: false},
+    {placa: "DSG2100", date: "03/11/1990 às 08:00", event: "Estacionamento" , permanence: "80 horas", preventiva: false, corretiva: false, estacionamento: true},
+    {placa: "DSG2100", date: "03/11/1990 às 08:00", event: "Preventiva" , permanence: "80 horas", preventiva: true, corretiva: false, estacionamento: false},
+  ]
 
   return (
-    <Details  details={details} />
+    <Manager data={data} />
   )
 }
 
