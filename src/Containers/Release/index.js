@@ -16,23 +16,24 @@ const Release = (props) => {
         <div className={Style.informationAll}>
           <div>
             <h5>Placa</h5>
-            <p>{props.checkin.plate}</p>
+            <p>{props.details.plate}</p>
           </div>
           <div>
             <h5>Evento</h5>
-            <p>{props.checkin.event}</p>
+            <p>{props.details.checkin.event}</p>
           </div>
           <div>
             <h5>Data</h5>
-            <p>{props.checkin.createdAt}</p>
+            <p>{props.details.checkin.createdAt}</p>
           </div>
         </div>
         <Input 
+          value={props.form.driver}
           label="Mototista"
           type="text" 
-          name="motorista"
-          id="textMotorista"
-          onChange={props.driver}
+          name="driver"
+          id="textDriver"
+          onchange={props.onChange}
         />
       </Card>
 

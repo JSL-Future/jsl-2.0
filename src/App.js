@@ -4,6 +4,7 @@ import Manager from './Pages/Manager'
 import Create from './Pages/Create'
 import Signature from './Pages/Signature'
 import Details from './Pages/Details'
+import Release from './Pages/Release'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
       <Route path='/create' component={Create} />
       <Route path='/signature' component={Signature} />
       <Route path='/details' component={Details} />
+      <Route path='/release' component={Release} />
     </Switch>
   )
 }

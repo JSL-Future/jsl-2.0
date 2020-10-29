@@ -27,7 +27,7 @@ const table = (props) => {
         <tbody>
           {props.data.map(item =>(
                 <tr>
-                  <td>{item.placa}</td>
+                  <td>{item.plate}</td>
                   <td>{item.date}</td>
                   <td className={classNames(Style.event, {
                     [Style.preventiva] : props.preventiva,  
