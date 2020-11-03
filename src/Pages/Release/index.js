@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import ReleaseContainer from '../../Containers/Release'
 
-const Release = () => {
+const Release = (props) => {
 
   const details = {
     plate: '',
@@ -30,8 +31,11 @@ const Release = () => {
   }
 
   const release = () => {
-    axios.put('http://localhost:3000/implements', form)
-      .then(response => console.log(response))
+    axios.post('http://localhost:3000/implements', form)
+      .then(response => {
+        console.log(response)
+        props.history.push('/signature')
+      })
       .catch(error => console.log(error))
   }
 
@@ -45,4 +49,4 @@ const Release = () => {
   )
 }
 
-export default Release
+export default withRouter(Release)

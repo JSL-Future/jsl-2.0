@@ -21,7 +21,10 @@ const Create = (props) => {
 
   const save = () => {
     axios.post('http://localhost:3000/implements', form)
-      .then(response => console.log(response))
+      .then(response => {
+        console.log(response)
+        props.history.push('/signature')
+      })
       .catch(error => console.log(error))
   }
 

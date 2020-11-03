@@ -11,12 +11,21 @@ const Manager = (props) => {
       .then(response => setData(response.data))
       .catch(error => console.log(error))
   })
+  
   const goToCreateImplements = () => {
     return props.history.push('/create')
   }
 
+  const goToRelease = () => {
+    return props.history.push('/release')
+  }
+
   return (
-    <ManagerContainer data={data} addImplement={goToCreateImplements}/>
+    <ManagerContainer 
+      data={data} 
+      addImplement={goToCreateImplements}
+      release={goToRelease}
+    />
   )
 }
 

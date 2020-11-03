@@ -23,7 +23,10 @@ const Manager = (props) => {
       <Card>
         {props.data.length > 0
           ? (
-            <Table data={props.data} />
+            <Table 
+              data={props.data} 
+              release={props.release}
+            />
           )
           : (
             <EmptyState
