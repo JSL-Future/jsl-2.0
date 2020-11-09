@@ -5,10 +5,7 @@
   font-family: Lato, sans-serif;
   font-style: normal;
   padding: 50px;
-}
-
-.container p {
-  margin: 1.5px;
+  min-height: 100vh;
 }
 
 .container > * p, h1, h4 {
@@ -16,15 +13,11 @@
 }
 
 .cardDetails {
-  align-items: center;
-  display: flex;
-  justify-content: flex-start;
-  overflow: auto;
-  white-space: nowrap;
+
 }
 
 .cardDetails > * {
-  margin-right: 140px; 
+  margin-right: 140px;
 }
 
 .cardDetails h5 {
@@ -34,4 +27,14 @@
 
 .button h5 {
   margin-bottom: 8px;
+}
+
+.checkout {
+  border-top: 1px dashed var(--gray-color);
+}
+
+.checkout, .checkin {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

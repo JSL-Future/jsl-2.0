@@ -1,59 +1,38 @@
 {
   "implements": [
     {
-      "operacao": "Mercedes",
-      "event": "Corretiva",
-      "plate": "DSG2100",
-      "driver": "Thiago Ramalho",
+      "status": "release",
+      "event": "Preventiva",
+      "operation": "Ford",
+      "plate": "ABC1234",
+      "checkin": {
+        "driver": "Alexandre Soares",
+        "createdAt": "2020-11-09T18:31:48.217Z",
+        "updatedAt": "2020-11-09T18:31:48.217Z"
+      },
+      "checkout": {
+        "driver": "Alexandre Soares",
+        "createdAt": "2020-11-09T18:31:48.217Z",
+        "updatedAt": "2020-11-09T18:35:02.862Z"
+      },
       "id": 1
     },
     {
-      "operacao": "Ford",
-      "event": "Estacionamento",
-      "plate": "BMS6545",
-      "driver": "Francisco",
+      "status": "unavailable",
+      "event": "Preventiva",
+      "operation": "Mercedes",
+      "plate": "DSA1234",
+      "checkin": {
+        "driver": "Thiago Ramalho",
+        "createdAt": "2020-11-09T18:33:45.992Z",
+        "updatedAt": "2020-11-09T18:33:45.992Z"
+      },
+      "checkout": {
+        "driver": null,
+        "createdAt": "2020-11-09T18:33:45.992Z",
+        "updatedAt": "2020-11-09T18:33:45.992Z"
+      },
       "id": 2
-    },
-    {
-      "operacao": "",
-      "event": "",
-      "plate": "BMS6545",
-      "driver": "Francisco",
-      "id": 3
-    },
-    {
-      "operacao": "",
-      "event": "",
-      "plate": "BMS6545",
-      "driver": "Francisco",
-      "id": 4
-    },
-    {
-      "driver": "Francisco",
-      "id": 5
-    },
-    {
-      "driver": "Francisco",
-      "id": 6
-    },
-    {
-      "driver": "thiago",
-      "id": 7
-    },
-    {
-      "operacao": "",
-      "event": "",
-      "plate": "",
-      "driver": "",
-      "id": 8
-    },
-    {
-      "driver": "",
-      "id": 9
-    },
-    {
-      "driver": "",
-      "id": 10
     }
   ]
 }

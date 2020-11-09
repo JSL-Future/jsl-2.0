@@ -6,25 +6,38 @@ import ManagerContainer from '../../Containers/Manager'
 const Manager = (props) => {
 
   const [data, setData] = useState([])
+  const [shouldRequest, setShouldRequest] = useState(true)
+
   useEffect(() => {
-    axios.get('http://localhost:3000/implements')
-      .then(response => setData(response.data))
-      .catch(error => console.log(error))
+    if(shouldRequest) {
+      axios.get('http://localhost:3000/implements')
+        .then(response => {
+          setData(response.data)
+          setShouldRequest(false)
+        })
+        .catch(error => console.log(error))
+    }
   })
-  
+
   const goToCreateImplements = () => {
     return props.history.push('/create')
   }
 
-  const goToRelease = () => {
-    return props.history.push('/release')
+  const goToRelease = id => {
+    return props.history.push(`/release/${id}`)
   }
 
+  const goToDetail = id => {
+    return props.history.push(`/detail/${id}`)
+  }
+
+
   return (
-    <ManagerContainer 
-      data={data} 
+    <ManagerContainer
+      data={data}
       addImplement={goToCreateImplements}
       release={goToRelease}
+      detail={goToDetail}
     />
   )
 }

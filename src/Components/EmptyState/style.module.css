@@ -4,12 +4,5 @@
   background: transparent;
   padding: 60px;
   position: relative;
-}
-
-.emptyState > * {
   text-align: center;
-}
-
-.emptyStateImg {
-  margin-left: 18.5%;
 }

@@ -1,5 +1,11 @@
 import React from 'react'
-import { Button, Card, EmptyState, Header, Table } from '../../Components'
+import {
+  Button,
+  Card,
+  EmptyState,
+  Header,
+  Table,
+} from '../../Components'
 import Style from './style.module.css'
 
 const Manager = (props) => {
@@ -23,15 +29,16 @@ const Manager = (props) => {
       <Card>
         {props.data.length > 0
           ? (
-            <Table 
-              data={props.data} 
+            <Table
+              data={props.data}
               release={props.release}
+              detail={props.detail}
             />
           )
           : (
             <EmptyState
               title="Não temos nenhum implemento criado"
-              description="Para adicionar um novo implmento clique em 
+              description="Para adicionar um novo implmento clique em
               “Adicionar” na parte superior!"
             />
           )

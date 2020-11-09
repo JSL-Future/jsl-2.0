@@ -3,6 +3,7 @@
 .container {
   background-color: var(--mercury-color);
   background-image: url(../../assets/Images/fundo-container-create.svg);
+  background-size: contain;
   background-repeat: no-repeat;
   font-family: Lato, sans-serif;
   font-style: normal;

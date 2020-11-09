@@ -1,51 +1,64 @@
 import React from 'react'
 import Button from '../Button'
-import classNames from 'classnames'
 import InputSearch from '../InputSearch'
 import Style from './style.module.css'
+import moment from 'moment'
+
+const diffTime = (initialDate, finalyDate, status) => {
+  const start = moment(initialDate)
+  const end = status === 'unavailable' ? moment() : moment(finalyDate)
+  const diff = end.diff(start)
+  return moment.utc(diff).format('HH:mm')
+}
+
+const formattedDate = date => moment(date).format('DD/MM/yyyy HH:mm')
 
 const table = (props) => {
-  return(
+  const buttonAction = (status, id) => {
+    const children = status === 'unavailable' ? 'Liberar' : 'Detalhes'
+    const actionButton = status === 'unavailable' ? props.release : props.detail
+    const outline = status === 'unavailable' ? false : true
+    return (
+      <Button
+        action={() => actionButton(id)}
+        outline={outline}
+      >
+        {children}
+      </Button>
+    )
+  }
+
+  return (
     <div className={Style.container}>
       <div className={Style.headerContainer}>
         <h2>Implementos</h2>
-        <InputSearch  
+        <InputSearch
           name="pesquisa"
           onChange={props.search}
           type="text"
           placeholder="Pesquisar"
         />
       </div>
-      <table class={Style.table}>
+      <table className={Style.table}>
         <thead>
+         <tr>
           <th>Placa</th>
           <th>Data Entrada</th>
           <th>Evento</th>
           <th>Permanência</th>
-          <th></th>
+          <th />
+         </tr>
         </thead>
         <tbody>
-          {props.data.map(item =>(
-                <tr>
-                  <td>{item.plate}</td>
-                  <td>{item.date}</td>
-                  <td className={classNames(Style.event, {
-                    [Style.preventiva] : props.preventiva,  
-                    [Style.corretiva] : props.corretiva,  
-                    [Style.estacionamento] : props.estacionamento,
-                  })}
-                    >{item.event}</td>
-                  <td>{item.permanence}</td>
-                  <td>
-                    <Button 
-                      action={props.release}
-                    >
-                      Liberar
-                    </Button>                  
-                  </td>
-                </tr>
-              )
-            )
+          {props.data.map((item) => (
+            <tr key={item.id} >
+              <td>{item.plate}</td>
+              <td>{formattedDate(item.checkin.createdAt)}</td>
+              <td>{item.event}</td>
+              <td>{diffTime(item.checkin.createdAt, item.checkout.updatedAt, item.status)}</td>
+              <td>{buttonAction(item.status, item.id)}</td>
+            </tr>
+          ))
           }
         </tbody>
       </table>

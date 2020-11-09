@@ -6,7 +6,7 @@ import CreateContainer from '../../Containers/Create'
 const Create = (props) => {
 
   const [form, setForm] = useState({
-    operacao: '',
+    operation: '',
     event: '',
     plate: '',
     driver: ''
@@ -20,10 +20,35 @@ const Create = (props) => {
   }
 
   const save = () => {
-    axios.post('http://localhost:3000/implements', form)
+    const {
+      driver,
+      event,
+      plate,
+      operation,
+    } = form
+
+    const defaultDate = new Date()
+
+    const formattedData = {
+      status: 'unavailable',
+      event,
+      operation,
+      plate,
+      checkin: {
+        driver,
+        createdAt: defaultDate,
+        updatedAt: defaultDate,
+      },
+      checkout: {
+        driver: null,
+        createdAt: defaultDate,
+        updatedAt: defaultDate,
+      }
+    }
+
+    axios.post('http://localhost:3000/implements', formattedData)
       .then(response => {
-        console.log(response)
-        props.history.push('/signature')
+        props.history.push('/manager')
       })
       .catch(error => console.log(error))
   }
