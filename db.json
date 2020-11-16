@@ -1,39 +1,55 @@
 {
+  "users": [
+    { "email": "email@jsl.com.br", "password": "1234567", "name": "Alexandre" },
+    { "email": "email@jsl.com.br", "password": "1234567", "name": "Thiago" }
+  ],
+  "fleets": [
+    {
+      "plate": "BMS6545",
+      "feet": "D2344",
+      "createdBy": "Alexandre Soares",
+      "createdAt": "2020-11-11T17:05:41.832Z",
+      "updateddBy": "Alexandre Soares",
+      "updateddAt": "2020-11-11T17:05:41.832Z"
+    }
+  ],
   "implements": [
     {
-      "status": "release",
-      "event": "Corretiva",
+      "active": true,
+      "status": "check-in", // checko-out
       "operation": "Mercedes",
       "plate": "BMS6545",
       "fleet": "D2344",
-      "checkin": {
-        "driver": "Thiago Ramalho",
-        "createdAt": "2020-11-11T17:05:41.832Z",
-        "updatedAt": "2020-11-11T17:05:41.832Z"
-      },
-      "checkout": {
-        "driver": "Francisco Alencar",
-        "createdAt": "2020-11-11T17:05:41.832Z",
-        "updatedAt": "2020-11-11T17:33:48.351Z"
-      },
+      "events": [
+        { "status": "checkin", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Julio Teste" },
+        { "status": "corretiva", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Julio Teste" },
+        { "status": "doca 03",  "userId:": "12345", "createdBy": "Thiago Ramalho", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" },
+        { "status": "pátio", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" },
+        { "status": "doca 04", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" },
+        { "status": "liberado para retirar",  "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" },
+        { "status": "checkout", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" }
+      ],
+      "createdBy": "Alexandre Soares",
+      "createdAt": "2020-11-11T17:05:41.832Z",
+      "updateddBy": "Alexandre Soares",
+      "updateddAt": "2020-11-11T17:05:41.832Z",
       "id": 1
     },
     {
-      "status": "unavailable",
-      "event": "Preventiva",
-      "operation": "Scania",
-      "plate": "DSG2100",
-      "fleet": "898881",
-      "checkin": {
-        "driver": "Francisco Alencar",
-        "createdAt": "2020-11-11T17:06:19.246Z",
-        "updatedAt": "2020-11-11T17:06:19.246Z"
-      },
-      "checkout": {
-        "driver": null,
-        "createdAt": "2020-11-11T17:06:19.246Z",
-        "updatedAt": "2020-11-11T17:06:19.246Z"
-      },
+      "active": false,
+      "status": "check-out",
+      "operation": "Mercedes",
+      "plate": "BMS6545",
+      "fleet": "D2344",
+      "events": [
+        { "status": "checkin", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Julio Teste" },
+        { "status": "corretiva", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Julio Teste" },
+        { "status": "doca 03",  "userId:": "12345", "createdBy": "Thiago Ramalho", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" },
+        { "status": "pátio", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" },
+        { "status": "doca 04", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" },
+        { "status": "liberado para retirar",  "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" },
+        { "status": "checkout", "userId:": "12345", "createdBy": "Alexandre Soares", "createdAt": "2020-11-11T17:05:41.832Z", "responsible": "Thiago ramalho" }
+      ],
       "id": 2
     }
   ]
