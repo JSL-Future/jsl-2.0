@@ -63,6 +63,14 @@ const createEntry = ({
           onchange={onChange}
         />
         <Input
+          value={form.fleet}
+          label="Frota"
+          type="text"
+          name="fleet"
+          id="textfleet"
+          onchange={onChange}
+        />
+        <Input
           value={form.driver}
           label="Motorista"
           type="text"
@@ -77,7 +85,6 @@ const createEntry = ({
       >
         Salvar
       </Button>
-
     </div>
   )
 }

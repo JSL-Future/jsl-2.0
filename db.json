@@ -2,35 +2,37 @@
   "implements": [
     {
       "status": "release",
-      "event": "Preventiva",
-      "operation": "Ford",
-      "plate": "ABC1234",
+      "event": "Corretiva",
+      "operation": "Mercedes",
+      "plate": "BMS6545",
+      "fleet": "D2344",
       "checkin": {
-        "driver": "Alexandre Soares",
-        "createdAt": "2020-11-09T18:31:48.217Z",
-        "updatedAt": "2020-11-09T18:31:48.217Z"
+        "driver": "Thiago Ramalho",
+        "createdAt": "2020-11-11T17:05:41.832Z",
+        "updatedAt": "2020-11-11T17:05:41.832Z"
       },
       "checkout": {
-        "driver": "Alexandre Soares",
-        "createdAt": "2020-11-09T18:31:48.217Z",
-        "updatedAt": "2020-11-09T18:35:02.862Z"
+        "driver": "Francisco Alencar",
+        "createdAt": "2020-11-11T17:05:41.832Z",
+        "updatedAt": "2020-11-11T17:33:48.351Z"
       },
       "id": 1
     },
     {
       "status": "unavailable",
       "event": "Preventiva",
-      "operation": "Mercedes",
-      "plate": "DSA1234",
+      "operation": "Scania",
+      "plate": "DSG2100",
+      "fleet": "898881",
       "checkin": {
-        "driver": "Thiago Ramalho",
-        "createdAt": "2020-11-09T18:33:45.992Z",
-        "updatedAt": "2020-11-09T18:33:45.992Z"
+        "driver": "Francisco Alencar",
+        "createdAt": "2020-11-11T17:06:19.246Z",
+        "updatedAt": "2020-11-11T17:06:19.246Z"
       },
       "checkout": {
         "driver": null,
-        "createdAt": "2020-11-09T18:33:45.992Z",
-        "updatedAt": "2020-11-09T18:33:45.992Z"
+        "createdAt": "2020-11-11T17:06:19.246Z",
+        "updatedAt": "2020-11-11T17:06:19.246Z"
       },
       "id": 2
     }

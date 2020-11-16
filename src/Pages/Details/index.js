@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react'
+import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import DetailsContainer from '../../Containers/Details'
 
@@ -36,9 +37,16 @@ const Details = (props) => {
     }
   })
 
+  const goToManager = () => {
+    return props.history.push('/manager')
+  }
+
   return (
-    <DetailsContainer data={implement} />
+    <DetailsContainer 
+      data={implement}
+      backPage={goToManager}
+    />
   )
 }
 
-export default Details
+export default withRouter(Details)

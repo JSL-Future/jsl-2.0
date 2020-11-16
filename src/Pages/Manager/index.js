@@ -31,7 +31,6 @@ const Manager = (props) => {
     return props.history.push(`/detail/${id}`)
   }
 
-
   return (
     <ManagerContainer
       data={data}

@@ -19,3 +19,7 @@
 .cardAdd p {
   margin: 1.5px;
 }
+
+.emptyTable {
+  overflow: auto;
+}

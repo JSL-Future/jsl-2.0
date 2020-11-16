@@ -33,10 +33,6 @@ tr, th {
   border-bottom: solid 1px var(--gray-color);
 }
 
-.event {
-  font-weight: bold;
-}
-
 .preventiva {
   color: #ECB31F;
 }
@@ -47,5 +43,9 @@ tr, th {
 
 .estacionamento {
   color: #1F32D8;
+}
+
+.preventiva, .corretiva, .estacionamento {
+  font-weight: bold;
 }
   

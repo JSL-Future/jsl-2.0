@@ -12,8 +12,8 @@
   color: var(--mako-color);
 }
 
-.cardDetails {
-
+.cardInfo > p {
+  margin: 1.5px;
 }
 
 .cardDetails > * {
@@ -34,7 +34,7 @@
 }
 
 .checkout, .checkin {
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }

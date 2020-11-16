@@ -9,6 +9,7 @@ const Create = (props) => {
     operation: '',
     event: '',
     plate: '',
+    fleet: '',
     driver: ''
   })
 
@@ -24,6 +25,7 @@ const Create = (props) => {
       driver,
       event,
       plate,
+      fleet,
       operation,
     } = form
 
@@ -34,6 +36,7 @@ const Create = (props) => {
       event,
       operation,
       plate,
+      fleet,
       checkin: {
         driver,
         createdAt: defaultDate,

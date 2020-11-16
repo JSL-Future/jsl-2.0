@@ -23,6 +23,10 @@ const Release = (props) => {
         <h1>informações Gerais</h1>
         <div className={Style.informationAll}>
           <div>
+            <h5>Frota</h5>
+            <p>{props.implement.fleet}</p>
+          </div>
+          <div>
             <h5>Placa</h5>
             <p>{props.implement.plate}</p>
           </div>
@@ -31,7 +35,7 @@ const Release = (props) => {
             <p>{props.implement.event}</p>
           </div>
           <div>
-            <h5>Data</h5>
+            <h5>Data Entrada</h5>
             <p>{formattedDate(props.implement.checkin.createdAt)}</p>
           </div>
         </div>

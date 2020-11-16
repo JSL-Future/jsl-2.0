@@ -5,11 +5,12 @@ import ReleaseContainer from '../../Containers/Release'
 
 const Release = (props) => {
 
-  const [implement, setImplement] = useState(   {
+  const [implement, setImplement] = useState({
     status: '',
     event: '',
     operation: '',
     plate: '',
+    fleet: '',
     checkin: {
       driver: '',
       createdAt: '',
@@ -37,7 +38,6 @@ const Release = (props) => {
         .catch(error => console.log(error))
     }
   })
-
 
   const handleChange = (event) => {
     setForm({

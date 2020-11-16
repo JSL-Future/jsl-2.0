@@ -8,6 +8,8 @@ const diffTime = (initialDate, finalyDate, status) => {
   const start = moment(initialDate)
   const end = status === 'unavailable' ? moment() : moment(finalyDate)
   const diff = end.diff(start)
+  console.log(">>>", initialDate)
+  console.log("***", finalyDate)
   return moment.utc(diff).format('HH:mm')
 }
 
@@ -42,9 +44,11 @@ const table = (props) => {
       <table className={Style.table}>
         <thead>
          <tr>
+          <th>Frota</th> 
           <th>Placa</th>
           <th>Data Entrada</th>
           <th>Evento</th>
+          <th>Operação</th>
           <th>Permanência</th>
           <th />
          </tr>
@@ -52,9 +56,11 @@ const table = (props) => {
         <tbody>
           {props.data.map((item) => (
             <tr key={item.id} >
+              <td>{item.fleet}</td>
               <td>{item.plate}</td>
               <td>{formattedDate(item.checkin.createdAt)}</td>
               <td>{item.event}</td>
+              <td>{item.operation}</td>
               <td>{diffTime(item.checkin.createdAt, item.checkout.updatedAt, item.status)}</td>
               <td>{buttonAction(item.status, item.id)}</td>
             </tr>

@@ -27,22 +27,24 @@ const Manager = (props) => {
         </div>
       </Card>
       <Card>
-        {props.data.length > 0
-          ? (
-            <Table
-              data={props.data}
-              release={props.release}
-              detail={props.detail}
-            />
-          )
-          : (
-            <EmptyState
-              title="Não temos nenhum implemento criado"
-              description="Para adicionar um novo implmento clique em
-              “Adicionar” na parte superior!"
-            />
-          )
-        }
+        <div className={Style.emptyTable}> 
+          {props.data.length > 0
+            ? (
+              <Table
+                data={props.data}
+                release={props.release}
+                detail={props.detail}
+              />
+            )
+            : (
+              <EmptyState
+                title="Não temos nenhum implemento criado"
+                description="Para adicionar um novo implmento clique em
+                “Adicionar” na parte superior!"
+              />
+            )
+          }
+        </div>
       </Card>
     </div>
   )
