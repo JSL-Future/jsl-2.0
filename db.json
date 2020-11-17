@@ -16,7 +16,7 @@
   "implements": [
     {
       "active": true,
-      "status": "check-in", // checko-out
+      "status": "check-in", 
       "operation": "Mercedes",
       "plate": "BMS6545",
       "fleet": "D2344",

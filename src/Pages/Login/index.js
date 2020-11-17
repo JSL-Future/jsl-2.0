@@ -1,5 +1,6 @@
 import React from  'react'
 import AuthService from '../../services/auth'
+import ContainerLogin from '../../Containers/Login'
 
 const Login = () => {
 
@@ -20,7 +21,9 @@ const Login = () => {
   }
 
   return (
-    <button onClick={handleLogin}>Logar</button>
+    <div>
+      <ContainerLogin auth={handleLogin}/>
+    </div>
   )
 }
 

@@ -1,0 +1,27 @@
+@import '../../assets/css/colors.css';
+
+.login {
+  display: flex;
+  height: 460px;
+  width: 100%;
+}
+
+.field {
+  padding: 20px;
+  width: 50%;
+}
+
+.logo {
+  background-color: var(--monza-color);
+  width: 50%;
+}
+
+img {
+  margin-left: 15%;
+  margin-top: 25%;
+  padding: 40px;
+}
+
+.imgLogo {
+  width: 250px;
+}
