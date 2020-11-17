@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
-import axios from 'axios'
 import CreateContainer from '../../Containers/Create'
+import ImplementService from '../../services/implement'
 
 const Create = (props) => {
-
   const [form, setForm] = useState({
     operation: '',
     reason: '',
@@ -20,7 +19,7 @@ const Create = (props) => {
     })
   }
 
-  const save = () => {
+  const save = async () => {
     const {
       responsible,
       reason,
@@ -29,30 +28,19 @@ const Create = (props) => {
       operation,
     } = form
 
-    axios.post('http://localhost:3003/api/implements', {
+    await ImplementService.saveImplement({
       operation,
       plate,
       fleet,
       responsible,
       reason,
     })
-      .then(response => {
-        props.history.push('/manager')
-      })
-      .catch(error => console.log(error))
-  }
-
-  const handleGetFleet = (plate) => {
-    axios.get(`http://localhost:3003/api/fleets?plate=${plate}`)
-      .then(response => console.log('=++>>', response))
-      .catch(error => console.log(error))
   }
 
   return (
     <CreateContainer
       form={form}
       onChange={handleChange}
-      onBlur={handleGetFleet}
       save={save}
     />
   )

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import axios from 'axios'
 import ManagerContainer from '../../Containers/Manager'
+import ImplementService from '../../services/implement'
+import Request from  '../../services/request'
 
 const Manager = (props) => {
 
@@ -9,10 +10,10 @@ const Manager = (props) => {
   const [shouldRequest, setShouldRequest] = useState(true)
 
   useEffect(() => {
+    Request.forceRenewAxiosInstance()
     if(shouldRequest) {
-      axios.get('http://localhost:3003/api/implements')
+      ImplementService.getImplements()
         .then(response => {
-          console.log(response.data)
           setData(response.data)
           setShouldRequest(false)
         })

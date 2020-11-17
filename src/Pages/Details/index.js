@@ -1,10 +1,9 @@
 import React, { useEffect, useState} from 'react'
 import { withRouter } from 'react-router-dom'
-import axios from 'axios'
 import DetailsContainer from '../../Containers/Details'
+import ImplementService from '../../services/implement'
 
 const Details = (props) => {
-
   const [implement, setImplement] = useState(   {
     status: '',
     event: '',
@@ -28,7 +27,7 @@ const Details = (props) => {
   useEffect(() => {
     const { id } = props.match.params
     if(shouldRequest) {
-      axios.get(`http://localhost:3003/api/implements/${id}`)
+      ImplementService.getImplementById(id)
         .then(response => {
           setImplement(response.data)
           setShouldRequest(false)
