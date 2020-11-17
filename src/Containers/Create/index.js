@@ -5,6 +5,7 @@ import Style from './style.module.css'
 const createEntry = ({
   form,
   onChange,
+  onBlur,
   save,
 }) => {
 
@@ -46,7 +47,7 @@ const createEntry = ({
         <h1>Evento</h1>
         <SelectOption
           selectValue={form.event}
-          selectName="event"
+          selectName="reason"
           onchange={onChange}
           options={dataListEvent}
         />
@@ -54,6 +55,15 @@ const createEntry = ({
 
       <Card>
         <h1>Informações Gerais</h1>
+        <Input
+          value={form.fleet}
+          label="Frota"
+          type="text"
+          name="fleet"
+          id="textfleet"
+          onchange={onChange}
+          onblur={onBlur}
+        />
         <Input
           value={form.plate}
           label="Placa"
@@ -63,18 +73,10 @@ const createEntry = ({
           onchange={onChange}
         />
         <Input
-          value={form.fleet}
-          label="Frota"
-          type="text"
-          name="fleet"
-          id="textfleet"
-          onchange={onChange}
-        />
-        <Input
           value={form.driver}
           label="Motorista"
           type="text"
-          name="driver"
+          name="responsible"
           id="textDriver"
           onchange={onChange}
         />

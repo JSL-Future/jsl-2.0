@@ -7,10 +7,10 @@ const Create = (props) => {
 
   const [form, setForm] = useState({
     operation: '',
-    event: '',
+    reason: '',
     plate: '',
     fleet: '',
-    driver: ''
+    responsible: ''
   })
 
   const handleChange = (event) => {
@@ -22,37 +22,29 @@ const Create = (props) => {
 
   const save = () => {
     const {
-      driver,
-      event,
+      responsible,
+      reason,
       plate,
       fleet,
       operation,
     } = form
 
-    const defaultDate = new Date()
-
-    const formattedData = {
-      status: 'unavailable',
-      event,
+    axios.post('http://localhost:3003/api/implements', {
       operation,
       plate,
       fleet,
-      checkin: {
-        driver,
-        createdAt: defaultDate,
-        updatedAt: defaultDate,
-      },
-      checkout: {
-        driver: null,
-        createdAt: defaultDate,
-        updatedAt: defaultDate,
-      }
-    }
-
-    axios.post('http://localhost:3000/implements', formattedData)
+      responsible,
+      reason,
+    })
       .then(response => {
         props.history.push('/manager')
       })
+      .catch(error => console.log(error))
+  }
+
+  const handleGetFleet = (plate) => {
+    axios.get(`http://localhost:3003/api/fleets?plate=${plate}`)
+      .then(response => console.log('=++>>', response))
       .catch(error => console.log(error))
   }
 
@@ -60,6 +52,7 @@ const Create = (props) => {
     <CreateContainer
       form={form}
       onChange={handleChange}
+      onBlur={handleGetFleet}
       save={save}
     />
   )

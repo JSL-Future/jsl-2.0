@@ -7,10 +7,11 @@ const input = (props) => {
       {props.label}
       <input className={style}
         value={props.value}
-        type={props.type} 
-        name={props.name} 
+        type={props.type}
+        name={props.name}
         id={props.name}
         onChange={props.onchange}
+        onBlur={props.onblur}
       />
     </label>
   )

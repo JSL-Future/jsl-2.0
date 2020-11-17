@@ -28,7 +28,7 @@ const Details = (props) => {
   useEffect(() => {
     const { id } = props.match.params
     if(shouldRequest) {
-      axios.get(`http://localhost:3000/implements/${id}`)
+      axios.get(`http://localhost:3003/api/implements/${id}`)
         .then(response => {
           setImplement(response.data)
           setShouldRequest(false)
@@ -42,7 +42,7 @@ const Details = (props) => {
   }
 
   return (
-    <DetailsContainer 
+    <DetailsContainer
       data={implement}
       backPage={goToManager}
     />

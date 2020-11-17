@@ -7,30 +7,24 @@ const Release = (props) => {
 
   const [implement, setImplement] = useState({
     status: '',
-    event: '',
+    reason: '',
+    events: [],
     operation: '',
     plate: '',
     fleet: '',
-    checkin: {
-      driver: '',
-      createdAt: '',
-      updatedAt: '',
-    },
-    checkout: {
-      driver: '',
-      createdAt: '',
-      updatedAt: '',
-    },
-    id: null,
+    responsible: '',
+    createdAt: '',
+    updatedAt: '',
+    _id: null,
   })
 
-  const [form, setForm] = useState ({ driver: '' })
+  const [form, setForm] = useState ({ responsible: '' })
   const [shouldRequest, setShouldRequest] = useState(true)
 
   useEffect(() => {
     const { id } = props.match.params
     if(shouldRequest) {
-      axios.get(`http://localhost:3000/implements/${id}`)
+      axios.get(`http://localhost:3003/api/implements/${id}`)
         .then(response => {
           setImplement(response.data)
           setShouldRequest(false)
@@ -47,15 +41,12 @@ const Release = (props) => {
   }
 
   const release = () => {
-    axios.put(`http://localhost:3000/implements/${implement.id}`, {
-      ...implement,
-      status: 'release',
-      checkout: {
-        driver: form.driver,
-        createdAt: implement.checkout.createdAt,
-        updatedAt: new Date(),
-      }
-    })
+    const formattedImplement = {
+      status: 'check-out',
+      responsible: form.responsible,
+    }
+
+    axios.put(`http://localhost:3003/api/implements/${implement._id}`, formattedImplement)
       .then(response => props.history.push('/manager'))
       .catch(error => console.log(error))
   }

@@ -31,19 +31,19 @@ const Release = (props) => {
             <p>{props.implement.plate}</p>
           </div>
           <div>
-            <h5>Evento</h5>
-            <p>{props.implement.event}</p>
+            <h5>Motivo</h5>
+            <p>{props.implement.reason}</p>
           </div>
           <div>
             <h5>Data Entrada</h5>
-            <p>{formattedDate(props.implement.checkin.createdAt)}</p>
+            <p>{formattedDate(props.implement.createdAt)}</p>
           </div>
         </div>
         <Input
           value={props.form.driver}
           label="Mototista"
           type="text"
-          name="driver"
+          name="responsible"
           id="textDriver"
           onchange={props.onChange}
         />

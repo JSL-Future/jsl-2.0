@@ -10,8 +10,9 @@ const Manager = (props) => {
 
   useEffect(() => {
     if(shouldRequest) {
-      axios.get('http://localhost:3000/implements')
+      axios.get('http://localhost:3003/api/implements')
         .then(response => {
+          console.log(response.data)
           setData(response.data)
           setShouldRequest(false)
         })

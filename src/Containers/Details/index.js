@@ -39,45 +39,18 @@ const Details = (props) => {
             </div>
 
             <div>
-              <h5>Motorista</h5>
-              <p>{props.data.checkin.driver}</p>
-            </div>
-
-            <div>
-              <h5>Status</h5>
-              <p>{props.data.event}</p>
+              <h5>Motivo</h5>
+              <p>{props.data.reason}</p>
             </div>
 
             <div>
               <h5>Data Entrada</h5>
-              <p>{formattedDate(props.data.checkin.createdAt)}</p>
-            </div>
-          </div>
-
-          <div className={Style.checkout}>
-            <div>
-              <h5>Frota</h5>
-              <p>{props.data.fleet}</p>
-            </div>
-
-            <div>
-              <h5>Placa</h5>
-              <p>{props.data.plate}</p>
-            </div>
-
-            <div>
-              <h5>Motorista</h5>
-              <p>{props.data.checkout.driver}</p>
-            </div>
-
-            <div>
-              <h5>Status</h5>
-              <p>{statusTranslate(props.data.status)}</p>
+              <p>{formattedDate(props.data.createdAt)}</p>
             </div>
 
             <div>
               <h5>Data Saída</h5>
-              <p>{formattedDate(props.data.checkout.updatedAt)}</p>
+              <p>{formattedDate(props.data.updatedAt)}</p>
             </div>
           </div>
         </div>
