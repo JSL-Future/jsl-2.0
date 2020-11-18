@@ -21,15 +21,15 @@ const Login = () => {
       const { data } = await AuthService.login(form)
       if (data.token) {
         localStorage.setItem('token', data.token)
-        window.location.href = '/#/manager'
       }
+      window.location.href = '/#/manager'
     } catch (error) {
       console.log('=========>>', error)
     }
   }
 
   return (
-    <ContainerLogin 
+    <ContainerLogin
       auth={handleLogin}
       onChange={handleChange}
     />

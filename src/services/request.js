@@ -3,7 +3,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 const HOST = 'http://157.230.8.214'
-const PORT = process.env.REACT_APP_HOST_PORT
+const PORT = 3003
 
 
 const createInstance = () => {
