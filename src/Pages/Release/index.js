@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import axios from 'axios'
 import ReleaseContainer from '../../Containers/Release'
+import ImplementService from '../../services/implement'
 
 const Release = (props) => {
 
@@ -24,7 +24,7 @@ const Release = (props) => {
   useEffect(() => {
     const { id } = props.match.params
     if(shouldRequest) {
-      axios.get(`http://localhost:3003/api/implements/${id}`)
+      ImplementService.getImplementById(id)
         .then(response => {
           setImplement(response.data)
           setShouldRequest(false)
@@ -46,7 +46,7 @@ const Release = (props) => {
       responsible: form.responsible,
     }
 
-    axios.put(`http://localhost:3003/api/implements/${implement._id}`, formattedImplement)
+    ImplementService.updateImplement(implement._id, formattedImplement)
       .then(response => props.history.push('/manager'))
       .catch(error => console.log(error))
   }

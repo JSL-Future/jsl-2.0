@@ -18,12 +18,9 @@
   width: 50%;
 }
 
-img {
+.imgLogo {
+  width: 250px;
   margin-left: 15%;
   margin-top: 30%;
   padding: 40px;
-}
-
-.imgLogo {
-  width: 250px;
 }
