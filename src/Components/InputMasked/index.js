@@ -14,6 +14,7 @@ const InputMasked = (props) => {
         onChange={props.onchange}
         onBlur={props.onblur}
         mask={props.mask}
+        guide={props.guide}
       />
     </label>
   )

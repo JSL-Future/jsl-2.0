@@ -6,7 +6,11 @@ const Login = () => {
 
   const [form, setForm] = useState({
     document: '',
+<<<<<<< HEAD
     password: ''
+=======
+    password: '',
+>>>>>>> 32c757c... Adicionado props no InputMasked
   })
 
   const handleChange = (event) => {

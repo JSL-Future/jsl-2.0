@@ -71,7 +71,17 @@ const createEntry = ({
           name="plate"
           id="textPlate"
           onchange={onChange}
-          mask={[/[A-Z]/,/[A-Z]/,/[A-Z]/, "-", /[0-9]/, /[0-9A-Z]/,/[0-9]/,/[0-9]/]}
+          mask={[
+            /[A-Z]/,
+            /[A-Z]/,
+            /[A-Z]/, 
+            "-", 
+            /[0-9]/, 
+            /[0-9A-Z]/,
+            /[0-9]/,
+            /[0-9]/
+          ]}
+          guide={false}
         />
         <Input
           value={form.driver}
