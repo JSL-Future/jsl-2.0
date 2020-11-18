@@ -2,8 +2,8 @@ import { path } from 'ramda'
 import axios from 'axios'
 import qs from 'qs'
 
-const HOST = 'http://localhost'
-const PORT = 3003
+const HOST = process.env.REACT_APP_HOST
+const PORT = process.env.REACT_APP_HOST_PORT
 
 
 const createInstance = () => {
