@@ -4,14 +4,14 @@ import { Button, Card, Header } from '../../Components'
 import Style from './style.module.css'
 
 const formattedDate = date => moment(date).format('DD/MM/yyyy HH:mm')
-const statusTranslate = status => {
-  const translate = {
-    unavaible: 'Indisponível',
-    release: 'Liberado',
-  }
+// const statusTranslate = status => {
+//   const translate = {
+//     unavaible: 'Indisponível',
+//     release: 'Liberado',
+//   }
 
-  return translate[status]
-}
+//   return translate[status]
+// }
 const Details = (props) => {
   return (
     <div className={Style.container}>
