@@ -2,7 +2,7 @@ import { path } from 'ramda'
 import axios from 'axios'
 import qs from 'qs'
 
-const HOST = process.env.REACT_APP_HOST
+const HOST = '157.230.8.214'
 const PORT = process.env.REACT_APP_HOST_PORT
 
 
