@@ -16,7 +16,7 @@ const App = () => {
       <Route path='/signature' component={Signature} />
       <Route path='/detail/:id' component={Details} />
       <Route path='/release/:id' component={Release} />
-      <Redirect from="/" to="/manager" />
+      <Redirect from="*" to="/auth" />
     </Switch>
   )
 }
