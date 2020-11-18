@@ -1,7 +1,6 @@
 import React from 'react'
 import Style from './style.module.css'
-import Input from '../../Components/Input'
-import Button from '../../Components/Button'
+import { Button, Input, InputMasked } from '../../Components'
 import imageLogo from '../../assets/Images/01-logo-jsl-branco 1.svg'
 
 const Login = (props) => {
@@ -15,18 +14,19 @@ const Login = (props) => {
       </div>
       <div className={Style.auth}>
         <h1>Login</h1>
-        <Input 
+        <InputMasked 
           value={props.document}
           label="CPF"
           type="text"
           name="document"
           id="textDocument"
           onchange={props.onChange}
+          mask={[/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/]}
         />
         <Input 
           value={props.password}
           label="Senha"
-          type="text"
+          type="password"
           name="password"
           id="textPassword"
           onchange={props.onChange}

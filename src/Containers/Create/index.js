@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, Header, Input, SelectOption } from '../../Components'
+import { Button, Card, Header, Input, InputMasked, SelectOption } from '../../Components'
 import Style from './style.module.css'
 
 const createEntry = ({
@@ -64,13 +64,14 @@ const createEntry = ({
           onchange={onChange}
           onblur={onBlur}
         />
-        <Input
+        <InputMasked
           value={form.plate}
           label="Placa"
           type="text"
           name="plate"
           id="textPlate"
           onchange={onChange}
+          mask={[/[A-Z]/,/[A-Z]/,/[A-Z]/, "-", /[0-9]/, /[0-9A-Z]/,/[0-9]/,/[0-9]/]}
         />
         <Input
           value={form.driver}

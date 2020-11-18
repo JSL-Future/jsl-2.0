@@ -6,7 +6,7 @@ const Login = () => {
 
   const [form, setForm] = useState({
     document: '',
-    password: '',
+    password: ''
   })
 
   const handleChange = (event) => {

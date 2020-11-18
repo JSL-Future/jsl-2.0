@@ -1,6 +1,6 @@
 @import '../../assets/css/colors.css';
 
-input {
+.input {
   background: transparent;
   border: none;
   border-bottom: solid 1px var(--gray-color);
@@ -11,7 +11,7 @@ input {
   width: 100%;
 }
 
-input:focus {
+.input:focus {
   border-bottom: solid 2px var(--mountain-meadow-color);
   box-shadow: 0 0 0 0;
   outline: 0;
