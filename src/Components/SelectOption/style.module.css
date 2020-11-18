@@ -10,3 +10,7 @@
   text-align-last: center;
   width: 100%;
 }
+
+.selectOptions {
+  outline: 0;
+}

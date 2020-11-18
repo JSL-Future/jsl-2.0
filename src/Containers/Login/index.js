@@ -13,7 +13,7 @@ const Login = (props) => {
           alt="logo-jsl"
         />
       </div>
-      <div className={Style.field}>
+      <div className={Style.auth}>
         <h1>Login</h1>
         <Input 
           value={props.document}
@@ -29,7 +29,7 @@ const Login = (props) => {
           type="text"
           name="password"
           id="textPassword"
-          onchange={props.password}
+          onchange={props.onChange}
         />
         <Button
           action={props.auth}

@@ -21,6 +21,10 @@
   color: var(--mountain-meadow-color);
 }
 
+.button:focus {
+  outline: 0;
+}
+
 .buttonOutline:hover {
   background: var(--mountain-meadow-color);
   color: var(--white-color);

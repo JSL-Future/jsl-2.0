@@ -4,11 +4,18 @@ input {
   background: transparent;
   border: none;
   border-bottom: solid 1px var(--gray-color);
+  box-sizing: border-box;
   color: var(--storm-gray-color);
   font-size: 18px;
   margin-bottom: 50px;
   padding: 16px 4px;
   width: 100%;
+}
+
+input:focus {
+  border-bottom: solid 2px var(--mountain-meadow-color);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.207965);
+  outline: 0;
 }
 
 label {

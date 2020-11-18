@@ -2,23 +2,25 @@
 
 .login {
   display: flex;
-  height: 460px;
   width: 100%;
+  min-height: 100vh;
 }
 
-.field {
-  padding: 20px;
+.auth {
+  box-sizing: border-box;
+  padding: 60px;
   width: 50%;
 }
 
 .logo {
   background-color: var(--monza-color);
+  overflow: hidden;
   width: 50%;
 }
 
 img {
   margin-left: 15%;
-  margin-top: 25%;
+  margin-top: 30%;
   padding: 40px;
 }
 
