@@ -9,18 +9,17 @@
 .auth {
   box-sizing: border-box;
   padding: 60px;
-  width: 50%;
+  width: 60%;
 }
 
 .logo {
   background-color: var(--monza-color);
   overflow: hidden;
-  width: 50%;
+  width: 40%;
 }
 
 .imgLogo {
-  width: 250px;
-  margin-left: 15%;
-  margin-top: 30%;
-  padding: 40px;
+  width: 23vw;
+  margin-left: 7.5vw;
+  margin-top: 40vh;
 }

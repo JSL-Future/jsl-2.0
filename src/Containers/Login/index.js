@@ -21,9 +21,6 @@ const Login = (props) => {
           name="document"
           id="textDocument"
           onchange={props.onChange}
-<<<<<<< HEAD
-          mask={[/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/,/[0-9]/]}
-=======
           mask={[
             /[0-9]/, 
             /[0-9]/, 
@@ -41,7 +38,6 @@ const Login = (props) => {
             /[0-9]/
           ]}
           guide={false}
->>>>>>> 32c757c... Adicionado props no InputMasked
         />
         <Input 
           value={props.password}
