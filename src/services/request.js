@@ -1,4 +1,3 @@
-import { path } from 'ramda'
 import axios from 'axios'
 import qs from 'qs'
 
