@@ -3,7 +3,6 @@ const url = '/api/implements'
 
 class ImplementService {
   constructor() {
-    request.forceRenewAxiosInstance()
     this.axios = request.getAxiosInstance()
   }
 
