@@ -18,7 +18,10 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const { data } = await AuthService.login(form)
+      const { data } = await AuthService.login({
+        ...form,
+        document: form.document.replace(/[^a-z0-9]/gi,'')
+      })
       if (data.token) {
         localStorage.setItem('token', data.token)
       }

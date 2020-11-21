@@ -2,15 +2,13 @@ import { path, prop } from 'ramda'
 import axios from 'axios'
 import qs from 'qs'
 
-const HOST = process.env.REACT_APP_PROXY_API
-const PORT = process.env.REACT_APP_PROXY_API_PORT
-
+const PROXY_API = process.env.REACT_APP_PROXY_API
 
 const createInstance = () => {
   const token = localStorage.getItem('token')
 
   const axiosInstace = axios.create({
-    baseURL: `${HOST}:${PORT}`,
+    baseURL: PROXY_API,
     headers: {
       Authorization: `bearer ${token}`,
     },
