@@ -4,9 +4,8 @@ import qs from 'qs'
 
 const PROXY_API = process.env.REACT_APP_PROXY_API
 
-const createInstance = () => {
-  const token = localStorage.getItem('token')
-
+const createInstance = (userToken = null) => {
+  const token = userToken || localStorage.getItem('token')
   const axiosInstace = axios.create({
     baseURL: PROXY_API,
     headers: {
@@ -39,8 +38,8 @@ class Resquest {
     return this.axiosInstance
   }
 
-  forceRenewAxiosInstance = () => {
-    this.axiosInstance = createInstance()
+  forceRenewAxiosInstance = (token = null) => {
+    this.axiosInstance = createInstance(token)
   }
 }
 

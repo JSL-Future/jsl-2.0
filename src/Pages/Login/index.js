@@ -1,8 +1,12 @@
 import React, { useState } from  'react'
+import { withRouter } from 'react-router-dom'
 import AuthService from '../../services/auth'
 import ContainerLogin from '../../Containers/Login'
+import Request from  '../../services/request'
 
-const Login = () => {
+const Login = ({
+  history,
+}) => {
 
   const [form, setForm] = useState({
     document: '',
@@ -22,10 +26,12 @@ const Login = () => {
         ...form,
         document: form.document.replace(/[^a-z0-9]/gi,'')
       })
+
       if (data.token) {
         localStorage.setItem('token', data.token)
       }
-      setTimeout(() => window.location.href = '/#/manager', 3000)
+      Request.forceRenewAxiosInstance(data.token)
+      history.push('/manager')
     } catch (error) {
       console.log('=========>>', error)
     }
@@ -39,4 +45,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default withRouter(Login)
