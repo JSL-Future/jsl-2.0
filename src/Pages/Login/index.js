@@ -25,7 +25,7 @@ const Login = () => {
       if (data.token) {
         localStorage.setItem('token', data.token)
       }
-      window.location.href = '/#/manager'
+      setTimeout(() => window.location.href = '/#/manager', 3000)
     } catch (error) {
       console.log('=========>>', error)
     }
