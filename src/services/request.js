@@ -19,12 +19,6 @@ const createInstance = (userToken = null) => {
       return response
     },
     (error) => {
-      const statusCode = path(['response', 'status'], error)
-
-      // if (statusCode === 401 || statusCode === 403) {
-      //   window.location.href = '/#/auth'
-      // }
-
       return Promise.reject(error.response);
     })
 
