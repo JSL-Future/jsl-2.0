@@ -58,7 +58,7 @@ const table = (props) => {
               <td>{item.fleet}</td>
               <td>{item.plate}</td>
               <td>{formattedDate(item.createdAt)}</td>
-              <td>{formattedDate(item.updatedAt)}</td>
+              <td>{item.status !== 'check-in' && formattedDate(item.updatedAt)}</td>
               <td>{item.reason}</td>
               <td>{item.operation}</td>
               <td>{diffTime(item.createdAt, item.updatedAt, item.status)}</td>
