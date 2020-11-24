@@ -8,14 +8,13 @@ const Release = (props) => {
   const [implement, setImplement] = useState({
     status: '',
     reason: '',
-    events: [],
     operation: '',
     plate: '',
     fleet: '',
     responsible: '',
     createdAt: '',
     updatedAt: '',
-    _id: null,
+    id: null,
   })
 
   const [form, setForm] = useState ({ responsible: '' })
@@ -46,7 +45,7 @@ const Release = (props) => {
       responsible: form.responsible,
     }
 
-    ImplementService.updateImplement(implement._id, formattedImplement)
+    ImplementService.updateImplement(implement.id, formattedImplement)
       .then(response => props.history.push('/manager'))
       .catch(error => console.log(error))
   }

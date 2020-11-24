@@ -54,7 +54,7 @@ const table = (props) => {
         </thead>
         <tbody>
           {props.data.map((item) => (
-            <tr key={item._id} >
+            <tr key={item.id} >
               <td>{item.fleet}</td>
               <td>{item.plate}</td>
               <td>{formattedDate(item.createdAt)}</td>
@@ -62,7 +62,7 @@ const table = (props) => {
               <td>{item.reason}</td>
               <td>{item.operation}</td>
               <td>{diffTime(item.createdAt, item.updatedAt, item.status)}</td>
-              <td>{buttonAction(item.status, item._id)}</td>
+              <td>{buttonAction(item.status, item.id)}</td>
             </tr>
           ))
           }
