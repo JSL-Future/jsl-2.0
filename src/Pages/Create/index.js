@@ -28,13 +28,18 @@ const Create = (props) => {
       operation,
     } = form
 
-    await ImplementService.saveImplement({
-      operation,
-      plate,
-      fleet,
-      responsible,
-      reason,
-    })
+    try {
+      await ImplementService.saveImplement({
+        operation,
+        plate,
+        fleet,
+        responsible,
+        reason,
+      })
+      props.history.push('/manager')
+    } catch (error) {
+      alert('Error ao cadastrar!')
+    }
   }
 
   return (
