@@ -1,8 +1,8 @@
 @import '../../assets/css/colors.css';
 
 .button {
-  background: var(--mountain-meadow-color);
-  border: solid 1px var(--mountain-meadow-color);
+  background: var(--crimson-color);
+  border: solid 1px var(--crimson-color);
   color: var(--white-color);
   cursor: pointer;
   font-size: 18px;
@@ -13,12 +13,12 @@
 
 .buttonOutline {
   background: transparent;
-  color: var(--mountain-meadow-color);
+  color: var(--crimson-color);
 }
 
 .button:hover {
   background: transparent;
-  color: var(--mountain-meadow-color);
+  color: var(--crimson-color);
 }
 
 .button:focus {
@@ -26,6 +26,6 @@
 }
 
 .buttonOutline:hover {
-  background: var(--mountain-meadow-color);
+  background: var(--crimson-color);
   color: var(--white-color);
 }
