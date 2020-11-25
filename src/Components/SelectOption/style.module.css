@@ -1,16 +1,28 @@
 @import '../../assets/css/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.label {
+  color: var(--black-color);
+  font-weight: bold;
+}
 
 .selectOptions {
-  background-color: var(--mercury-color);
-  border: none;
-  border-radius: 26.5px;
-  color: var(--mid-gray-color);
-  font-size: 24px;
-  padding: 16px 0;
+  background: transparent;
+  border: solid 2px var(--silver-color);
+  border-radius: 6px;
+  color: var(--black-color);
+  margin-top: 1em;
+  padding: 1em;
   text-align-last: center;
   width: 100%;
 }
 
 .selectOptions {
   outline: 0;
+}
+
+.label, .selectOptions {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-size: 1em; 
 }
