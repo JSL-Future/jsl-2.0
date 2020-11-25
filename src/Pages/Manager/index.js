@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import ManagerContainer from '../../Containers/Manager'
 import ImplementService from '../../services/implement'
+import { Menu } from '../../Components'
 
 const Manager = (props) => {
 
   const [data, setData] = useState([])
   const [shouldRequest, setShouldRequest] = useState(true)
+  const [filterSelected, setFilterSelected] = useState('Todos')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if(shouldRequest && localStorage.getItem('token')) {
@@ -14,6 +17,7 @@ const Manager = (props) => {
         .then(response => {
           setData(response.data)
           setShouldRequest(false)
+          setLoading(false)
         })
         .catch(error => console.log(error))
     }
@@ -31,13 +35,21 @@ const Manager = (props) => {
     return props.history.push(`/detail/${id}`)
   }
 
+  const HandleFilter = filter => setFilterSelected(filter)
+
   return (
-    <ManagerContainer
-      data={data}
-      addImplement={goToCreateImplements}
-      release={goToRelease}
-      detail={goToDetail}
-    />
+   <Fragment>
+      <ManagerContainer
+        data={data}
+        addImplement={goToCreateImplements}
+        release={goToRelease}
+        goToDetail={goToDetail}
+        filterSelected={filterSelected}
+        HandleFilter={HandleFilter}
+        loading={loading}
+      />
+      <Menu />
+   </Fragment>
   )
 }
 
