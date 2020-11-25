@@ -1,0 +1,49 @@
+@import '../../assets/css/colors.css';
+
+.filtersContainer > h3 {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: wrap;
+
+}
+
+.filterItem {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.filterItemImage {
+  display: flex;
+  justify-content: center;
+  background-color: #FF8E88;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.filterItemImage:hover {
+  background-color: #f36059;
+}
+
+.activeText {
+  color: #EA162C;
+  font-weight: bold;
+}
+
+.active {
+  background-color: #EA162C;
+}
+
+@media (max-width: 583px) {
+  .filterItem {
+    width: calc(100% / 3);
+  }
+}

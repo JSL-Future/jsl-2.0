@@ -1,52 +1,45 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {
-  Button,
-  Card,
-  EmptyState,
-  Header,
-  Table,
+  CardImplement,
+  CardSkeleton,
+  Filters,
 } from '../../Components'
-import Style from './style.module.css'
+import Styles from './style.module.css'
 
-const Manager = (props) => {
+const items = [1, 2, 3, 4, 5, 6, 7]
+const Manager = ({
+  data,
+  filterSelected,
+  goToDetail,
+  HandleFilter,
+  loading,
+}) => {
+  const renderCardImplement = implement => (
+   <div
+    className={Styles.implementItem}
+    key={implement.id}
+  >
+    <CardImplement
+        goToDetail={goToDetail}
+        {...implement}
+      />
+   </div>
+  )
   return (
-    <div className={Style.container}>
-      <Header />
-      <Card>
-        <div className={Style.cardAdd}>
-          <div>
-            <h1>Gerenciamento de implementos</h1>
-            <p>Adicione um novo implemento para a gestão</p>
-            <p>de entrada e saída em cada operação</p>
-          </div>
-          <div>
-            <Button action={props.addImplement} outline >
-              Adicionar
-            </Button>
-          </div>
-        </div>
-      </Card>
-      <Card>
-        <div className={Style.emptyTable}> 
-          {props.data.length > 0
-            ? (
-              <Table
-                data={props.data}
-                release={props.release}
-                detail={props.detail}
-              />
-            )
-            : (
-              <EmptyState
-                title="Não temos nenhum implemento criado"
-                description="Para adicionar um novo implmento clique em
-                “Adicionar” na parte superior!"
-              />
-            )
-          }
-        </div>
-      </Card>
-    </div>
+    <Fragment>
+      <div className={Styles.header}>
+        <h1>Gerenciamento</h1>
+      </div>
+      <div className={Styles.container}>
+        <Filters filterSelected={filterSelected} HandleFilter={HandleFilter} />
+        {loading && items.map(item => (
+          <div className={Styles.implementItem} key={item} >
+            <CardSkeleton />
+          </div>)
+        )}
+        {data.map(renderCardImplement)}
+      </div>
+    </Fragment>
   )
 }
 
