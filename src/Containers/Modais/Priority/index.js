@@ -1,15 +1,16 @@
 import React from 'react'
-import { Button, SelectOption } from '../../Components'
-import ClosedIcon from './closed.svg'
+import { Button, SelectOption } from '../../../Components'
 import Style from './style.module.css'
 
-const Priority = (
+const Priority = ({
+  handleSave,
   form,
-  onChange,
-) => {
+  handleOnChange,
+  formErrors,
+}) => {
 
   const dataListPriority = [
-    { name: 'Selecione uma prioridade', value: '', hidden: true, disabled: false },
+    { name: 'Selecione uma prioridade', value: null, hidden: true, disabled: false },
     { name: 'Alta', value: 'alta', hidden: false, disabled: false },
     { name: 'Normal', value: 'normal', hidden: false, disabled: false },
     { name: 'Baixa', value: 'baixa', hidden: false, disabled: false },
@@ -17,18 +18,13 @@ const Priority = (
 
   return (
     <div className={Style.container}>
-      <div className={Style.closed}>
-        <button className={Style.closedBtn} onClick={() => { }}>
-          <img src={ClosedIcon} alt="closed" />
-        </button>
-      </div>
       <div className={Style.content}>
         <div>
           <h1 className={Style.title}>
             Editar Prioridade!
           </h1>
           <p className={Style.description}>
-            Todos as atividades são criadas com a prioridade <b>“Normal”</b>, mas vocês pode alterar por uma das<br/> opções abaixo:
+            Todos as atividades são criadas com a prioridade <b>“Normal”</b>, mas vocês pode alterar por uma das opções abaixo:
           </p>
         </div>
         <div className={Style.selectOption}>
@@ -36,13 +32,14 @@ const Priority = (
             label="Prioridades"
             selectValue={form.priority}
             selectName="priority"
-            onchange={onChange}
+            onchange={handleOnChange}
             options={dataListPriority}
+            formErrors={formErrors}
           />
         </div>
         <div className={Style.buttonSave}>
           <Button
-            action={() => { }}
+            action={() => handleSave('priority')}
           >
             Alterar prioridade
           </Button>

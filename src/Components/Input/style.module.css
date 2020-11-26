@@ -23,6 +23,18 @@ label {
   color: var(--black-color);
   font-family: 'Poppins', sans-serif;
   font-style: normal;
-  font-size: 1em; 
+  font-size: 1em;
   font-weight: bold;
+}
+
+.errorMessage {
+  color: #EA162C;
+}
+
+.inputError {
+  border-color: #EA162C;
+}
+
+.labelError {
+  color: #EA162C;
 }

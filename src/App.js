@@ -4,7 +4,6 @@ import Manager from './Pages/Manager'
 import Create from './Pages/Create'
 import Details from './Pages/Details'
 import Login from './Pages/Login'
-import Supply from '../src/Containers/AddEvents'
 
 const App = () => {
   return (
@@ -13,7 +12,6 @@ const App = () => {
       <Route path='/manager' component={Manager} />
       <Route path='/create' component={Create} />
       <Route path='/detail/:id' component={Details} />
-      <Route path='/supply' component={Supply} />
       <Redirect from="*" to="/auth" />
     </Switch>
   )
