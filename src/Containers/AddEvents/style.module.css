@@ -35,21 +35,13 @@
 
 .description {
   font-size: 12px;
+  margin-bottom: 15%;
 }
 
 .selectOption {
   margin-bottom: 1em;
 }
 
-.twoInputLine {
-  display: flex;
-  margin-bottom: 1em;
-}
-
-.inputFleet {
-  margin-right: 1em;
-} 
-
 .buttonSave {
-  margin-top: 25%;
+  margin-top: 30%;
 }

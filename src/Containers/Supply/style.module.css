@@ -5,11 +5,11 @@
   min-height: 100vh;
 }
 
-.closed {
+.goBack {
   padding: 20px 0 10px 20px;
 }
 
-.closedBtn {
+.goBackBtn {
   background-color: transparent;
   border: none;
   outline: none;
@@ -41,12 +41,16 @@
   margin-bottom: 1em;
 }
 
+.inputLiters {
+  margin-bottom: 1em;
+}
+
 .twoInputLine {
   display: flex;
   margin-bottom: 1em;
 }
 
-.inputFleet {
+.inputMileage {
   margin-right: 1em;
 } 
 
