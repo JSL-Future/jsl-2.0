@@ -5,6 +5,8 @@ import RiskIcon from './risk.svg'
 import HighRiskIcon from './highRisk.svg'
 import LossRiskIcon from './lossRisk.svg'
 import { Modal, Skeleton } from '../../Components'
+import AddEvents from '../../Containers/AddEvents'
+import Priority from '../../Containers/Priority'
 import CloseIcon from './closed.svg'
 import styles from './style.module.css'
 
@@ -26,7 +28,7 @@ const ModalEvent = ({ showModalEvent, handleCloseModalEvent }) => (
       >
         <img src={CloseIcon} alt="close modal" />
       </div>
-      conteudo aqui!
+      <AddEvents />
     </div>
   </Modal>
 )
@@ -41,7 +43,7 @@ const ModalPriority = ({ showModalPriority, handleCloseModalPriority }) => (
       >
         <img src={CloseIcon} alt="close modal" />
       </div>
-      conteudo aqui prioridade!
+      <Priority />
     </div>
   </Modal>
 )

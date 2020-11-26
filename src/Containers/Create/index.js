@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button,Input, InputMasked, SelectOption } from '../../Components'
-import ClosedIcon from './closed.svg'  
+import { Button, Input, InputMasked, SelectOption } from '../../Components'
+import GoBackIcon from './arrowBack.svg'
 
 import Style from './style.module.css'
 
@@ -11,25 +11,33 @@ const createEntry = ({
   save,
 }) => {
 
-  const dataListOper = [
-    { name: 'Selecione uma opção', value: '', hidden: true, disabled: false },
-    { name: 'Mercedes', value: 'Mercedes', hidden: false, disabled: false },
-    { name: 'Ford', value: 'Ford', hidden: false, disabled: false },
-    { name: 'Scania', value: 'Scania', hidden: false, disabled: false },
+  const dataListService = [
+    { name: 'Selecione um serviço', value: '', hidden: true, disabled: false },
+    { name: 'Corretiva', value: 'corretiva', hidden: false, disabled: false },
+    { name: 'Preventiva', value: 'preventiva', hidden: false, disabled: false },
+    { name: 'Abastecer', value: 'abastecer', hidden: false, disabled: false },
+    { name: 'Estacionar', value: 'estacionar', hidden: false, disabled: false },
+    { name: 'Lavar', value: 'lavar', hidden: false, disabled: false },
   ]
 
-  const dataListService = [
-    { name: 'Selecione uma opção', value: '', hidden: true, disabled: false },
-    { name: 'Abastecer', value: 'Mercedes', hidden: false, disabled: false },
-    { name: 'Ford', value: 'Ford', hidden: false, disabled: false },
-    { name: 'Scania', value: 'Scania', hidden: false, disabled: false },
+  const dataListOper = [
+    { name: 'Selecione uma operação', value: '', hidden: true, disabled: false },
+    { name: 'Mercedes-Benz', value: 'Mercedes', hidden: false, disabled: false },
+    { name: 'Ford Motor', value: 'Ford', hidden: false, disabled: false },
+    { name: 'Scania do Brasil', value: 'Scania', hidden: false, disabled: false },
+    { name: 'Lear Corporation', value: 'lear', hidden: false, disabled: false },
+    { name: 'Renault do Brasil', value: 'renault', hidden: false, disabled: false },
+    { name: 'Whirlpool', value: 'whirlpool', hidden: false, disabled: false },
+    { name: 'GM Interplantas', value: 'gmIinterplatas', hidden: false, disabled: false },
+    { name: 'GM Cegonha', value: 'gmCegonha', hidden: false, disabled: false},
+    { name: 'Volkswagem', value: 'volkswagem', hidden: false, disabled: false },
   ]
 
   return (
     <div className={Style.container}>
       <div className={Style.closed}>
-        <button  className={Style.closedBtn} onClick={()=>{}}>
-          <img src={ClosedIcon} alt="closed" />
+        <button className={Style.closedBtn} onClick={() => { }}>
+          <img src={GoBackIcon} alt="go back" />
         </button>
       </div>
       <div className={Style.content}>
@@ -38,23 +46,27 @@ const createEntry = ({
             Criar novo acesso!
           </h1>
           <p className={Style.description}>
-            Selecione o tipo de atividade que<br/>deseja registrar.
+            Selecione o tipo de atividade que<br />deseja registrar.
           </p>
         </div>
-        <SelectOption
-          label="Serviços"
-          selectValue={form.service}
-          selectName="service"
-          onchange={onChange}
-          options={dataListService}
-        />
-        <SelectOption
-          label="Operação"
-          selectValue={form.operations}
-          selectName="operation"
-          onchange={onChange}
-          options={dataListOper}
-        />
+        <div className={Style.selectOption}>
+          <SelectOption
+            label="Serviços"
+            selectValue={form.service}
+            selectName="service"
+            onchange={onChange}
+            options={dataListService}
+          />
+        </div>
+        <div className={Style.selectOption}>
+          <SelectOption
+            label="Operação"
+            selectValue={form.operations}
+            selectName="operation"
+            onchange={onChange}
+            options={dataListOper}
+          />
+        </div>
         <div className={Style.twoInputLine}>
           <div className={Style.inputFleet}>
             <Input
@@ -99,13 +111,13 @@ const createEntry = ({
         />
         <div className={Style.buttonSave}>
           <Button
-            action={()=>{}}
+            action={() => { }}
           >
             Salvar
           </Button>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
