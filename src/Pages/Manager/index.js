@@ -23,27 +23,23 @@ const Manager = (props) => {
     }
   })
 
-  const goToCreateImplements = () => {
-    return props.history.push('/create')
-  }
-
   const goToDetail = id => {
     return props.history.push(`/detail/${id}`)
   }
 
   const HandleFilter = filter => setFilterSelected(filter)
+  const goToCreate = () => props.history.push('/create')
 
   return (
    <Fragment>
       <ManagerContainer
         data={data}
-        addImplement={goToCreateImplements}
         goToDetail={goToDetail}
         filterSelected={filterSelected}
         HandleFilter={HandleFilter}
         loading={loading}
       />
-      <Menu />
+      <Menu goToCreate={goToCreate} />
    </Fragment>
   )
 }

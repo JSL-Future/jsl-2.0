@@ -6,6 +6,7 @@ import ProfileIcon from './profile.svg'
 
 const Menu = ({
   children,
+  goToCreate,
 }) => {
   return (
     <Fragment>
@@ -21,6 +22,7 @@ const Menu = ({
           <span className={styles.menuItemText}>Home</span>
         </button>
         <button
+          onClick={goToCreate}
           className={styles.menuItemPlus}
           type="button"
         >

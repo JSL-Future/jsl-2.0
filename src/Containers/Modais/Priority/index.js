@@ -11,9 +11,9 @@ const Priority = ({
 
   const dataListPriority = [
     { name: 'Selecione uma prioridade', value: null, hidden: true, disabled: false },
-    { name: 'Alta', value: 'alta', hidden: false, disabled: false },
-    { name: 'Normal', value: 'normal', hidden: false, disabled: false },
-    { name: 'Baixa', value: 'baixa', hidden: false, disabled: false },
+    { name: 'Alta', value: 'high', hidden: false, disabled: false },
+    { name: 'Normal', value: 'medium', hidden: false, disabled: false },
+    { name: 'Baixa', value: 'loss', hidden: false, disabled: false },
   ]
 
   return (

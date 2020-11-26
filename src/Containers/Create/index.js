@@ -7,17 +7,19 @@ import Style from './style.module.css'
 const createEntry = ({
   form,
   onChange,
-  onBlur,
-  save,
+  handleSave,
+  goBack,
+  HandleBlur,
+  formErrors,
 }) => {
 
   const dataListService = [
     { name: 'Selecione um serviço', value: '', hidden: true, disabled: false },
-    { name: 'Corretiva', value: 'corretiva', hidden: false, disabled: false },
-    { name: 'Preventiva', value: 'preventiva', hidden: false, disabled: false },
-    { name: 'Abastecer', value: 'abastecer', hidden: false, disabled: false },
-    { name: 'Estacionar', value: 'estacionar', hidden: false, disabled: false },
-    { name: 'Lavar', value: 'lavar', hidden: false, disabled: false },
+    { name: 'Corretiva', value: 'Corretiva', hidden: false, disabled: false },
+    { name: 'Preventiva', value: 'Preventiva', hidden: false, disabled: false },
+    { name: 'Abastecer', value: 'Abastecer', hidden: false, disabled: false },
+    { name: 'Estacionar', value: 'Estacionar', hidden: false, disabled: false },
+    { name: 'Lavar', value: 'Lavar', hidden: false, disabled: false },
   ]
 
   const dataListOper = [
@@ -36,7 +38,7 @@ const createEntry = ({
   return (
     <div className={Style.container}>
       <div className={Style.closed}>
-        <button className={Style.closedBtn} onClick={() => { }}>
+        <button className={Style.closedBtn} onClick={goBack}>
           <img src={GoBackIcon} alt="go back" />
         </button>
       </div>
@@ -46,16 +48,17 @@ const createEntry = ({
             Criar novo acesso!
           </h1>
           <p className={Style.description}>
-            Selecione o tipo de atividade que<br />deseja registrar.
+            Selecione o tipo de atividade que deseja registrar.
           </p>
         </div>
         <div className={Style.selectOption}>
           <SelectOption
             label="Serviços"
             selectValue={form.service}
-            selectName="service"
+            selectName="reason"
             onchange={onChange}
             options={dataListService}
+            formErrors={formErrors}
           />
         </div>
         <div className={Style.selectOption}>
@@ -65,10 +68,11 @@ const createEntry = ({
             selectName="operation"
             onchange={onChange}
             options={dataListOper}
+            formErrors={formErrors}
           />
         </div>
         <div className={Style.twoInputLine}>
-          <div className={Style.inputFleet}>
+          <div className={Style.inputSize}>
             <Input
               value={form.fleet}
               label="Frota"
@@ -76,28 +80,20 @@ const createEntry = ({
               name="fleet"
               id="textfleet"
               onchange={onChange}
-              onblur={onBlur}
+              onblur={HandleBlur}
+              formErrors={formErrors}
             />
           </div>
-          <div className={Style.inputPlate}>
-            <InputMasked
+          <div className={Style.inputSize}>
+            <Input
               value={form.plate}
               label="Placa"
               type="text"
               name="plate"
               id="textPlate"
               onchange={onChange}
-              mask={[
-                /[A-Z]/,
-                /[A-Z]/,
-                /[A-Z]/,
-                "-",
-                /[0-9]/,
-                /[0-9A-Z]/,
-                /[0-9]/,
-                /[0-9]/
-              ]}
-              guide={false}
+              onblur={HandleBlur}
+              formErrors={formErrors}
             />
           </div>
         </div>
@@ -108,11 +104,11 @@ const createEntry = ({
           name="responsible"
           id="textDriver"
           onchange={onChange}
+          onblur={HandleBlur}
+          formErrors={formErrors}
         />
         <div className={Style.buttonSave}>
-          <Button
-            action={() => { }}
-          >
+          <Button action={handleSave}>
             Salvar
           </Button>
         </div>
