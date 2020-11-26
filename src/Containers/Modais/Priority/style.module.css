@@ -1,15 +1,16 @@
-@import '../../assets/css/colors.css';
+@import '../../../assets/css/colors.css';
 
 .container {
   background-color: #fff;
   min-height: 100vh;
+  overflow: hidden;
 }
 
-.goBack {
+.closed {
   padding: 20px 0 10px 20px;
 }
 
-.goBackBtn {
+.closedBtn {
   background-color: transparent;
   border: none;
   outline: none;
@@ -35,25 +36,9 @@
 
 .description {
   font-size: 12px;
+  margin-bottom: 15%;
 }
-
-.selectOption {
-  margin-bottom: 1em;
-}
-
-.inputLiters {
-  margin-bottom: 1em;
-}
-
-.twoInputLine {
-  display: flex;
-  margin-bottom: 1em;
-}
-
-.inputMileage {
-  margin-right: 1em;
-} 
 
 .buttonSave {
-  margin-top: 25%;
+  margin-top: 30%;
 }

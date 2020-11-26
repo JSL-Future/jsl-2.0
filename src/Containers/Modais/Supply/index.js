@@ -1,13 +1,14 @@
 import React from 'react'
-import { Button, Input, SelectOption } from '../../Components'
-import Closed from './closed.svg'
+import { Button, Input, SelectOption } from '../../../Components'
 import Style from './style.module.css'
 
-const Supply = (
+const Supply = ({
+  handleSave,
   form,
-  onChange,
-  onBlur
-) => {
+  formErrors,
+  handleOnChange,
+  HandleBlur,
+}) => {
 
   const dataListFuel = [
     { name: 'Selecione um combustível', value: '', hidden: true, disabled: false },
@@ -17,11 +18,6 @@ const Supply = (
 
   return (
     <div className={Style.container}>
-      <div className={Style.goBack}>
-        <button className={Style.goBackBtn} onClick={() => { }}>
-          <img src={Closed} alt="go back" />
-        </button>
-      </div>
       <div className={Style.content}>
         <div>
           <h1 className={Style.title}>
@@ -36,8 +32,9 @@ const Supply = (
             label="Combustível"
             selectValue={form.fuel}
             selectName="fuel"
-            onchange={onChange}
+            onchange={handleOnChange}
             options={dataListFuel}
+            formErrors={formErrors}
           />
         </div>
         <div className={Style.inputLiters}>
@@ -47,30 +44,34 @@ const Supply = (
             type="number"
             name="totalLiters"
             id="texttotalLiters"
-            onchange={onChange}
-            onblur={onBlur}
+            onchange={handleOnChange}
+            onblur={HandleBlur}
+            formErrors={formErrors}
           />
         </div>
         <div className={Style.twoInputLine}>
-          <div className={Style.inputMileage}>
+          <div className={Style.inputSize}>
             <Input
               value={form.fleet}
               label="Quilometragem"
               type="number"
               name="mileage"
               id="textmileage"
-              onchange={onChange}
-              onblur={onBlur}
+              onchange={handleOnChange}
+              onblur={HandleBlur}
+              formErrors={formErrors}
             />
           </div>
-          <div className={Style.inputPlate}>
+          <div className={Style.inputSize}>
             <Input
               value={form.pedometer}
               label="Hodômetro"
               type="number"
               name="pedometer"
               id="textPedometer"
-              onchange={onChange}
+              onchange={handleOnChange}
+              onblur={HandleBlur}
+              formErrors={formErrors}
             />
           </div>
         </div>
@@ -80,11 +81,13 @@ const Supply = (
           type="text"
           name="registrationDriver"
           id="textregistrationDriver"
-          onchange={onChange}
+          onchange={handleOnChange}
+          onblur={HandleBlur}
+          formErrors={formErrors}
         />
         <div className={Style.buttonSave}>
           <Button
-            action={() => { }}
+            action={() => handleSave('suply')}
           >
             Salvar
           </Button>
