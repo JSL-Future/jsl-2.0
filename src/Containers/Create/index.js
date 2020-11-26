@@ -21,6 +21,8 @@ const createEntry = ({
     { name: 'Corretiva', value: 'Corretiva', hidden: false, disabled: false },
     { name: 'Preventiva', value: 'Preventiva', hidden: false, disabled: false },
     { name: 'Estacionamento', value: 'Estacionamento', hidden: false, disabled: false },
+    { name: 'Abastecer', value: 'Preventiva', hidden: false, disabled: false },
+    { name: 'Lavar', value: 'Estacionamento', hidden: false, disabled: false },
   ]
 
   return(
@@ -74,9 +76,9 @@ const createEntry = ({
           mask={[
             /[A-Z]/,
             /[A-Z]/,
-            /[A-Z]/, 
-            "-", 
-            /[0-9]/, 
+            /[A-Z]/,
+            "-",
+            /[0-9]/,
             /[0-9A-Z]/,
             /[0-9]/,
             /[0-9]/
