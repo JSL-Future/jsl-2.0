@@ -2,9 +2,17 @@ import React, { Fragment } from 'react'
 import moment from 'moment'
 import GoBackIcon from './arrowBack.svg'
 import RiskIcon from './risk.svg'
+import HighRiskIcon from './highRisk.svg'
+import LossRiskIcon from './lossRisk.svg'
 import { Skeleton } from '../../Components'
 
 import styles from './style.module.css'
+
+const iconRisk = {
+  Normal: RiskIcon,
+  Alto: HighRiskIcon,
+  Baixo: LossRiskIcon,
+}
 
 const formattedDate = date => moment(date).format('DD/MMM - HH:mm')
 
@@ -20,6 +28,8 @@ const Details = ({
     const diffTime = moment.utc(diff).format('HH:mm')
     return diffTime
   }
+
+  const riskLevel = data.priority ? data.priority : 'Normal'
 
   const countHoursTotal = diff(data.createdAt, data.updatedAt, data.status)
 
@@ -135,11 +145,13 @@ const Details = ({
               <button className={styles.btnCircle}>Editar prioridade</button>
             </div>
             <div className={styles.risk}>
-              <h4>Nível de prioridade</h4>
+              <h4>Nível {riskLevel}</h4>
               <div className={styles.riskInfo}>
-                <img src={RiskIcon} alt="risk level" />
+                <img src={iconRisk[riskLevel]} alt={riskLevel} />
                 <p>
-                  Na prioridade é possível controlar quais serviços irão ser executados primeiro. A prioridade atual dessa atividade é <strong> “Normal”</strong>.
+                  Na prioridade é possível controlar quais serviços
+                  irão ser executados primeiro. A prioridade atual dessa
+                  atividade é <strong> “{riskLevel}”</strong>.
                 </p>
               </div>
             </div>
