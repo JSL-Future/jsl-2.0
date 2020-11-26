@@ -27,10 +27,6 @@ const Manager = (props) => {
     return props.history.push('/create')
   }
 
-  const goToRelease = id => {
-    return props.history.push(`/release/${id}`)
-  }
-
   const goToDetail = id => {
     return props.history.push(`/detail/${id}`)
   }
@@ -42,7 +38,6 @@ const Manager = (props) => {
       <ManagerContainer
         data={data}
         addImplement={goToCreateImplements}
-        release={goToRelease}
         goToDetail={goToDetail}
         filterSelected={filterSelected}
         HandleFilter={HandleFilter}
