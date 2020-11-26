@@ -4,25 +4,21 @@ import DetailsContainer from '../../Containers/Details'
 import ImplementService from '../../services/implement'
 
 const Details = (props) => {
-  const [implement, setImplement] = useState(   {
-    status: '',
-    event: '',
+  const [implement, setImplement] = useState({
+    active: false,
+    createdAt: '',
+    fleet: '',
+    id: '',
+    implement_events: [],
     operation: '',
     plate: '',
-    checkin: {
-      driver: '',
-      createdAt: '',
-      updatedAt: '',
-    },
-    checkout: {
-      driver: '',
-      createdAt: '',
-      updatedAt: '',
-    },
-    id: null,
+    reason: '',
+    status: '',
+    updatedAt: '',
   })
 
   const [shouldRequest, setShouldRequest] = useState(true)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const { id } = props.match.params
@@ -31,6 +27,7 @@ const Details = (props) => {
         .then(response => {
           setImplement(response.data)
           setShouldRequest(false)
+          setLoading(false)
         })
         .catch(error => console.log(error))
     }
@@ -44,6 +41,7 @@ const Details = (props) => {
     <DetailsContainer
       data={implement}
       backPage={goToManager}
+      loading={loading}
     />
   )
 }

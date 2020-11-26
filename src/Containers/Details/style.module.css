@@ -1,40 +1,156 @@
 @import '../../assets/css/colors.css';
 
 .container {
-  background-color: var(--mercury-color);
-  font-family: Lato, sans-serif;
-  font-style: normal;
-  padding: 50px;
   min-height: 100vh;
 }
 
-.container > * p, h1, h4 {
-  color: var(--mako-color);
+.goBack {
+  padding: 20px 0 10px 20px;
 }
 
-.cardInfo > p {
-  margin: 1.5px;
+.content {
+  padding: 10px 20px;
 }
 
-.cardDetails > * {
-  margin-right: 140px;
-}
-
-.cardDetails h5 {
-  color: var(--storm-gray-color);
-  font-weight: normal;
-}
-
-.button h5 {
-  margin-bottom: 8px;
-}
-
-.checkout {
-  border-top: 1px dashed var(--gray-color);
-}
-
-.checkout, .checkin {
+.content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.2);
+}
+
+.implementInfo {
+  width: calc(100% / 3);
+}
+
+.implementInfo2 {
+  width: calc(100% / 4);
+}
+
+.implementInfo3 {
+  width: calc(100% / 5);
+}
+
+.title,
+.implementInfo3 > h3,
+.implementInfo3 > h2,
+.implementInfo2 > h3,
+.implementInfo2 > h2,
+.implementInfo > h3,
+.implementInfo > h2,
+.implementTotal > h3,
+.riskInfo > p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.title,
+.implementInfo3 > h2,
+.implementInfo2 > h2,
+.implementInfo > h2 {
+  font-weight: 600;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+.risk > h4 {
+  padding-left: 37px;
+  margin: 24px 0 0 0;
+}
+
+.riskInfo {
+  display: flex;
+  align-items: center;
+}
+
+.riskInfo > p {
+  line-height: 20px;
+  padding-left: 10px;
+}
+
+.riskContent {
+  padding: 20px;
+}
+
+.btnCircle {
+  background: #1ED69E;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 24px;
+}
+
+.btnCircle:hover,
+.btnCircle:focus {
+  background-color:#0bc08a;
+}
+
+.riskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.smallTitle {
+  font-size: 16px;
+  line-height: 24px;
+  width: 50%;
+}
+
+.btnCircleRed {
+  background: #EA162C;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 24px;
+}
+
+.btnCircle:hover,
+.btnCircle:focus {
+  background-color:#b80012;
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.gobackBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skeletonDetailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeletonContent {
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.2);
+}
+
+.skeletonContent,
+.skeletonContentPadding {
+  padding: 24px 20px;
+}
+
+.implementTotal{
   width: 100%;
 }
