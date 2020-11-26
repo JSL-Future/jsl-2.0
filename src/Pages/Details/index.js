@@ -19,6 +19,8 @@ const Details = (props) => {
 
   const [shouldRequest, setShouldRequest] = useState(true)
   const [loading, setLoading] = useState(true)
+  const [showModalEvent, setShowModalEvent] = useState(false)
+  const [showModalPriority, setShowModalPriority] = useState(false)
 
   useEffect(() => {
     const { id } = props.match.params
@@ -37,11 +39,22 @@ const Details = (props) => {
     return props.history.push('/manager')
   }
 
+  const handleCloseModalPriority = () => setShowModalPriority(false)
+  const handleCloseModalEvent = () => setShowModalEvent(false)
+  const handleOpenModalEvent = () => setShowModalEvent(true)
+  const handleOpenModalPriority = () => setShowModalPriority(true)
+
   return (
     <DetailsContainer
       data={implement}
       backPage={goToManager}
       loading={loading}
+      showModalEvent={showModalEvent}
+      showModalPriority={showModalPriority}
+      handleCloseModalEvent={handleCloseModalEvent}
+      handleOpenModalEvent={handleOpenModalEvent}
+      handleOpenModalPriority={handleOpenModalPriority}
+      handleCloseModalPriority={handleCloseModalPriority}
     />
   )
 }

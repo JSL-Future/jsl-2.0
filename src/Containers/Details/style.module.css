@@ -154,3 +154,147 @@
 .implementTotal{
   width: 100%;
 }
+
+
+.container {
+  background-color: var(--color-white);
+  padding: 20px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.product {
+  background-color: var(--color-white);
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+.productImage {
+  height: 210px;
+  margin: auto;
+  text-align: center;
+  width: 215px;
+}
+
+.productImage img {
+  height: 100%;
+}
+
+.productContent {
+  padding-top: 30px;
+}
+
+.productInfoSection {
+  flex: 1;
+  margin-top: 10px;
+}
+
+.productRevenue {
+  padding: 10px 20px;
+}
+
+.productIssueTitle {
+  padding: 20px;
+}
+
+.issueSection {
+  padding: 10px 0;
+}
+
+.productRevenueDocumet {
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.productRevenueDocumet img {
+  width: 100%;
+}
+
+.revenuesAvatar {
+  border-radius: 3px;
+  height: auto;
+  overflow: hidden;
+  width: 105px;
+}
+
+.revenuesAvatar img {
+  height: 100%;
+}
+
+.revenueGallery {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.descriptionText {
+  text-align: justify;
+  width: 100%;
+}
+
+.equipmentTechnical {
+  display: flex;
+  justify-content: space-between;
+}
+
+.equipmentInfo {
+  margin: 10px 0;
+  margin-right: 10px;
+  text-align: center;
+  width: calc((100% - 30px) / 3);
+}
+
+.issuesContainer,
+.revenuesContainer,
+.equipmentInfoContainer {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.issueItem {
+  box-sizing: border-box;
+  margin: 8px 0;
+  margin-right: 10px;
+  width: calc((100% - 50px) / 5);
+}
+
+.revenueItem {
+  box-sizing: border-box;
+  margin: 8px 0;
+  margin-right: 10px;
+  width: calc((100% - 30px) / 3);
+}
+
+.revenuesTitle,
+.issuesTitle {
+  margin: 40px 0 15px 0;
+}
+
+.issueModalContent {
+  margin-top: 35px;
+}
+
+.issueModalTitle {
+  margin-bottom: 35px;
+}
+
+.headerModalIssue {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.headerModalItem {
+  width: calc(100% / 3);
+}
+
+.fixed {
+  overflow: hidden;
+}
