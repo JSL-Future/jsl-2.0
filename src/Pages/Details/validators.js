@@ -11,7 +11,9 @@ const EmptyField = ({ value }) => {
 const validationForm = data => {
   let errors = {}
   for(let key in data) {
-    errors = {...errors, [key]: 'Este Campo é obrigatório' }
+    if(isEmpty(data[key]) || isNil(data[key])) {
+      errors = {...errors, [key]: 'Este Campo é obrigatório' }
+    }
   }
 
   return errors

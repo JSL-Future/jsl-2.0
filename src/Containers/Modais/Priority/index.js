@@ -38,9 +38,7 @@ const Priority = ({
           />
         </div>
         <div className={Style.buttonSave}>
-          <Button
-            action={() => handleSave('priority')}
-          >
+          <Button action={handleSave}>
             Alterar prioridade
           </Button>
         </div>
