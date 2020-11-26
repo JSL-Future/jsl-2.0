@@ -18,7 +18,7 @@
 }
 
 .content {
-  padding: 10px 20px;
+  padding: 10px 30px;
 }
 
 .title {
@@ -43,12 +43,13 @@
 
 .twoInputLine {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 1em;
 }
 
-.inputFleet {
-  margin-right: 1em;
-} 
+.inputSize {
+  width: calc((100% - 20px) / 2);
+}
 
 .buttonSave {
   margin-top: 25%;
