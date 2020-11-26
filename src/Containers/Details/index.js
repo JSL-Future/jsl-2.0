@@ -5,7 +5,7 @@ import RiskIcon from './risk.svg'
 import HighRiskIcon from './highRisk.svg'
 import LossRiskIcon from './lossRisk.svg'
 import { Modal, Skeleton } from '../../Components'
-
+import CloseIcon from './closed.svg'
 import styles from './style.module.css'
 
 const iconRisk = {
@@ -16,10 +16,46 @@ const iconRisk = {
 
 const formattedDate = date => moment(date).format('DD/MMM - HH:mm')
 
+const ModalEvent = ({ showModalEvent, handleCloseModalEvent }) => (
+  <Modal show={showModalEvent}>
+    <div className={styles.headerModalIssue}>
+      <div
+        onClick={handleCloseModalEvent}
+        role="button"
+        className={styles.headerModalItem}
+      >
+        <img src={CloseIcon} alt="close modal" />
+      </div>
+      conteudo aqui!
+    </div>
+  </Modal>
+)
+
+const ModalPriority = ({ showModalPriority, handleCloseModalPriority }) => (
+  <Modal show={showModalPriority}>
+    <div className={styles.headerModalIssue}>
+      <div
+        onClick={handleCloseModalPriority}
+        role="button"
+        className={styles.headerModalItem}
+      >
+        <img src={CloseIcon} alt="close modal" />
+      </div>
+      conteudo aqui prioridade!
+    </div>
+  </Modal>
+)
+
 const Details = ({
   backPage,
   data,
   loading,
+  showModalEvent,
+  showModalPriority,
+  handleCloseModalEvent,
+  handleOpenModalEvent,
+  handleOpenModalPriority,
+  handleCloseModalPriority,
 }) => {
   const diff = (createdAt, updatedAt, status) => {
     const start = moment(createdAt)
@@ -89,9 +125,15 @@ const Details = ({
           <img src={GoBackIcon} alt="go back" />
         </button>
       </div>
-      <Modal show={true}>
-        <h1>Teste modal!</h1>
-      </Modal>
+      <ModalEvent
+        showModalEvent={showModalEvent}
+        handleCloseModalEvent={handleCloseModalEvent}
+      />
+
+      <ModalPriority
+        handleCloseModalPriority={handleCloseModalPriority}
+        showModalPriority={showModalPriority}
+      />
       {loading && <RenderSkeleton />}
       {!loading && (
         <Fragment>
@@ -130,7 +172,7 @@ const Details = ({
               <h1 className={styles.smallTitle}>
                 Eventos
               </h1>
-              <button className={styles.btnCircleRed}>Adicionar <strong>+</strong></button>
+              <button className={styles.btnCircleRed} onClick={handleOpenModalEvent}>Adicionar <strong>+</strong></button>
             </div>
             {data.implement_events && data.implement_events.map(({ id, status, createdAt }) => (
               <div key={id} className={styles.implementInfo}>
@@ -145,7 +187,7 @@ const Details = ({
           <div className={styles.riskContent}>
             <div className={styles.riskHeader}>
               <h1 className={styles.smallTitle}>Prioridade</h1>
-              <button className={styles.btnCircle}>Editar prioridade</button>
+              <button className={styles.btnCircle} onClick={handleOpenModalPriority}>Editar prioridade</button>
             </div>
             <div className={styles.risk}>
               <h4>Nível {riskLevel}</h4>
