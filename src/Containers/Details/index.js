@@ -4,7 +4,7 @@ import GoBackIcon from './arrowBack.svg'
 import RiskIcon from './risk.svg'
 import HighRiskIcon from './highRisk.svg'
 import LossRiskIcon from './lossRisk.svg'
-import { Skeleton } from '../../Components'
+import { Modal, Skeleton } from '../../Components'
 
 import styles from './style.module.css'
 
@@ -89,6 +89,9 @@ const Details = ({
           <img src={GoBackIcon} alt="go back" />
         </button>
       </div>
+      <Modal show={true}>
+        <h1>Teste modal!</h1>
+      </Modal>
       {loading && <RenderSkeleton />}
       {!loading && (
         <Fragment>

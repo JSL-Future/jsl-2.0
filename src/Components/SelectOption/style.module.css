@@ -18,11 +18,11 @@
 }
 
 .selectOptions {
+  font-size: 1em;
   outline: 0;
 }
 
 .label, .selectOptions {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
-  font-size: 1em; 
 }
