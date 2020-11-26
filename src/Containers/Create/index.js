@@ -1,5 +1,7 @@
 import React from 'react'
-import { Button, Card, Header, Input, InputMasked, SelectOption } from '../../Components'
+import { Button,Input, InputMasked, SelectOption } from '../../Components'
+import ClosedIcon from './closed.svg'  
+
 import Style from './style.module.css'
 
 const createEntry = ({
@@ -11,80 +13,82 @@ const createEntry = ({
 
   const dataListOper = [
     { name: 'Selecione uma opção', value: '', hidden: true, disabled: false },
-    { name: 'Mercedes', value:'Mercedes', hidden: false, disabled: false },
+    { name: 'Mercedes', value: 'Mercedes', hidden: false, disabled: false },
     { name: 'Ford', value: 'Ford', hidden: false, disabled: false },
     { name: 'Scania', value: 'Scania', hidden: false, disabled: false },
   ]
 
-  const dataListEvent = [
+  const dataListService = [
     { name: 'Selecione uma opção', value: '', hidden: true, disabled: false },
-    { name: 'Corretiva', value: 'Corretiva', hidden: false, disabled: false },
-    { name: 'Preventiva', value: 'Preventiva', hidden: false, disabled: false },
-    { name: 'Estacionamento', value: 'Estacionamento', hidden: false, disabled: false },
-    { name: 'Abastecer', value: 'Preventiva', hidden: false, disabled: false },
-    { name: 'Lavar', value: 'Estacionamento', hidden: false, disabled: false },
+    { name: 'Abastecer', value: 'Mercedes', hidden: false, disabled: false },
+    { name: 'Ford', value: 'Ford', hidden: false, disabled: false },
+    { name: 'Scania', value: 'Scania', hidden: false, disabled: false },
   ]
 
-  return(
+  return (
     <div className={Style.container}>
-      <Header />
-
-      <Card>
-        <h1>Adicionando Implementos</h1>
-        <p>Para adicionar novos implementos preencha</p>
-        <p>as informações abaixo:</p>
-      </Card>
-
-      <Card>
-        <h1>Operação</h1>
+      <div className={Style.closed}>
+        <button  className={Style.closedBtn} onClick={()=>{}}>
+          <img src={ClosedIcon} alt="closed" />
+        </button>
+      </div>
+      <div className={Style.content}>
+        <div>
+          <h1 className={Style.title}>
+            Criar novo acesso!
+          </h1>
+          <p className={Style.description}>
+            Selecione o tipo de atividade que<br/>deseja registrar.
+          </p>
+        </div>
         <SelectOption
+          label="Serviços"
+          selectValue={form.service}
+          selectName="service"
+          onchange={onChange}
+          options={dataListService}
+        />
+        <SelectOption
+          label="Operação"
           selectValue={form.operations}
           selectName="operation"
           onchange={onChange}
           options={dataListOper}
         />
-      </Card>
-
-      <Card>
-        <h1>Evento</h1>
-        <SelectOption
-          selectValue={form.event}
-          selectName="reason"
-          onchange={onChange}
-          options={dataListEvent}
-        />
-      </Card>
-
-      <Card>
-        <h1>Informações Gerais</h1>
-        <Input
-          value={form.fleet}
-          label="Frota"
-          type="text"
-          name="fleet"
-          id="textfleet"
-          onchange={onChange}
-          onblur={onBlur}
-        />
-        <InputMasked
-          value={form.plate}
-          label="Placa"
-          type="text"
-          name="plate"
-          id="textPlate"
-          onchange={onChange}
-          mask={[
-            /[A-Z]/,
-            /[A-Z]/,
-            /[A-Z]/,
-            "-",
-            /[0-9]/,
-            /[0-9A-Z]/,
-            /[0-9]/,
-            /[0-9]/
-          ]}
-          guide={false}
-        />
+        <div className={Style.twoInputLine}>
+          <div className={Style.inputFleet}>
+            <Input
+              value={form.fleet}
+              label="Frota"
+              type="text"
+              name="fleet"
+              id="textfleet"
+              onchange={onChange}
+              onblur={onBlur}
+            />
+          </div>
+          <div className={Style.inputPlate}>
+            <InputMasked
+              value={form.plate}
+              label="Placa"
+              type="text"
+              name="plate"
+              id="textPlate"
+              onchange={onChange}
+              mask={[
+                /[A-Z]/,
+                /[A-Z]/,
+                /[A-Z]/,
+                "-",
+                /[0-9]/,
+                /[0-9A-Z]/,
+                /[0-9]/,
+                /[0-9]/
+              ]}
+              guide={false}
+            />
+          </div>
+        </div>
         <Input
           value={form.driver}
           label="Motorista"
@@ -93,13 +97,14 @@ const createEntry = ({
           id="textDriver"
           onchange={onChange}
         />
-      </Card>
-
-      <Button
-        action={save}
-      >
-        Salvar
-      </Button>
+        <div className={Style.buttonSave}>
+          <Button
+            action={()=>{}}
+          >
+            Salvar
+          </Button>
+        </div>
+      </div>
     </div>
   )
 }
