@@ -50,6 +50,7 @@ const Details = (props) => {
     updatedAt: '',
   })
 
+
   const [shouldRequest, setShouldRequest] = useState(true)
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
