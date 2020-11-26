@@ -81,19 +81,19 @@ const Details = (props) => {
 
   const changePriority = () => {
     const { priority } = form
-    console.log('Alterar prioridade')
+    console.log('Alterar prioridade', form)
   }
 
   const createEvent = () => {
-    console.log('Criar evento')
+    console.log('Criar evento', form)
   }
 
   const beginSuply = () => {
-    console.log('Iniciar abastecimento')
+    console.log('Iniciar abastecimento', form)
   }
 
   const checkType = type => {
-    if (type === 'Abastecer') {
+    if (type === 'suply') {
       return beginSuply
     }
 
@@ -116,8 +116,8 @@ const Details = (props) => {
     return setFormErrors(omit([target.name], formErrors))
   }
 
-  const handleSave = (type) => {
-    const action = checkType(type)
+  const handleSave = () => {
+    const action = checkType(modalType)
     const errors = validationForm(form)
     setFormErrors(errors)
     return isEmpty(errors) && action(form)

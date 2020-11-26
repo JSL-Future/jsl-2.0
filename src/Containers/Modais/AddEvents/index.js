@@ -12,9 +12,10 @@ const AddEvents = ({
 
   const dataListEvent = [
     { name: 'Selecione um evento', value: '', hidden: true, disabled: false },
-    { name: 'Alta', value: 'alta', hidden: false, disabled: false },
-    { name: 'Normal', value: 'normal', hidden: false, disabled: false },
-    { name: 'Baixa', value: 'baixa', hidden: false, disabled: false },
+    { name: 'Doca', value: 'doca', hidden: false, disabled: false },
+    { name: 'Aguardando Peças', value: 'aguardando_pecas', hidden: false, disabled: false },
+    { name: 'Pátio', value: 'patio', hidden: false, disabled: false },
+    { name: 'Lavar', value: 'lavar', hidden: false, disabled: false },
   ]
 
   return (
@@ -51,9 +52,7 @@ const AddEvents = ({
           />
         </div>
         <div className={Style.buttonSave}>
-          <Button
-            action={() => handleSave('event')}
-          >
+          <Button action={handleSave}>
             Salvar evento
           </Button>
         </div>

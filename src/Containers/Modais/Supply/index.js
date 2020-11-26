@@ -12,8 +12,8 @@ const Supply = ({
 
   const dataListFuel = [
     { name: 'Selecione um combustível', value: '', hidden: true, disabled: false },
-    { name: 'Diesel S-10', value: 'corretiva', hidden: false, disabled: false },
-    { name: 'Arla', value: 'corretiva', hidden: false, disabled: false },
+    { name: 'Diesel S-10', value: 'diesel_s10', hidden: false, disabled: false },
+    { name: 'Arla', value: 'arla', hidden: false, disabled: false },
   ]
 
   return (
@@ -86,10 +86,8 @@ const Supply = ({
           formErrors={formErrors}
         />
         <div className={Style.buttonSave}>
-          <Button
-            action={() => handleSave('suply')}
-          >
-            Salvar
+          <Button action={handleSave}>
+            Salvar abastecimento
           </Button>
         </div>
       </div>
