@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Input, InputMasked, SelectOption } from '../../Components'
+import { Button, Input, SelectOption } from '../../Components'
 import GoBackIcon from './arrowBack.svg'
 
 import Style from './style.module.css'

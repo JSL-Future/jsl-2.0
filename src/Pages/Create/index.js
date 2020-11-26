@@ -17,7 +17,6 @@ const Create = (props) => {
     plate: '',
     fleet: '',
     responsible: '',
-    reason: '',
   })
   const [formErrors, setFormErrors] = useState({})
 
@@ -68,7 +67,7 @@ const Create = (props) => {
   const handleSave = () => {
     const errors = validationForm(form)
     setFormErrors(errors)
-    return createImplement(form)
+    return isEmpty(errors) && createImplement(form)
   }
 
   const goBack = () => props.history.push('/manager')
