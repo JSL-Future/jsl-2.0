@@ -79,7 +79,6 @@ const Details = (props) => {
   }
 
   const changePriority = () => {
-    const { priority } = form
     console.log('Alterar prioridade', form)
   }
 
