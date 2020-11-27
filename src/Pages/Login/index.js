@@ -1,8 +1,13 @@
 import React, { useState } from  'react'
+import { isEmpty, omit } from 'ramda'
 import { withRouter } from 'react-router-dom'
 import AuthService from '../../services/auth'
 import ContainerLogin from '../../Containers/Login'
 import Request from  '../../services/request'
+import {
+  EmptyField,
+  validationForm,
+} from '../../utils/validators'
 
 const Login = ({
   history,
@@ -12,12 +17,22 @@ const Login = ({
     document: '',
     password: ''
   })
+  const [formErrors, setFormErrors] = useState({})
 
-  const handleChange = (event) => {
+  const handleChange = ({ target }) => {
+    const message = EmptyField(target)
+    if (message) {
+      return setFormErrors({
+        ...formErrors,
+        [target.name]: message
+      })
+    }
+
     setForm({
       ...form,
-      [event.target.name]: event.target.value
+      [target.name]: target.value
     })
+    return setFormErrors(omit([target.name], formErrors))
   }
 
   const handleLogin = async () => {
@@ -37,10 +52,17 @@ const Login = ({
     }
   }
 
+  const authentication = () => {
+    const errors = validationForm(form)
+    setFormErrors(errors)
+    return isEmpty(errors) && handleLogin(form)
+  }
+
   return (
     <ContainerLogin
-      auth={handleLogin}
+      auth={authentication}
       onChange={handleChange}
+      formErrors={formErrors}
     />
   )
 }
