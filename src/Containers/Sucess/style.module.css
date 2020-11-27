@@ -5,20 +5,8 @@
   min-height: 100vh;
 }
 
-.closed {
-  padding: 20px 0 10px 20px;
-}
-
-.closedBtn {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-}
-
 .content {
-  padding: 10px 20px;
+  padding: 70px 20px 0 20px;
 }
 
 .title {
@@ -28,7 +16,8 @@
 }
 
 .title,
-.description {
+.description,
+.sucess > h1 {
   font-family: Poppins;
   font-style: normal;
 }
@@ -38,6 +27,15 @@
   margin-bottom: 15%;
 }
 
-.buttonSave {
+.sucess {
+  margin: 100px 0;
+  text-align: center;
+}
+
+.sucess h1 {
+  font-weight: normal;
+}
+
+.button {
   margin-top: 5%;
 }
