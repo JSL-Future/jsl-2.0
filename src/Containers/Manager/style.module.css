@@ -6,7 +6,7 @@
   float: left;
   height: calc(100vh - 149px);
   overflow-y: scroll;
-  width: 97%;
+  width: calc(100% - 20px);
 }
 
 .cardAdd {
