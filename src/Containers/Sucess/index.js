@@ -1,33 +1,37 @@
 import React from 'react'
 import { Button } from '../../Components'
-import ClosedIcon from './closed.svg'
+import SucessIcon from './sucess-icon.svg'
 import Style from './style.module.css'
 
-const Priority = () => {
+const Sucess = (
+  addImplement,
+  goHome
+) => {
   return (
     <div className={Style.container}>
       <div className={Style.content}>
         <div>
           <h1 className={Style.title}>
-            Acesso do tipo “Corretiva” criado com sucesso!
+            Acesso criado com sucesso!
           </h1>
           <p className={Style.description}>
-          Acesso registrado clique em <b>“Home”</b> para navegar<br/> para  a tela inicial ou clique em <b>“Novo”</b><br/> para adicionar um novo acesso!
+            Acesso registrado clique em <b>“Home”</b> para navegar<br /> para  a tela inicial ou clique em <b>“Novo”</b><br /> para adicionar um novo acesso!
           </p>
         </div>
-        <div className={Style.selectOption}>
-          
+        <div className={Style.sucess}>
+          <img src={SucessIcon} alt="icon-sucess" />
+          <h1>Sucesso!</h1>
         </div>
-        <div className={Style.buttonSave}>
+        <div className={Style.button}>
           <Button
-            action={() => { }}
+            action={addImplement}
           >
             Novo
           </Button>
         </div>
-        <div className={Style.buttonSave}>
+        <div className={Style.button}>
           <Button
-            action={() => { }}
+            action={goHome}
             outline
           >
             Home
@@ -38,4 +42,4 @@ const Priority = () => {
   )
 }
 
-export default Priority
+export default Sucess
