@@ -6,7 +6,6 @@ import imageLogo from '../../assets/Images/01-logo-jsl-branco 1.svg'
 const Login = ({
   onChange,
   form,
-  onChange,
   auth,
   formErrors,
 }) => {
@@ -29,15 +28,17 @@ const Login = ({
           onchange={onChange}
           formErrors={formErrors}
         />
-        <Input
-          value={form.password}
-          label="Senha"
-          type="password"
-          name="password"
-          id="textPassword"
-          onchange={onChange}
-          formErrors={formErrors}
-        />
+        <div className={Style.inputPwd}>
+          <Input
+            value={form.password}
+            label="Senha"
+            type="password"
+            name="password"
+            id="textPassword"
+            onchange={onChange}
+            formErrors={formErrors}
+          />
+        </div>
         <Button
           action={auth}
         >

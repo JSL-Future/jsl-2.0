@@ -21,6 +21,11 @@ const Login = ({
 
   const handleChange = ({ target }) => {
     const message = EmptyField(target)
+    setForm({
+      ...form,
+      [target.name]: target.value
+    })
+
     if (message) {
       return setFormErrors({
         ...formErrors,
@@ -28,10 +33,6 @@ const Login = ({
       })
     }
 
-    setForm({
-      ...form,
-      [target.name]: target.value
-    })
     return setFormErrors(omit([target.name], formErrors))
   }
 
@@ -63,6 +64,7 @@ const Login = ({
       auth={authentication}
       onChange={handleChange}
       formErrors={formErrors}
+      form={form}
     />
   )
 }
