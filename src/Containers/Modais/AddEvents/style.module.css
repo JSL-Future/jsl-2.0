@@ -1,8 +1,9 @@
-@import '../../assets/css/colors.css';
+@import '../../../assets/css/colors.css';
 
 .container {
   background-color: #fff;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .closed {
@@ -36,6 +37,10 @@
 .description {
   font-size: 12px;
   margin-bottom: 15%;
+}
+
+.selectOption {
+  margin-bottom: 1em;
 }
 
 .buttonSave {

@@ -1,39 +1,47 @@
 import React from 'react'
 import Style from './style.module.css'
-import { Button, Input } from '../../Components'
-import imageLogo from './logo-jsl.svg'
+import { Button, Input, Loading } from '../../Components'
 
-const Login = (props) => {
+const Login = ({
+  onChange,
+  form,
+  auth,
+  formErrors,
+  loading,
+}) => {
   return(
-    <div className={Style.container}>
-     <div className={Style.login}>
-        <h1>Login</h1>
-        <div className={Style.inputLogin}>
+    <div className={Style.login}>
+      <div className={Style.auth}>
+        <h3>Login</h3>
+        <Input
+          value={form.document}
+          label="CPF"
+          type="text"
+          name="document"
+          id="textDocument"
+          onchange={onChange}
+          formErrors={formErrors}
+        />
+        <div className={Style.inputPwd}>
           <Input
-            value={props.document}
-            label="CPF"
-            type="text"
-            name="document"
-            id="textDocument"
-            onchange={props.onChange}
-          />
-        </div>
-        <div className={Style.inputPass}>
-          <Input 
-            value={props.password}
+            value={form.password}
             label="Senha"
             type="password"
             name="password"
             id="textPassword"
-            onchange={props.onChange}
+            onchange={onChange}
+            formErrors={formErrors}
           />
         </div>
-        <Button
-          action={props.auth}
-        >
-          Entrar
-        </Button>
-        <p><a href="''">Esqueceu a senha?</a></p>
+        {!loading && (
+          <Button action={auth}>Entrar</Button>
+        )}
+
+        {loading && (
+          <div className={Style.load}>
+            <Loading />
+          </div>
+        )}
       </div>
     </div>
   )

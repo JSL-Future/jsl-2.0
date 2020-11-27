@@ -1,45 +1,50 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
+
 import styles from './style.module.css'
 import HomeIcon from './home.svg'
 import PlusIcon from './plus.svg'
 import ProfileIcon from './profile.svg'
 
 const Menu = ({
-  children,
+  history,
 }) => {
+  const goToCreate = () => history.push('/create')
+  const goToManager = () => history.push('/manager')
+
   return (
-    <Fragment>
-      {children}
-      <div className={styles.menu}>
-        <button
-          className={styles.menuItem}
-          type="button"
-        >
-          <div className={styles.menuIcon}>
-            <img src={HomeIcon} alt="home" />
-          </div>
-          <span className={styles.menuItemText}>Home</span>
-        </button>
-        <button
-          className={styles.menuItemPlus}
-          type="button"
-        >
-          <div className={styles.menuIconPlus}>
-            <img src={PlusIcon} alt="plus" />
-          </div>
-        </button>
-        <button
-          className={styles.menuItem}
-          type="button"
-        >
-          <div className={styles.menuIcon}>
-            <img src={ProfileIcon} alt="profile" />
-          </div>
-          <span className={styles.menuItemText}>Perfil</span>
-        </button>
-      </div>
-    </Fragment>
+    <div className={styles.menu}>
+      <button
+        onClick={goToManager}
+        className={styles.menuItem}
+        type="button"
+      >
+        <div className={styles.menuIcon}>
+          <img src={HomeIcon} alt="home" />
+        </div>
+        <span className={styles.menuItemText}>Home</span>
+      </button>
+      <button
+        onClick={goToCreate}
+        className={styles.menuItemPlus}
+        type="button"
+      >
+        <div className={styles.menuIconPlus}>
+          <img src={PlusIcon} alt="plus" />
+        </div>
+      </button>
+      <button
+        onClick={() => console.log('profile')}
+        className={styles.menuItem}
+        type="button"
+      >
+        <div className={styles.menuIcon}>
+          <img src={ProfileIcon} alt="profile" />
+        </div>
+        <span className={styles.menuItemText}>Perfil</span>
+      </button>
+    </div>
   )
 }
 
-export default Menu
+export default withRouter(Menu)

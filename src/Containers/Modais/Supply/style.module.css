@@ -1,15 +1,16 @@
-@import '../../assets/css/colors.css';
+@import '../../../assets/css/colors.css';
 
 .container {
   background-color: #fff;
   min-height: 100vh;
+  overflow: hidden;
 }
 
-.closed {
+.goBack {
   padding: 20px 0 10px 20px;
 }
 
-.closedBtn {
+.goBackBtn {
   background-color: transparent;
   border: none;
   outline: none;
@@ -35,13 +36,26 @@
 
 .description {
   font-size: 12px;
-  margin-bottom: 15%;
 }
 
 .selectOption {
   margin-bottom: 1em;
 }
 
+.inputLiters {
+  margin-bottom: 1em;
+}
+
+.twoInputLine {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.inputSize {
+  width: calc((100% - 20px) / 2);
+}
+
 .buttonSave {
-  margin-top: 30%;
+  margin-top: 25%;
 }

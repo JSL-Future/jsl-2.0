@@ -23,10 +23,6 @@ const Manager = (props) => {
     }
   })
 
-  const goToCreateImplements = () => {
-    return props.history.push('/create')
-  }
-
   const goToDetail = id => {
     return props.history.push(`/detail/${id}`)
   }
@@ -37,7 +33,6 @@ const Manager = (props) => {
    <Fragment>
       <ManagerContainer
         data={data}
-        addImplement={goToCreateImplements}
         goToDetail={goToDetail}
         filterSelected={filterSelected}
         HandleFilter={HandleFilter}

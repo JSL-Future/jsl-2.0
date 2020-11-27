@@ -1,11 +1,17 @@
 @import '../../assets/css/colors.css';
 
-.container {
-  padding: 50px;
+.login {
+  width: 100%;
+  min-height: 100vh;
 }
 
-.login {
-  margin: 30% 0;
+.auth {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.load {
+  text-align: center;
 }
 
 .imgLogo {
@@ -16,4 +22,8 @@
 
 .inputPass {
   margin-bottom: 1em;
+}
+
+.inputPwd {
+  padding: 20px 0;
 }

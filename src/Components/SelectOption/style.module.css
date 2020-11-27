@@ -26,3 +26,16 @@
   font-family: 'Poppins', sans-serif;
   font-style: normal;
 }
+
+.errorMessage {
+  color: #EA162C;
+}
+
+.SelectError {
+  border-color: #EA162C;
+  color: #EA162C;
+}
+
+.labelError {
+  color: #EA162C;
+}
