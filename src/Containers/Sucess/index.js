@@ -1,21 +1,31 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
+
 import { Button } from '../../Components'
 import SucessIcon from './sucess-icon.svg'
 import Style from './style.module.css'
 
-const Sucess = (
-  addImplement,
-  goHome
-) => {
+const Sucess = ({
+  history,
+  actionText,
+  action,
+  title,
+  message,
+}) => {
+
+  const goHome = () => {
+    history.push('/manager')
+  }
+
   return (
     <div className={Style.container}>
       <div className={Style.content}>
         <div>
           <h1 className={Style.title}>
-            Acesso criado com sucesso!
+            {title}
           </h1>
           <p className={Style.description}>
-            Acesso registrado clique em <b>“Home”</b> para navegar<br /> para  a tela inicial ou clique em <b>“Novo”</b><br /> para adicionar um novo acesso!
+            {message}
           </p>
         </div>
         <div className={Style.sucess}>
@@ -23,10 +33,8 @@ const Sucess = (
           <h1>Sucesso!</h1>
         </div>
         <div className={Style.button}>
-          <Button
-            action={addImplement}
-          >
-            Novo
+          <Button action={action}>
+            {actionText}
           </Button>
         </div>
         <div className={Style.button}>
@@ -42,4 +50,4 @@ const Sucess = (
   )
 }
 
-export default Sucess
+export default withRouter(Sucess)

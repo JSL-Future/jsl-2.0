@@ -1,20 +1,24 @@
 import React from 'react'
+
 import { Button } from '../../Components'
 import ErrorIcon from './error-icon.svg'
 import Style from './style.module.css'
 
-const Error = (
+const Error = ({
   again,
-) => {
+  title,
+  message,
+  actionText,
+}) => {
   return (
     <div className={Style.container}>
       <div className={Style.content}>
         <div>
           <h1 className={Style.title}>
-            Erro ao criar acesso!
+            {title}
           </h1>
           <p className={Style.description}>
-            Não foi possível criar o acesso! Verifique os dados informados ou se a Placa informada possui processo em andamento.
+            {message}
           </p>
         </div>
         <div className={Style.error}>
@@ -26,7 +30,7 @@ const Error = (
             action={again}
             outline
           >
-            Tentar novamente
+            { actionText || 'Tentar novamente' }
           </Button>
         </div>
       </div>
