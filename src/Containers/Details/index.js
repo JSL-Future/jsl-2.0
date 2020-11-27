@@ -39,8 +39,9 @@ const Details = ({
     return diffTime
   }
   const riskLevel = data.priority ? data.priority : 'Normal'
-  const formType = data.reason === 'abastecer' ? 'suply' : 'event'
+  const formType = (data.reason === 'abastecer' && data.status === 'check-in') ? 'abastecer' : 'event'
   const countHoursTotal = diff(data.createdAt, data.updatedAt, data.status)
+
   return (
     <div className={styles.containerDetail}>
       <div className={styles.goBack}>

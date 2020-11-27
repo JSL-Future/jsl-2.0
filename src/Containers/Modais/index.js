@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Modal } from '../../Components'
 import AddEvents from './AddEvents'
@@ -8,7 +7,7 @@ import CloseIcon from './closed.svg'
 import styles from './style.module.css'
 
 const checkModalType = type => {
-  if (type === 'suply') {
+  if (type === 'abastecer') {
     return Suply
   }
 

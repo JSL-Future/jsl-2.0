@@ -28,7 +28,7 @@ const PriorityForm = {
 const formSetting = {
   event: EventForm,
   priority: PriorityForm,
-  suply: suplyForm,
+  abastecer: suplyForm,
 }
 
 const Details = (props) => {
@@ -73,8 +73,8 @@ const Details = (props) => {
   const closeModal = () => setShowModal(false)
 
   const openModal = (type) => {
-    setModalType(type)
     setForm(formSetting[type])
+    setModalType(type)
     setShowModal(true)
   }
 
@@ -107,7 +107,7 @@ const Details = (props) => {
   }
 
   const checkType = type => {
-    if (type === 'suply') {
+    if (type === 'abastecer') {
       return beginSuply
     }
 

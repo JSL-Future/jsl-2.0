@@ -58,7 +58,7 @@ const Create = (props) => {
         responsible,
         reason,
       })
-      props.history.push('/success')
+      props.history.push('/create/success')
     } catch (error) {
       props.history.push('/create/error')
     }
