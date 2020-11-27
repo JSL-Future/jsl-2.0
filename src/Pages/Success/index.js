@@ -18,7 +18,10 @@ const Success = ({
 
     setId(id)
     setSuccessType(type)
-  }, [])
+  }, [
+    location.pathname,
+    match.params,
+  ])
 
   const action = () => {
     if (successType === 'create') {
