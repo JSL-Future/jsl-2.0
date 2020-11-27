@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 50%;
+  padding-top: 100px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -13,10 +13,11 @@
   background-image: url('./logo-jsl.svg');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   height: 100px;
   margin: 0 auto;
   position: relative;
-  width: 60%;
+  width: 100%;
 }
 
 .auth {
