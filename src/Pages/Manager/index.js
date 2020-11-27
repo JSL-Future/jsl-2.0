@@ -28,7 +28,6 @@ const Manager = (props) => {
   }
 
   const HandleFilter = filter => setFilterSelected(filter)
-  const goToCreate = () => props.history.push('/create')
 
   return (
    <Fragment>
@@ -39,7 +38,7 @@ const Manager = (props) => {
         HandleFilter={HandleFilter}
         loading={loading}
       />
-      <Menu goToCreate={goToCreate} />
+      <Menu />
    </Fragment>
   )
 }
