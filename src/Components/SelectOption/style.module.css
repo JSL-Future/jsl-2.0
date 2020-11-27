@@ -13,16 +13,29 @@
   color: var(--black-color);
   margin-top: 1em;
   padding: 1em;
-  text-align-last: center;
+  text-align-last: left;
   width: 100%;
 }
 
 .selectOptions {
+  font-size: 1em;
   outline: 0;
 }
 
 .label, .selectOptions {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
-  font-size: 1em; 
+}
+
+.errorMessage {
+  color: #EA162C;
+}
+
+.SelectError {
+  border-color: #EA162C;
+  color: #EA162C;
+}
+
+.labelError {
+  color: #EA162C;
 }

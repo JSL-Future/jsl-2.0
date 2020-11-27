@@ -1,15 +1,16 @@
-@import '../../assets/css/colors.css';
+@import '../../../assets/css/colors.css';
 
 .container {
   background-color: #fff;
   min-height: 100vh;
+  overflow: hidden;
 }
 
-.closed {
+.goBack {
   padding: 20px 0 10px 20px;
 }
 
-.closedBtn {
+.goBackBtn {
   background-color: transparent;
   border: none;
   outline: none;
@@ -18,7 +19,7 @@
 }
 
 .content {
-  padding: 10px 30px;
+  padding: 10px 20px;
 }
 
 .title {
@@ -38,6 +39,10 @@
 }
 
 .selectOption {
+  margin-bottom: 1em;
+}
+
+.inputLiters {
   margin-bottom: 1em;
 }
 

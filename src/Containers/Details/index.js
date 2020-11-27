@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react'
 import moment from 'moment'
+import Modais from '../Modais'
+
+import SkeletonContent from './Skeleton'
 import GoBackIcon from './arrowBack.svg'
 import RiskIcon from './risk.svg'
 import HighRiskIcon from './highRisk.svg'
 import LossRiskIcon from './lossRisk.svg'
-import { Skeleton } from '../../Components'
-
 import styles from './style.module.css'
 
 const iconRisk = {
@@ -20,6 +21,15 @@ const Details = ({
   backPage,
   data,
   loading,
+  showModal,
+  openModal,
+  closeModal,
+  modalType,
+  handleSave,
+  form,
+  formErrors,
+  handleOnChange,
+  HandleBlur,
 }) => {
   const diff = (createdAt, updatedAt, status) => {
     const start = moment(createdAt)
@@ -28,60 +38,9 @@ const Details = ({
     const diffTime = moment.utc(diff).format('HH:mm')
     return diffTime
   }
-
   const riskLevel = data.priority ? data.priority : 'Normal'
-
+  const formType = data.reason === 'abastecer' ? 'suply' : 'event'
   const countHoursTotal = diff(data.createdAt, data.updatedAt, data.status)
-
-  const RenderSkeleton = () => (
-    <div style={{ width: '100%'}}>
-      <div className={styles.skeletonContent}>
-        <Skeleton height="20px" width="30%" borderRadius="3px" margin="20px 0" />
-        {[100, 100, 30].map((item, index) => (
-          <Skeleton
-            key={index}
-            height="20px"
-            width={`${item}%`}
-            margin="5px 0"
-            borderRadius="3px"
-          />
-        ))}
-      </div>
-
-      <div className={styles.skeletonContent}>
-        <div className={styles.skeletonDetailHeader}>
-          <Skeleton height="20px" width="30%" borderRadius="3px" margin="20px 0" />
-          <Skeleton height="20px" width="40%" borderRadius="20px" margin="20px 0" />
-        </div>
-        {[100, 100, 30].map((item, index) => (
-          <Skeleton
-            key={index}
-            height="20px"
-            width={`${item}%`}
-            margin="15px 0"
-            borderRadius="3px"
-          />
-        ))}
-      </div>
-
-      <div className={styles.skeletonContentPadding}>
-        <div className={styles.skeletonDetailHeader}>
-          <Skeleton height="20px" width="30%" borderRadius="3px" margin="20px 0" />
-          <Skeleton height="20px" width="40%" borderRadius="20px" margin="20px 0" />
-        </div>
-        {[100, 100, 30].map((item, index) => (
-          <Skeleton
-            key={index}
-            height="20px"
-            width={`${item}%`}
-            margin="5px 0"
-            borderRadius="3px"
-          />
-        ))}
-      </div>
-    </div>
-  )
-
   return (
     <div className={styles.container}>
       <div className={styles.goBack}>
@@ -89,7 +48,17 @@ const Details = ({
           <img src={GoBackIcon} alt="go back" />
         </button>
       </div>
-      {loading && <RenderSkeleton />}
+      <Modais
+        type={modalType}
+        showModal={showModal}
+        closeModal={closeModal}
+        handleSave={handleSave}
+        form={form}
+        formErrors={formErrors}
+        handleOnChange={handleOnChange}
+        HandleBlur={HandleBlur}
+      />
+      {loading && <SkeletonContent />}
       {!loading && (
         <Fragment>
           <div className={styles.content}>
@@ -127,7 +96,7 @@ const Details = ({
               <h1 className={styles.smallTitle}>
                 Eventos
               </h1>
-              <button className={styles.btnCircleRed}>Adicionar <strong>+</strong></button>
+              <button className={styles.btnCircleRed} onClick={() => openModal(formType)}>Adicionar <strong>+</strong></button>
             </div>
             {data.implement_events && data.implement_events.map(({ id, status, createdAt }) => (
               <div key={id} className={styles.implementInfo}>
@@ -142,7 +111,7 @@ const Details = ({
           <div className={styles.riskContent}>
             <div className={styles.riskHeader}>
               <h1 className={styles.smallTitle}>Prioridade</h1>
-              <button className={styles.btnCircle}>Editar prioridade</button>
+              <button className={styles.btnCircle} onClick={() => openModal('priority')}>Editar prioridade</button>
             </div>
             <div className={styles.risk}>
               <h4>Nível {riskLevel}</h4>

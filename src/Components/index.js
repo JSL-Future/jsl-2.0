@@ -9,6 +9,7 @@ import Input from './Input'
 import InputMasked from './InputMasked'
 import InputSearch from './InputSearch'
 import Menu from './Menu'
+import Modal from './Modal'
 import Skeleton from './Skeleton'
 import SelectOption from './SelectOption'
 import SignaturePad from './Signature'
@@ -26,6 +27,7 @@ export {
   InputMasked,
   InputSearch,
   Menu,
+  Modal,
   Skeleton,
   SelectOption,
   SignaturePad,

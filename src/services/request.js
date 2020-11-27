@@ -3,7 +3,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 // const PROXY_API = process.env.REACT_APP_PROXY_API
-const PROXY_API = 'https://sandbox-jsl.herokuapp.com'
+const PROXY_API = 'http://localhost:3003'
 
 const createInstance = () => {
   const token = localStorage.getItem('token')
