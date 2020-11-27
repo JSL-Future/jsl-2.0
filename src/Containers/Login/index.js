@@ -1,9 +1,15 @@
 import React from 'react'
 import Style from './style.module.css'
 import { Button, Input } from '../../Components'
-import imageLogo from './logo-jsl.svg'
+import imageLogo from '../../assets/Images/01-logo-jsl-branco 1.svg'
 
-const Login = (props) => {
+const Login = ({
+  onChange,
+  form,
+  onChange,
+  auth,
+  formErrors,
+}) => {
   return(
     <div className={Style.container}>
      <div className={Style.login}>
@@ -19,7 +25,7 @@ const Login = (props) => {
           />
         </div>
         <div className={Style.inputPass}>
-          <Input 
+          <Input
             value={props.password}
             label="Senha"
             type="password"
@@ -29,7 +35,7 @@ const Login = (props) => {
           />
         </div>
         <Button
-          action={props.auth}
+          action={auth}
         >
           Entrar
         </Button>

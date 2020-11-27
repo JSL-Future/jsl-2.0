@@ -58,9 +58,9 @@ const Create = (props) => {
         responsible,
         reason,
       })
-      props.history.push('/manager')
+      props.history.push('/success')
     } catch (error) {
-      alert('Error ao cadastrar!')
+      props.history.push('/create/error')
     }
   }
 

@@ -78,16 +78,32 @@ const Details = (props) => {
     setShowModal(true)
   }
 
+  const goToSuccess = routeComplement => props.history.push(`/${routeComplement}/success`)
   const changePriority = () => {
-    console.log('Alterar prioridade', form)
+    try {
+      console.log('Alterar prioridade', form)
+      goToSuccess('priority')
+    } catch (error) {
+
+    }
   }
 
   const createEvent = () => {
-    console.log('Criar evento', form)
+    try {
+      console.log('Criar evento', form)
+      goToSuccess('event')
+    } catch (error) {
+
+    }
   }
 
   const beginSuply = () => {
-    console.log('Iniciar abastecimento', form)
+    try {
+      console.log('Iniciar abastecimento', form)
+      goToSuccess('suply')
+    } catch (error) {
+
+    }
   }
 
   const checkType = type => {
