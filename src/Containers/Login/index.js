@@ -11,8 +11,7 @@ const Login = ({
 }) => {
   return(
     <div className={Style.container}>
-      <div className={Style.logo}>
-      </div>
+      <div className={Style.logo} />
       <div className={Style.auth}>
         <Input
           value={form.document}
