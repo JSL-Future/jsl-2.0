@@ -4,7 +4,7 @@ import Manager from './Pages/Manager'
 import Create from './Pages/Create'
 import Details from './Pages/Details'
 import Login from './Pages/Login'
-import Supply from '../src/Containers/AddEvents'
+import Supply from '../src/Containers/Sucess'
 
 const App = () => {
   return (

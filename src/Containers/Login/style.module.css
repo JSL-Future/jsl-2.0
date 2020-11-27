@@ -1,25 +1,19 @@
 @import '../../assets/css/colors.css';
 
+.container {
+  padding: 50px;
+}
+
 .login {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.auth {
-  box-sizing: border-box;
-  padding: 60px;
-  width: 60%;
-}
-
-.logo {
-  background-color: var(--monza-color);
-  overflow: hidden;
-  width: 40%;
+  margin: 30% 0;
 }
 
 .imgLogo {
-  width: 23vw;
-  margin-left: 7.5vw;
-  margin-top: 40vh;
+  display: block;
+  width: 50vw;
+  text-align: center;
+}
+
+.inputPass {
+  margin-bottom: 1em;
 }
