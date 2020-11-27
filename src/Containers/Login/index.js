@@ -1,18 +1,18 @@
 import React from 'react'
 import Style from './style.module.css'
-import { Button, Input } from '../../Components'
-import imageLogo from '../../assets/Images/01-logo-jsl-branco 1.svg'
+import { Button, Input, Loading } from '../../Components'
 
 const Login = ({
   onChange,
   form,
   auth,
   formErrors,
+  loading,
 }) => {
   return(
-    <div className={Style.container}>
-     <div className={Style.login}>
-        <h1>Login</h1>
+    <div className={Style.login}>
+      <div className={Style.auth}>
+        <h3>Login</h3>
         <Input
           value={form.document}
           label="CPF"
@@ -33,12 +33,15 @@ const Login = ({
             formErrors={formErrors}
           />
         </div>
-        <Button
-          action={auth}
-        >
-          Entrar
-        </Button>
-        <p><a href="''">Esqueceu a senha?</a></p>
+        {!loading && (
+          <Button action={auth}>Entrar</Button>
+        )}
+
+        {loading && (
+          <div className={Style.load}>
+            <Loading />
+          </div>
+        )}
       </div>
     </div>
   )

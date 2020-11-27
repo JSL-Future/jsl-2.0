@@ -5,6 +5,7 @@ import Filters from './Filters'
 import Input from './Input'
 import InputMasked from './InputMasked'
 import InputSearch from './InputSearch'
+import Loading from './Loading'
 import Menu from './Menu'
 import Modal from './Modal'
 import Skeleton from './Skeleton'
@@ -18,6 +19,7 @@ export {
   Input,
   InputMasked,
   InputSearch,
+  Loading,
   Menu,
   Modal,
   Skeleton,

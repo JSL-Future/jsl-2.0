@@ -16,6 +16,7 @@ const Login = ({
     password: ''
   })
   const [formErrors, setFormErrors] = useState({})
+  const [loading, setLoading] = useState(false)
 
   const handleChange = ({ target }) => {
     const message = EmptyField(target)
@@ -35,6 +36,7 @@ const Login = ({
   }
 
   const handleLogin = async () => {
+    setLoading(true)
     try {
       const { data } = await AuthService.login({
         ...form,
@@ -46,8 +48,10 @@ const Login = ({
       }
       Request.forceRenewAxiosInstance(data.token)
       history.push('/manager')
+      setLoading(false)
     } catch (error) {
       console.log('=========>>', error)
+      setLoading(false)
     }
   }
 
@@ -63,6 +67,7 @@ const Login = ({
       onChange={handleChange}
       formErrors={formErrors}
       form={form}
+      loading={loading}
     />
   )
 }
