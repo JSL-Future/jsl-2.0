@@ -1,7 +1,6 @@
 import React from 'react'
 import Style from './style.module.css'
 import { Button, Input, Loading } from '../../Components'
-import imageLogo from './logo-jsl.svg'
 
 const Login = ({
   onChange,
@@ -12,7 +11,7 @@ const Login = ({
 }) => {
   return(
     <div className={Style.container}>
-      <div className={Style.logo}> 
+      <div className={Style.logo}>
       </div>
       <div className={Style.auth}>
         <Input
