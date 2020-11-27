@@ -42,7 +42,7 @@ const Details = ({
   const formType = data.reason === 'abastecer' ? 'suply' : 'event'
   const countHoursTotal = diff(data.createdAt, data.updatedAt, data.status)
   return (
-    <div className={styles.container}>
+    <div className={styles.containerDetail}>
       <div className={styles.goBack}>
         <button className={styles.gobackBtn} onClick={backPage}>
           <img src={GoBackIcon} alt="go back" />
