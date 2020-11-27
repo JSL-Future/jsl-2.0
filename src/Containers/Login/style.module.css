@@ -1,22 +1,29 @@
 @import '../../assets/css/colors.css';
 
-.login {
-  width: 100%;
+.container {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+  padding-top: 50%;
+  width: 100%;
+}
+
+.logo {
+  background-image: url('./logo-jsl.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  width: 60%;
 }
 
 .auth {
   box-sizing: border-box;
-  padding: 20px;
+  padding: 30px;
 }
 
 .load {
-  text-align: center;
-}
-
-.imgLogo {
-  display: block;
-  width: 50vw;
   text-align: center;
 }
 
