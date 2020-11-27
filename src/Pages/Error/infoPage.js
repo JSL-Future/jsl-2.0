@@ -1,6 +1,13 @@
 import React from 'react'
 
 const infoPage = {
+  auth: {
+    title: 'Erro ao realizar o login!',
+    message: (
+      <>Não foi possível realizar o seu login <b>verifique os dados inseridos e tente novamente</b>!</>
+    ),
+    actionText: 'Tente novamente'
+  },
   create: {
     title: 'Erro ao criar acesso!',
     message: (

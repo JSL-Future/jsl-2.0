@@ -10,7 +10,8 @@ import Error from './Pages/Error'
 const App = () => {
   return (
     <Switch>
-      <Route path='/auth' component={Login} />
+      <Route exact path='/auth' component={Login} />
+      <Route path='/auth/error' component={Error} />
       <Route path='/manager' component={Manager} />
       <Route exact path='/create' component={Create} />
       <Route exact path='/detail/:id' component={Details} />

@@ -52,8 +52,8 @@ const Login = ({
       history.push('/manager')
       setLoading(false)
     } catch (error) {
-      console.log('=========>>', error)
       setLoading(false)
+      history.push('/auth/error')
     }
   }
 

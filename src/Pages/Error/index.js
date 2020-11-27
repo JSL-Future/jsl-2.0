@@ -15,12 +15,18 @@ const Error = ({
     const { id } = match.params
     const pathname = location.pathname
     const type = pathname.split('/')[1]
-
     setId(id)
     setErrorType(type)
-  }, [])
+  }, [
+    location.pathname,
+    match.params,
+  ])
 
   const again = () => {
+    if (errorType === 'auth') {
+      history.push('/auth/login')
+    }
+
     if (errorType === 'create') {
       history.push('/create')
     }
