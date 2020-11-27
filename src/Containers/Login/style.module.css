@@ -14,16 +14,14 @@
   text-align: center;
 }
 
-.logo {
-  background-color: var(--monza-color);
-  overflow: hidden;
-  width: 40%;
+.imgLogo {
+  display: block;
+  width: 50vw;
+  text-align: center;
 }
 
-.imgLogo {
-  width: 23vw;
-  margin-left: 7.5vw;
-  margin-top: 40vh;
+.inputPass {
+  margin-bottom: 1em;
 }
 
 .inputPwd {

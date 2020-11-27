@@ -1,0 +1,41 @@
+@import '../../assets/css/colors.css';
+
+.container {
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.content {
+  padding: 70px 20px 0 20px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.title,
+.description,
+.error > h1 {
+  font-family: Poppins;
+  font-style: normal;
+}
+
+.description {
+  font-size: 12px;
+  margin-bottom: 15%;
+}
+
+.error {
+  margin: 100px 0;
+  text-align: center;
+}
+
+.error h1 {
+  font-weight: normal;
+}
+
+.button {
+  margin-top: 5%;
+}
