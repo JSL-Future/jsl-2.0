@@ -6,7 +6,7 @@ import Details from './Pages/Details'
 import Login from './Pages/Login'
 import Success from './Pages/Success'
 import Error from './Pages/Error'
-import Perfil from './Containers/Perfil'
+import Profile from './Pages/Profile'
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const App = () => {
       <Route path='/detail/:id/success' component={Success} />
       <Route path='/priority/:id/success' component={Success} />
       <Route path='/suply/:id/success' component={Success} />
-      <Route path='/perfil' component={Perfil} />
+      <Route path='/profile' component={Profile} />
       <Redirect from="*" to="/auth" />
     </Switch>
   )

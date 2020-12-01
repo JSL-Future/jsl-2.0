@@ -10,9 +10,11 @@ ReactGA.initialize(process.env.REACT_APP_GA)
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <ProviderState>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </ProviderState>
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -11,6 +11,7 @@ const Menu = ({
 }) => {
   const goToCreate = () => history.push('/create')
   const goToManager = () => history.push('/manager')
+  const goToProfile = () => history.push('/profile')
 
   return (
     <div className={styles.menu}>
@@ -34,7 +35,7 @@ const Menu = ({
         </div>
       </button>
       <button
-        onClick={() => console.log('profile')}
+        onClick={goToProfile}
         className={styles.menuItem}
         type="button"
       >
