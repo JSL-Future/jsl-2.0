@@ -1,5 +1,5 @@
 import React, { useState } from  'react'
-import { isEmpty, omit } from 'ramda'
+import { isEmpty, omit, props } from 'ramda'
 import { withRouter } from 'react-router-dom'
 import AuthService from '../../services/auth'
 import ContainerLogin from '../../Containers/Login'
@@ -8,9 +8,11 @@ import {
   EmptyField,
   validationForm,
 } from '../../utils/validators'
+import { ContextProvider } from '../../Context'
 
 const Login = ({
   history,
+  updateUser
 }) => {
 
   const [form, setForm] = useState({
@@ -44,7 +46,7 @@ const Login = ({
         ...form,
         document: form.document.replace(/[^a-z0-9]/gi,'')
       })
-
+      updateUser(data.user)
       if (data.token) {
         localStorage.setItem('token', data.token)
       }
@@ -64,14 +66,14 @@ const Login = ({
   }
 
   return (
-    <ContainerLogin
-      auth={authentication}
-      onChange={handleChange}
-      formErrors={formErrors}
-      form={form}
-      loading={loading}
-    />
+      <ContainerLogin
+        auth={authentication}
+        onChange={handleChange}
+        formErrors={formErrors}
+        form={form}
+        loading={loading}
+      />
   )
 }
 
-export default withRouter(Login)
+export default ContextProvider(withRouter(Login))

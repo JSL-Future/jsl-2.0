@@ -2,7 +2,7 @@ import React from 'react'
 import Style from './style.module.css'
 import { Menu } from '../../Components'
 
-const Perfil = (props)=> {
+const Profile = (props)=> {
   return (
     <div className={Style.container}>
        <div className={Style.header}>
@@ -31,4 +31,4 @@ const Perfil = (props)=> {
   )
 }
 
-export default Perfil
+export default Profile
