@@ -1,18 +1,20 @@
 import React from 'react'
-import style from './style.module.css'
-import imageEmptyState from '../../assets/Images/image-empty-state.svg'
+import Styles from './style.module.css'
+import NoDataIcon from './no-data.svg'
+import doneCheckIcon from './done-check.svg'
 
-const emptyState = (props) => {
-  return (
-    <div className={style.emptyState}>
-      <img className={style.emptyStateImg} 
-        src={imageEmptyState} 
-        alt="sem dados"
-      />
-      <h1>{props.title}</h1>
-      <p>{props.description}</p>
-    </div>
-  )
-}
+const EmptyState = ({
+  type,
+}) => (
+  <div className={Styles.emptyStateManager}>
+    <img src={type === 'Todos' ? NoDataIcon : doneCheckIcon} alt="empty state" />
+    <h3>{(
+      type === 'Todos'
+        ? 'Nenhuma Atividade encontrada!'
+        : `Nenhuma atividade do tipo "${type.toLowerCase()}" encontrada!`
+    )}</h3>
+    <p>Clique no botão de "<b>+</b>" abaixo para criar uma atividade.</p>
+  </div>
+)
 
-export default emptyState
+export default EmptyState

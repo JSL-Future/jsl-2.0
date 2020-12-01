@@ -1,0 +1,53 @@
+@import '../../../assets/css/colors.css';
+
+.container {
+  background-color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.closed {
+  padding: 20px 0 10px 20px;
+}
+
+.closedBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  padding: 10px 20px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.title,
+.description {
+  font-family: Poppins;
+  font-style: normal;
+}
+
+.description {
+  font-size: 12px;
+  margin-bottom: 15%;
+}
+
+.selectOption {
+  margin-bottom: 1em;
+}
+
+.buttonSave {
+  margin-top: 30%;
+}
+
+.load {
+  padding-top: 20px;
+  text-align: center;
+}

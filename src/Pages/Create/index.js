@@ -1,5 +1,12 @@
 import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom'
+import { isEmpty, omit } from 'ramda'
+
+import {
+  EmptyField,
+  validationForm,
+} from '../../utils/validators'
+
 import CreateContainer from '../../Containers/Create'
 import ImplementService from '../../services/implement'
 
@@ -9,17 +16,33 @@ const Create = (props) => {
     reason: '',
     plate: '',
     fleet: '',
-    responsible: ''
+    responsible: '',
   })
+  const [formErrors, setFormErrors] = useState({})
+  const [loading, setloading] = useState(false)
 
-  const handleChange = (event) => {
+  const HandleBlur = ({ target }) => {
+    const message = EmptyField(target)
+    if (message) {
+      return setFormErrors({
+        ...formErrors,
+        [target.name]: message
+      })
+    }
+
+    return setFormErrors(omit([target.name], formErrors))
+  }
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target
+    HandleBlur({ target })
     setForm({
       ...form,
-      [event.target.name]: event.target.value
+      [name]: value,
     })
   }
 
-  const save = async () => {
+  const createImplement = async () => {
     const {
       responsible,
       reason,
@@ -28,6 +51,7 @@ const Create = (props) => {
       operation,
     } = form
 
+    setloading(true)
     try {
       await ImplementService.saveImplement({
         operation,
@@ -36,17 +60,31 @@ const Create = (props) => {
         responsible,
         reason,
       })
-      props.history.push('/manager')
+      setloading(false)
+      props.history.push('/create/success')
     } catch (error) {
-      alert('Error ao cadastrar!')
+      setloading(false)
+      props.history.push('/create/error')
     }
   }
+
+  const handleSave = () => {
+    const errors = validationForm(form)
+    setFormErrors(errors)
+    return isEmpty(errors) && createImplement(form)
+  }
+
+  const goBack = () => props.history.push('/manager')
 
   return (
     <CreateContainer
       form={form}
       onChange={handleChange}
-      save={save}
+      handleSave={handleSave}
+      goBack={goBack}
+      HandleBlur={HandleBlur}
+      formErrors={formErrors}
+      loading={loading}
     />
   )
 }

@@ -1,19 +1,62 @@
 @import '../../assets/css/colors.css';
 
 .container {
-  background-color: var(--mercury-color);
-  background-image: url(../../assets/Images/fundo-container-create.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  font-family: Lato, sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.closed {
+  padding: 20px 0 10px 20px;
+}
+
+.closedBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  padding: 10px 30px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.title,
+.description {
+  font-family: Poppins;
   font-style: normal;
-  padding: 50px;
 }
 
-.container p {
-  margin: 1.5px;
+.description {
+  font-size: 12px;
 }
 
-.container h1 {
-  color: var(--tundora-color);
+.selectOption {
+  margin-bottom: 1em;
+}
+
+.twoInputLine {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.inputSize {
+  width: calc((100% - 20px) / 2);
+}
+
+.buttonSave {
+  margin-top: 25%;
+}
+
+.load {
+  padding-top: 20px;
+  text-align: center;
 }

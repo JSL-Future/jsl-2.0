@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import ManagerContainer from '../../Containers/Manager'
 import ImplementService from '../../services/implement'
+import { Menu } from '../../Components'
+import {
+  priorityTranslate,
+  statusTranslate,
+} from '../../utils/implement.translate'
 
 const Manager = (props) => {
 
   const [data, setData] = useState([])
   const [shouldRequest, setShouldRequest] = useState(true)
+  const [filterSelected, setFilterSelected] = useState('Todos')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if(shouldRequest && localStorage.getItem('token')) {
@@ -14,30 +21,42 @@ const Manager = (props) => {
         .then(response => {
           setData(response.data)
           setShouldRequest(false)
+          setLoading(false)
         })
         .catch(error => console.log(error))
     }
   })
 
-  const goToCreateImplements = () => {
-    return props.history.push('/create')
-  }
-
-  const goToRelease = id => {
-    return props.history.push(`/release/${id}`)
-  }
-
   const goToDetail = id => {
     return props.history.push(`/detail/${id}`)
   }
 
+  const HandleFilter = async (filter) => {
+    setLoading(true)
+    setFilterSelected(filter)
+    try {
+      const filterQuery = filter === 'Todos' ? {} : { reason: filter }
+      const { data } = await ImplementService.getImplements(filterQuery)
+      setData(data)
+      setLoading(false)
+    } catch (error) {
+      setLoading(false)
+    }
+  }
+
   return (
-    <ManagerContainer
-      data={data}
-      addImplement={goToCreateImplements}
-      release={goToRelease}
-      detail={goToDetail}
-    />
+   <Fragment>
+      <ManagerContainer
+        data={data}
+        goToDetail={goToDetail}
+        filterSelected={filterSelected}
+        HandleFilter={HandleFilter}
+        loading={loading}
+        statusTranslate={statusTranslate}
+        priorityTranslate={priorityTranslate}
+      />
+      <Menu />
+   </Fragment>
   )
 }
 

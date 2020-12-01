@@ -1,16 +1,41 @@
 @import '../../assets/css/colors.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.label {
+  color: #000000;
+  font-weight: bold;
+}
 
 .selectOptions {
-  background-color: var(--mercury-color);
-  border: none;
-  border-radius: 26.5px;
-  color: var(--mid-gray-color);
-  font-size: 24px;
-  padding: 16px 0;
-  text-align-last: center;
+  background: transparent;
+  border: solid 2px #C4C4C4;
+  border-radius: 6px;
+  color: #000000;
+  margin-top: 1em;
+  padding: 1em;
+  text-align-last: left;
   width: 100%;
 }
 
 .selectOptions {
+  font-size: 1em;
   outline: 0;
+}
+
+.label, .selectOptions {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+}
+
+.errorMessage {
+  color: #EA162C;
+}
+
+.SelectError {
+  border-color: #EA162C;
+  color: #EA162C;
+}
+
+.labelError {
+  color: #EA162C;
 }

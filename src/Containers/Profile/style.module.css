@@ -1,0 +1,40 @@
+@import '../../assets/css/colors.css';
+
+.container {
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #EA162C;
+  border-bottom-right-radius: 50px;
+  padding: 18px 10px;
+}
+
+.header > h1 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  margin:0;
+}
+
+.card {
+  border-bottom: solid 1px #EFEDED;
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 12px;
+  height: 50px;
+  line-height: 2;
+  padding: 20px;
+}
+
+.card div > h3,
+.card div > p {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.card div {
+  margin: auto;
+}

@@ -1,25 +1,38 @@
 @import '../../assets/css/colors.css';
 
-.login {
+.container {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   min-height: 100vh;
+  padding-top: 100px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  background-image: url('./logo-jsl.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
 }
 
 .auth {
   box-sizing: border-box;
-  padding: 60px;
-  width: 60%;
+  padding: 30px;
 }
 
-.logo {
-  background-color: var(--monza-color);
-  overflow: hidden;
-  width: 40%;
+.load {
+  text-align: center;
 }
 
-.imgLogo {
-  width: 23vw;
-  margin-left: 7.5vw;
-  margin-top: 40vh;
+.inputPass {
+  margin-bottom: 1em;
+}
+
+.inputPwd {
+  padding: 20px 0;
 }

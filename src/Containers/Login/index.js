@@ -1,57 +1,48 @@
 import React from 'react'
 import Style from './style.module.css'
-import { Button, Input, InputMasked } from '../../Components'
-import imageLogo from '../../assets/Images/01-logo-jsl-branco 1.svg'
+import { Button, Input, Loading } from '../../Components'
 
-const Login = (props) => {
+const Login = ({
+  onChange,
+  form,
+  auth,
+  formErrors,
+  loading,
+}) => {
   return(
-    <div className={Style.login}>
-      <div className={Style.logo}> 
-        <img className={Style.imgLogo}
-          src={imageLogo} 
-          alt="logo-jsl"
-        />
-      </div>
+    <div className={Style.container}>
+      <div className={Style.logo} />
       <div className={Style.auth}>
-        <h1>Login</h1>
-        <InputMasked 
-          value={props.document}
+        <Input
+          value={form.document}
           label="CPF"
           type="text"
           name="document"
           id="textDocument"
-          onchange={props.onChange}
-          mask={[
-            /[0-9]/, 
-            /[0-9]/, 
-            /[0-9]/, 
-            ".", 
-            /[0-9]/, 
-            /[0-9]/, 
-            /[0-9]/, 
-            ".", 
-            /[0-9]/, 
-            /[0-9]/, 
-            /[0-9]/, 
-            "-", 
-            /[0-9]/, 
-            /[0-9]/
-          ]}
-          guide={false}
+          onchange={onChange}
+          formErrors={formErrors}
+          mask="111.111.111-11"
         />
-        <Input 
-          value={props.password}
-          label="Senha"
-          type="password"
-          name="password"
-          id="textPassword"
-          onchange={props.onChange}
-        />
-        <Button
-          action={props.auth}
-        >
-          Entrar
-        </Button>
+        <div className={Style.inputPwd}>
+          <Input
+            value={form.password}
+            label="Senha"
+            type="password"
+            name="password"
+            id="textPassword"
+            onchange={onChange}
+            formErrors={formErrors}
+          />
+        </div>
+        {!loading && (
+          <Button action={auth}>Entrar</Button>
+        )}
+
+        {loading && (
+          <div className={Style.load}>
+            <Loading />
+          </div>
+        )}
       </div>
     </div>
   )

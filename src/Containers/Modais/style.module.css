@@ -1,0 +1,9 @@
+.header {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.closeBtn {
+  width: calc(100% / 3);
+}
