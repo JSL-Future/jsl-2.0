@@ -1,6 +1,7 @@
 import moment from 'moment'
+import 'moment/locale/pt-br'
 
-const formattedDate = date => moment(date).format('DD/MMM - HH:mm')
+const formattedDate = date => moment(date).format('DD/MMM HH:mm')
 
 const diff = (createdAt, updatedAt, status) => {
   const start = moment(createdAt)
