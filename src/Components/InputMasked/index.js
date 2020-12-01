@@ -1,5 +1,5 @@
 import React from 'react'
-import MaskedInput from 'react-text-mask'
+import MaskedInput from 'react-maskedinput'
 import style from './style.module.css'
 
 const InputMasked = (props) => {
