@@ -33,6 +33,7 @@ const Details = ({
   HandleBlur,
   statusTranslate,
   priorityTranslate,
+  operationTranslate,
   modalLoading,
 }) => {
   const riskLevel = data.priority ? priorityTranslate[data.priority] : 'Normal'
@@ -86,7 +87,7 @@ const Details = ({
             </div>
             <div className={styles.implementInfo3}>
               <h3>Operação</h3>
-              <h2>{data.operation}</h2>
+              <h2>{operationTranslate[data.operation]}</h2>
             </div>
           </div>
 

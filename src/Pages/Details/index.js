@@ -11,6 +11,7 @@ import {
 import {
   priorityTranslate,
   statusTranslate,
+  operationTranslate,
 } from '../../utils/implement.translate'
 
 const suplyForm = {
@@ -184,6 +185,7 @@ const Details = (props) => {
       statusTranslate={statusTranslate}
       priorityTranslate={priorityTranslate}
       modalLoading={modalLoading}
+      operationTranslate={operationTranslate}
     />
   )
 }

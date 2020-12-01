@@ -14,7 +14,20 @@ const statusTranslate = {
   washing: 'Lavar',
 }
 
+const operationTranslate = {
+  Mercedes: 'Mercedes-Benz',
+  Ford: 'Ford Motor',
+  Scania: 'Scania do Brasil',
+  lear: 'Lear Corporation',
+  renault: 'Renault do Brasil',
+  whirlpool: 'Whirlpool',
+  gmIinterplatas: 'GM Interplantas',
+  gmCegonha: 'GM Cegonha',
+  volkswagem: 'Volkswagem',
+}
+
 export {
   statusTranslate,
   priorityTranslate,
+  operationTranslate,
 }
