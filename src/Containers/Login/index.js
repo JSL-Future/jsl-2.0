@@ -21,7 +21,7 @@ const Login = ({
           id="textDocument"
           onchange={onChange}
           formErrors={formErrors}
-          mask="111.111.111.-11"
+          mask="111.111.111-11"
         />
         <div className={Style.inputPwd}>
           <Input
