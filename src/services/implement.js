@@ -18,8 +18,8 @@ class ImplementService {
     return this.axios.get(`${url}/${id}`, { headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}})
   }
 
-  getImplements() {
-    return this.axios.get(url, { headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}})
+  getImplements(query) {
+    return this.axios.get(url, { params: query, headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}})
   }
 }
 

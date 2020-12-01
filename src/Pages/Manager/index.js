@@ -31,7 +31,18 @@ const Manager = (props) => {
     return props.history.push(`/detail/${id}`)
   }
 
-  const HandleFilter = filter => setFilterSelected(filter)
+  const HandleFilter = async (filter) => {
+    setLoading(true)
+    setFilterSelected(filter)
+    try {
+      const filterQuery = filter === 'Todos' ? {} : { reason: filter }
+      const { data } = await ImplementService.getImplements(filterQuery)
+      setData(data)
+      setLoading(false)
+    } catch (error) {
+      setLoading(false)
+    }
+  }
 
   return (
    <Fragment>
