@@ -3,10 +3,12 @@ import { withRouter } from 'react-router-dom'
 import AuthService from '../../services/auth'
 import ContainerLogin from '../../Containers/Login'
 import Request from  '../../services/request'
+import GAInitialize from '../../ga'
 
 const Login = ({
   history,
 }) => {
+  GAInitialize('/auth/login')
 
   const [form, setForm] = useState({
     document: '',
