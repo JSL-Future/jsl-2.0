@@ -108,7 +108,7 @@ const Details = (props) => {
     }
   }
 
-  const beginSuply = () => {
+  const beginSuply = async () => {
     try {
       await ImplementService.updateImplement(implement.id, {...form, event: 'suply' })
       goToSuccess(`suply/${implement.id}`)
