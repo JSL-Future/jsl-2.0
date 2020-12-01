@@ -3,6 +3,10 @@ import { withRouter } from 'react-router-dom'
 import ManagerContainer from '../../Containers/Manager'
 import ImplementService from '../../services/implement'
 import { Menu } from '../../Components'
+import {
+  priorityTranslate,
+  statusTranslate,
+} from '../../utils/implement.translate'
 
 const Manager = (props) => {
 
@@ -37,6 +41,8 @@ const Manager = (props) => {
         filterSelected={filterSelected}
         HandleFilter={HandleFilter}
         loading={loading}
+        statusTranslate={statusTranslate}
+        priorityTranslate={priorityTranslate}
       />
       <Menu />
    </Fragment>

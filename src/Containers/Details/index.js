@@ -10,9 +10,9 @@ import LossRiskIcon from './lossRisk.svg'
 import styles from './style.module.css'
 
 const iconRisk = {
-  Normal: RiskIcon,
-  Alto: HighRiskIcon,
-  Baixo: LossRiskIcon,
+  medium: RiskIcon,
+  high: HighRiskIcon,
+  low: LossRiskIcon,
 }
 
 const formattedDate = date => moment(date).format('DD/MMM - HH:mm')
@@ -30,6 +30,8 @@ const Details = ({
   formErrors,
   handleOnChange,
   HandleBlur,
+  statusTranslate,
+  priorityTranslate,
 }) => {
   const diff = (createdAt, updatedAt, status) => {
     const start = moment(createdAt)
@@ -38,7 +40,7 @@ const Details = ({
     const diffTime = moment.utc(diff).format('HH:mm')
     return diffTime
   }
-  const riskLevel = data.priority ? data.priority : 'Normal'
+  const riskLevel = data.priority ? priorityTranslate[data.priority] : 'Normal'
   const formType = (data.reason === 'abastecer' && data.status === 'check-in') ? 'abastecer' : 'event'
   const countHoursTotal = diff(data.createdAt, data.updatedAt, data.status)
 
@@ -84,7 +86,7 @@ const Details = ({
             </div>
             <div className={styles.implementInfo2}>
               <h3>Status</h3>
-              <h2>{data.status}</h2>
+              <h2>{statusTranslate[data.status]}</h2>
             </div>
             <div className={styles.implementInfo3}>
               <h3>Operação</h3>
@@ -97,11 +99,20 @@ const Details = ({
               <h1 className={styles.smallTitle}>
                 Eventos
               </h1>
-              <button className={styles.btnCircleRed} onClick={() => openModal(formType)}>Adicionar <strong>+</strong></button>
+              {
+                data.status !== 'check-out' && (
+                  <button
+                    className={styles.btnCircleRed}
+                    onClick={() => openModal(formType)}
+                  >
+                    Adicionar <strong>+</strong>
+                  </button>
+                )
+              }
             </div>
             {data.implement_events && data.implement_events.map(({ id, status, createdAt }) => (
               <div key={id} className={styles.implementInfo}>
-                <h3>{status}</h3>
+                <h3 className={styles.statusInfo}>{statusTranslate[status]}</h3>
                 <h2>{formattedDate(createdAt)}</h2>
               </div>
             ))}
@@ -112,12 +123,21 @@ const Details = ({
           <div className={styles.riskContent}>
             <div className={styles.riskHeader}>
               <h1 className={styles.smallTitle}>Prioridade</h1>
-              <button className={styles.btnCircle} onClick={() => openModal('priority')}>Editar prioridade</button>
+              {
+                data.status !== 'check-out' && (
+                  <button
+                    className={styles.btnCircle}
+                    onClick={() => openModal('priority')}
+                  >
+                    Editar prioridade
+                  </button>
+                )
+              }
             </div>
             <div className={styles.risk}>
               <h4>Nível {riskLevel}</h4>
               <div className={styles.riskInfo}>
-                <img src={iconRisk[riskLevel]} alt={riskLevel} />
+                <img src={iconRisk[data.priority]} alt={riskLevel} />
                 <p>
                   Na prioridade é possível controlar quais serviços
                   irão ser executados primeiro. A prioridade atual dessa

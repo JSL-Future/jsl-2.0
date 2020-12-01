@@ -298,3 +298,7 @@
 .fixed {
   overflow: hidden;
 }
+
+.statusInfo {
+  margin-top: 10px;
+}
