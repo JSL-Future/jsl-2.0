@@ -12,10 +12,11 @@ const AddEvents = ({
 
   const dataListEvent = [
     { name: 'Selecione um evento', value: '', hidden: true, disabled: false },
-    { name: 'Doca', value: 'doca', hidden: false, disabled: false },
-    { name: 'Aguardando Peças', value: 'aguardando_pecas', hidden: false, disabled: false },
-    { name: 'Pátio', value: 'patio', hidden: false, disabled: false },
-    { name: 'Lavar', value: 'lavar', hidden: false, disabled: false },
+    { name: 'Doca', value: 'dock', hidden: false, disabled: false },
+    { name: 'Pátio', value: 'courtyard', hidden: false, disabled: false },
+    { name: 'Lavar', value: 'washing', hidden: false, disabled: false },
+    { name: 'Aguardando Reparo', value: 'awaiting_repair', hidden: false, disabled: false },
+    { name: 'Liberado', value: 'check-out', hidden: false, disabled: false },
   ]
 
   return (
@@ -33,7 +34,7 @@ const AddEvents = ({
           <SelectOption
             label="Evento"
             selectValue={form.event}
-            selectName="status"
+            selectName="event"
             onchange={handleOnChange}
             options={dataListEvent}
             formErrors={formErrors}

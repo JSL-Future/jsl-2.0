@@ -13,6 +13,8 @@ const Manager = ({
   goToDetail,
   HandleFilter,
   loading,
+  statusTranslate,
+  priorityTranslate,
 }) => {
   const renderCardImplement = implement => (
    <div
@@ -22,6 +24,8 @@ const Manager = ({
     <CardImplement
         goToDetail={goToDetail}
         {...implement}
+        statusTranslate={statusTranslate}
+        priorityTranslate={priorityTranslate}
       />
    </div>
   )

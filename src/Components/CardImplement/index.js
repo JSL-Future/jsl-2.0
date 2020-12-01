@@ -30,7 +30,10 @@ const CardImplement = ({
   reason,
   status,
   fleet,
+  priority,
   goToDetail,
+  statusTranslate,
+  priorityTranslate,
 }) => {
 
   const diff = (createdAt, updatedAt, status) => {
@@ -69,11 +72,11 @@ const CardImplement = ({
         </div>
         <div className={styles.cardContentItem}>
           <h3>Status</h3>
-          <h2>{status}</h2>
+          <h2>{statusTranslate[status]}</h2>
         </div>
         <div className={styles.cardContentItem}>
           <h3>Prioridade</h3>
-          <h2>Normal</h2>
+          <h2>{priorityTranslate[priority]}</h2>
         </div>
       </div>
     </div>

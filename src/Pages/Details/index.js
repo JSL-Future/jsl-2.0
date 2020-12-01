@@ -8,6 +8,11 @@ import {
   validationForm,
 } from '../../utils/validators'
 
+import {
+  priorityTranslate,
+  statusTranslate,
+} from '../../utils/implement.translate'
+
 const suplyForm = {
   fuel: '',
   mileage: '',
@@ -18,7 +23,7 @@ const suplyForm = {
 
 const EventForm = {
   responsible: '',
-  status: '',
+  event: '',
 }
 
 const PriorityForm = {
@@ -44,7 +49,6 @@ const Details = (props) => {
     status: '',
     updatedAt: '',
   })
-
 
   const [shouldRequest, setShouldRequest] = useState(true)
   const [loading, setLoading] = useState(true)
@@ -78,31 +82,38 @@ const Details = (props) => {
     setShowModal(true)
   }
 
-  const goToSuccess = routeComplement => props.history.push(`/${routeComplement}/success`)
-  const changePriority = () => {
-    try {
-      console.log('Alterar prioridade', form)
-      goToSuccess('priority')
-    } catch (error) {
+  const goToSuccess = routeComplement => (
+    props.history.push(`/${routeComplement}/success`)
+  )
 
+  const goToError = routeComplement => (
+    props.history.push(`/${routeComplement}/error`)
+  )
+
+  const changePriority = async () => {
+    try {
+      await ImplementService.updateImplement(implement.id, form)
+      goToSuccess(`priority/${implement.id}`)
+    } catch (error) {
+      goToError(`priority/${implement.id}`)
     }
   }
 
-  const createEvent = () => {
+  const createEvent = async () => {
     try {
-      console.log('Criar evento', form)
-      goToSuccess('event')
+      await ImplementService.updateImplement(implement.id, form)
+      goToSuccess(`detail/${implement.id}`)
     } catch (error) {
-
+      goToError(`detail/${implement.id}`)
     }
   }
 
   const beginSuply = () => {
     try {
-      console.log('Iniciar abastecimento', form)
-      goToSuccess('suply')
+      await ImplementService.updateImplement(implement.id, {...form, event: 'suply' })
+      goToSuccess(`suply/${implement.id}`)
     } catch (error) {
-
+      goToError(`suply/${implement.id}`)
     }
   }
 
@@ -160,6 +171,8 @@ const Details = (props) => {
       handleOnChange={handleOnChange}
       HandleBlur={HandleBlur}
       formErrors={formErrors}
+      statusTranslate={statusTranslate}
+      priorityTranslate={priorityTranslate}
     />
   )
 }
