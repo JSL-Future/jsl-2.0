@@ -5,6 +5,7 @@ import { isEmpty, omit } from 'ramda'
 import {
   EmptyField,
   validationForm,
+  replaceMask,
 } from '../../utils/validators'
 
 import CreateContainer from '../../Containers/Create'
@@ -55,7 +56,7 @@ const Create = (props) => {
     try {
       await ImplementService.saveImplement({
         operation,
-        plate,
+        plate: replaceMask(plate),
         fleet,
         responsible,
         reason,

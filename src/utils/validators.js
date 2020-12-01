@@ -1,6 +1,6 @@
 import { isEmpty, isNil }  from 'ramda'
 
-const replaceMask = (value = '') =>  value.replace(/[^a-z0-9]/gi,'')
+const replaceMask = (value = '') =>  value.replace(/[^a-z0-9]/gi,'').trim()
 
 const cpfValidator = value => {
   if (replaceMask(value).toString().length < 11) {
