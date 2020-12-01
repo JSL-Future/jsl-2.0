@@ -4,11 +4,7 @@ import { withRouter } from 'react-router-dom'
 import AuthService from '../../services/auth'
 import ContainerLogin from '../../Containers/Login'
 import Request from  '../../services/request'
-import {
-  EmptyField,
-  validationForm,
-} from '../../utils/validators'
-import { ContextProvider } from '../../Context'
+import GAInitialize from '../../ga'
 
 const Login = ({
   history,
