@@ -7,7 +7,7 @@ const EmptyState = ({
   type,
 }) => (
   <div className={Styles.emptyStateManager}>
-    <img src={type === 'Todos' ? NoDataIcon : doneCheckIcon} />
+    <img src={type === 'Todos' ? NoDataIcon : doneCheckIcon} alt="empty state" />
     <h3>{(
       type === 'Todos'
         ? 'Nenhuma Atividade encontrada!'
