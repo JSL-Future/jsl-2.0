@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import {
   CardImplement,
   CardSkeleton,
+  EmptyStateManager,
   Filters,
 } from '../../Components'
 import Styles from './style.module.css'
@@ -36,11 +37,13 @@ const Manager = ({
       </div>
       <div className={Styles.container}>
         <Filters filterSelected={filterSelected} HandleFilter={HandleFilter} />
+        {data.length === 0 && !loading && <EmptyStateManager type={filterSelected} />}
         {loading && items.map(item => (
           <div className={Styles.implementItem} key={item} >
             <CardSkeleton />
           </div>)
         )}
+
         {data.map(renderCardImplement)}
       </div>
     </Fragment>

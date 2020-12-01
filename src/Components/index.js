@@ -1,6 +1,7 @@
 import Button from './Button'
 import CardImplement from './CardImplement'
 import CardSkeleton from './CardSkeleton'
+import EmptyStateManager from './EmptyState'
 import Filters from './Filters'
 import Input from './Input'
 import InputSearch from './InputSearch'
@@ -14,6 +15,7 @@ export {
   Button,
   CardImplement,
   CardSkeleton,
+  EmptyStateManager,
   Filters,
   Input,
   InputSearch,
