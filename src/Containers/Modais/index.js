@@ -27,6 +27,7 @@ const Modais = ({
   formErrors,
   handleOnChange,
   HandleBlur,
+  modalLoading,
 }) => {
   const Component = checkModalType(type)
   return (
@@ -46,6 +47,7 @@ const Modais = ({
         formErrors={formErrors}
         handleOnChange={handleOnChange}
         HandleBlur={HandleBlur}
+        modalLoading={modalLoading}
       />
     </Modal>
   )

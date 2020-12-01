@@ -1,14 +1,24 @@
-import React, { memo } from 'react'
+import React from 'react'
+import { withRouter } from 'react-router-dom'
 import ContainerProfile from '../../Containers/Profile'
 import { ContextProvider } from '../../Context'
 
-const Profile = ({ user }) => {
+const Profile = ({
+  user,
+  history,
+}) => {
+  const loggout = () => {
+    localStorage.removeItem('token')
+    history.push('/auth')
+  }
+
   return (
-    <ContainerProfile 
+    <ContainerProfile
       name={user.name}
       document={user.document}
+      action={loggout}
     />
   )
 }
 
-export default memo(ContextProvider(Profile))
+export default ContextProvider(withRouter(Profile))

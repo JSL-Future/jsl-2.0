@@ -3,7 +3,6 @@ import CardImplement from './CardImplement'
 import CardSkeleton from './CardSkeleton'
 import Filters from './Filters'
 import Input from './Input'
-import InputMasked from './InputMasked'
 import InputSearch from './InputSearch'
 import Loading from './Loading'
 import Menu from './Menu'
@@ -17,7 +16,6 @@ export {
   CardSkeleton,
   Filters,
   Input,
-  InputMasked,
   InputSearch,
   Loading,
   Menu,

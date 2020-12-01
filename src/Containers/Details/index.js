@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react'
-import moment from 'moment'
-import Modais from '../Modais'
 
+import Modais from '../Modais'
+import {
+  diff,
+  formattedDate,
+} from '../../utils/parserDate'
 import SkeletonContent from './Skeleton'
 import GoBackIcon from './arrowBack.svg'
 import RiskIcon from './risk.svg'
@@ -14,8 +17,6 @@ const iconRisk = {
   high: HighRiskIcon,
   low: LossRiskIcon,
 }
-
-const formattedDate = date => moment(date).format('DD/MMM - HH:mm')
 
 const Details = ({
   backPage,
@@ -32,16 +33,10 @@ const Details = ({
   HandleBlur,
   statusTranslate,
   priorityTranslate,
+  modalLoading,
 }) => {
-  const diff = (createdAt, updatedAt, status) => {
-    const start = moment(createdAt)
-    const end = status === 'check-in' ? moment() : moment(updatedAt)
-    const diff = end.diff(start)
-    const diffTime = moment.utc(diff).format('HH:mm')
-    return diffTime
-  }
   const riskLevel = data.priority ? priorityTranslate[data.priority] : 'Normal'
-  const formType = (data.reason === 'abastecer' && data.status === 'check-in') ? 'abastecer' : 'event'
+  const formType = (data.reason === 'Abastecer' && data.status === 'check-in') ? 'abastecer' : 'event'
   const countHoursTotal = diff(data.createdAt, data.updatedAt, data.status)
 
   return (
@@ -60,6 +55,7 @@ const Details = ({
         formErrors={formErrors}
         handleOnChange={handleOnChange}
         HandleBlur={HandleBlur}
+        modalLoading={modalLoading}
       />
       {loading && <SkeletonContent />}
       {!loading && (

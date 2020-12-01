@@ -19,6 +19,7 @@ const Create = (props) => {
     responsible: '',
   })
   const [formErrors, setFormErrors] = useState({})
+  const [loading, setloading] = useState(false)
 
   const HandleBlur = ({ target }) => {
     const message = EmptyField(target)
@@ -50,6 +51,7 @@ const Create = (props) => {
       operation,
     } = form
 
+    setloading(true)
     try {
       await ImplementService.saveImplement({
         operation,
@@ -58,8 +60,10 @@ const Create = (props) => {
         responsible,
         reason,
       })
+      setloading(false)
       props.history.push('/create/success')
     } catch (error) {
+      setloading(false)
       props.history.push('/create/error')
     }
   }
@@ -80,6 +84,7 @@ const Create = (props) => {
       goBack={goBack}
       HandleBlur={HandleBlur}
       formErrors={formErrors}
+      loading={loading}
     />
   )
 }

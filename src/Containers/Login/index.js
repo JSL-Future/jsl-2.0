@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from './style.module.css'
-import { Button, Input, InputMasked, Loading } from '../../Components'
+import { Button, Input, Loading } from '../../Components'
 
 const Login = ({
   onChange,
@@ -13,7 +13,7 @@ const Login = ({
     <div className={Style.container}>
       <div className={Style.logo} />
       <div className={Style.auth}>
-        <InputMasked
+        <Input
           value={form.document}
           label="CPF"
           type="text"

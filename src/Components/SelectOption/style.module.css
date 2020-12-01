@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .label {
-  color: var(--black-color);
+  color: #000000;
   font-weight: bold;
 }
 
 .selectOptions {
   background: transparent;
-  border: solid 2px var(--silver-color);
+  border: solid 2px #C4C4C4;
   border-radius: 6px;
-  color: var(--black-color);
+  color: #000000;
   margin-top: 1em;
   padding: 1em;
   text-align-last: left;

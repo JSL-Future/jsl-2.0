@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Input, SelectOption } from '../../Components'
+import { Button, Input, SelectOption, Loading } from '../../Components'
 import GoBackIcon from './arrowBack.svg'
 
 import Style from './style.module.css'
@@ -11,6 +11,7 @@ const createEntry = ({
   goBack,
   HandleBlur,
   formErrors,
+  loading,
 }) => {
 
   const dataListService = [
@@ -107,11 +108,19 @@ const createEntry = ({
           onblur={HandleBlur}
           formErrors={formErrors}
         />
-        <div className={Style.buttonSave}>
-          <Button action={handleSave}>
-            Salvar
-          </Button>
-        </div>
+        {loading && (
+          <div className={Style.load}>
+            <Loading />
+          </div>
+        )}
+        {!loading && (
+          <div className={Style.buttonSave}>
+            <Button action={handleSave}>
+              Salvar
+            </Button>
+          </div>
+        )}
+
       </div>
     </div >
   )

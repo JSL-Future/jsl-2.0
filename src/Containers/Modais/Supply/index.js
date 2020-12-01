@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Input, SelectOption } from '../../../Components'
+import { Button, Input, SelectOption, Loading } from '../../../Components'
 import Style from './style.module.css'
 
 const Supply = ({
@@ -8,6 +8,7 @@ const Supply = ({
   formErrors,
   handleOnChange,
   HandleBlur,
+  modalLoading,
 }) => {
 
   const dataListFuel = [
@@ -85,11 +86,18 @@ const Supply = ({
           onblur={HandleBlur}
           formErrors={formErrors}
         />
-        <div className={Style.buttonSave}>
-          <Button action={handleSave}>
-            Salvar abastecimento
-          </Button>
-        </div>
+        {modalLoading && (
+          <div className={Style.load}>
+            <Loading />
+          </div>
+        )}
+        {!modalLoading && (
+          <div className={Style.buttonSave}>
+            <Button action={handleSave}>
+              Salvar abastecimento
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   )

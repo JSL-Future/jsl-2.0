@@ -10,7 +10,7 @@ const statusTranslate = {
   courtyard: 'Pátio',
   dock: 'Doca',
   awaiting_repair: 'Aguardando Reparo',
-  suply: 'Abastecer',
+  suply: 'Abastecido',
   washing: 'Lavar',
 }
 

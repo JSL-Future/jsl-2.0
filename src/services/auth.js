@@ -7,7 +7,6 @@ class AuthService {
   }
 
   login(value) {
-    console.log(value)
     return this.axios.post(url, value)
   }
 }

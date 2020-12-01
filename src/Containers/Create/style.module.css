@@ -1,4 +1,4 @@
-@import '../../../assets/css/colors.css';
+@import '../../assets/css/colors.css';
 
 .container {
   background-color: #fff;
@@ -54,4 +54,9 @@
 
 .buttonSave {
   margin-top: 25%;
+}
+
+.load {
+  padding-top: 20px;
+  text-align: center;
 }

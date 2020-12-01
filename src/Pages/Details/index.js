@@ -50,13 +50,13 @@ const Details = (props) => {
     updatedAt: '',
   })
 
-
   const [shouldRequest, setShouldRequest] = useState(true)
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
   const [modalType, setModalType] = useState('event')
   const [form, setForm] = useState(formSetting[modalType])
   const [formErrors, setFormErrors] = useState({})
+  const [modalLoading, setModalLoading] = useState(false)
 
   useEffect(() => {
     const { id } = props.match.params
@@ -92,28 +92,37 @@ const Details = (props) => {
   )
 
   const changePriority = async () => {
+    setModalLoading(true)
     try {
       await ImplementService.updateImplement(implement.id, form)
+      setModalLoading(false)
       goToSuccess(`priority/${implement.id}`)
     } catch (error) {
+      setModalLoading(false)
       goToError(`priority/${implement.id}`)
     }
   }
 
   const createEvent = async () => {
+    setModalLoading(true)
     try {
       await ImplementService.updateImplement(implement.id, form)
+      setModalLoading(false)
       goToSuccess(`detail/${implement.id}`)
     } catch (error) {
+      setModalLoading(false)
       goToError(`detail/${implement.id}`)
     }
   }
 
   const beginSuply = async () => {
+    setModalLoading(true)
     try {
       await ImplementService.updateImplement(implement.id, {...form, event: 'suply' })
+      setModalLoading(false)
       goToSuccess(`suply/${implement.id}`)
     } catch (error) {
+      setModalLoading(false)
       goToError(`suply/${implement.id}`)
     }
   }
@@ -174,6 +183,7 @@ const Details = (props) => {
       formErrors={formErrors}
       statusTranslate={statusTranslate}
       priorityTranslate={priorityTranslate}
+      modalLoading={modalLoading}
     />
   )
 }

@@ -1,10 +1,12 @@
 import React, { useState } from  'react'
-import { isEmpty, omit, props } from 'ramda'
+import { isEmpty, omit } from 'ramda'
 import { withRouter } from 'react-router-dom'
 import AuthService from '../../services/auth'
 import ContainerLogin from '../../Containers/Login'
 import Request from  '../../services/request'
 import GAInitialize from '../../ga'
+import { validationForm, EmptyField, replaceMask } from '../../utils/validators'
+import { ContextProvider } from '../../Context'
 
 const Login = ({
   history,
@@ -41,7 +43,7 @@ const Login = ({
     try {
       const { data } = await AuthService.login({
         ...form,
-        document: form.document.replace(/[^a-z0-9]/gi,'')
+        document: replaceMask(form.document),
       })
       updateUser(data.user)
       if (data.token) {

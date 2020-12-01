@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, SelectOption } from '../../../Components'
+import { Button, SelectOption, Loading } from '../../../Components'
 import Style from './style.module.css'
 
 const Priority = ({
@@ -7,6 +7,7 @@ const Priority = ({
   form,
   handleOnChange,
   formErrors,
+  modalLoading,
 }) => {
 
   const dataListPriority = [
@@ -37,11 +38,18 @@ const Priority = ({
             formErrors={formErrors}
           />
         </div>
-        <div className={Style.buttonSave}>
-          <Button action={handleSave}>
-            Alterar prioridade
-          </Button>
-        </div>
+        {modalLoading && (
+          <div className={Style.load}>
+            <Loading />
+          </div>
+        )}
+        {!modalLoading && (
+           <div className={Style.buttonSave}>
+            <Button action={handleSave}>
+              Alterar prioridade
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   )

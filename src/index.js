@@ -6,6 +6,7 @@ import ReactGA from 'react-ga'
 import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
+import { ProviderState } from './Context'
 ReactGA.initialize(process.env.REACT_APP_GA)
 
 ReactDOM.render(

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Input,SelectOption } from '../../../Components'
+import { Button, Input,SelectOption, Loading } from '../../../Components'
 import Style from './style.module.css'
 
 const AddEvents = ({
@@ -8,6 +8,7 @@ const AddEvents = ({
   formErrors,
   handleOnChange,
   HandleBlur,
+  modalLoading,
 }) => {
 
   const dataListEvent = [
@@ -52,11 +53,18 @@ const AddEvents = ({
             formErrors={formErrors}
           />
         </div>
-        <div className={Style.buttonSave}>
-          <Button action={handleSave}>
-            Salvar evento
-          </Button>
-        </div>
+        {modalLoading && (
+          <div className={Style.load}>
+            <Loading />
+          </div>
+        )}
+        {!modalLoading && (
+          <div className={Style.buttonSave}>
+            <Button action={handleSave}>
+              Salvar evento
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   )

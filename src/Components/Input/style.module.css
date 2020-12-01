@@ -3,10 +3,10 @@
 
 input {
   background: transparent;
-  border: solid 2px var(--silver-color);
+  border: solid 2px #C4C4C4;
   border-radius: 6px;
   box-sizing: border-box;
-  color: var(--black-color);
+  color: #000000;
   font-family: 'Poppins', sans-serif;
   font-size: 1em;
   margin-top: 1em;
@@ -20,10 +20,10 @@ input:focus {
 }
 
 label {
-  color: var(--black-color);
+  color: #000000;
   font-family: 'Poppins', sans-serif;
   font-style: normal;
-  font-size: 1em;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -32,6 +32,7 @@ label {
 }
 
 .inputError {
+  color: #EA162C;
   border-color: #EA162C;
 }
 
