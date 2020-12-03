@@ -34,6 +34,7 @@ const createEntry = ({
     { name: 'GM Interplantas', value: 'gmIinterplatas', hidden: false, disabled: false },
     { name: 'GM Cegonha', value: 'gmCegonha', hidden: false, disabled: false},
     { name: 'Volkswagem', value: 'volkswagem', hidden: false, disabled: false },
+    { name: 'Caterpillar', value: 'caterpillar', hidden: false, disabled: false },
   ]
 
   return (
