@@ -22,11 +22,11 @@ const diff = (createdAt, updatedAt, status) => {
 const messageDates = ({ weekdays, days, hours, minutes }) => {
   let message = 'Há,'
   if (weekdays > 0) {
-    message += `${weekdays},${weekdays > 1 ? 'semanas' : 'semana'},`
+    message = `${weekdays},${weekdays > 1 ? 'semanas' : 'semana'}`
   }
 
   if (days > 0) {
-    message += `${days},${days > 1 ? 'dias' : 'dia'},`
+    message = `${days},${days > 1 ? 'dias' : 'dia'}`
   }
 
   if (hours) {
