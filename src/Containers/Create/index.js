@@ -36,6 +36,7 @@ const createEntry = ({
     { name: 'Volkswagem', value: 'volkswagem', hidden: false, disabled: false },
     { name: 'Caterpillar', value: 'caterpillar', hidden: false, disabled: false },
     { name: 'Bridgestone', value: 'bridgestone', hidden: false, disabled: false },
+    { name: 'Quick', value: 'quick', hidden: false, disabled: false },
   ]
 
   return (
