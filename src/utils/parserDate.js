@@ -20,21 +20,21 @@ const diff = (createdAt, updatedAt, status) => {
 }
 
 const messageDates = ({ weekdays, days, hours, minutes }) => {
-  let message = 'Há,'
+  let message = 'Há poucos minutos'
   if (weekdays > 0) {
-    message = `${weekdays},${weekdays > 1 ? 'semanas' : 'semana'}`
+    message = `Há ${weekdays} ${weekdays > 1 ? 'semanas' : 'semana'}`
   }
 
-  if (days > 0) {
-    message = `${days},${days > 1 ? 'dias' : 'dia'}`
+  if (weekdays === 0 && days > 0) {
+    message = `Há ${days} ${days > 1 ? 'dias' : 'dia'}`
   }
 
-  if (hours) {
-    message += `${hours.toString().length === 1 ? '0'+ hours : hours}h`
+  if (days === 0 && weekdays === 0 && hours) {
+    message = `Há ${hours.toString().length === 1 ? '0'+ hours : hours}h${minutes.toString().length >= 2 ? minutes : '0'+ minutes}`
   }
 
-  if (minutes) {
-    message += `${minutes.toString().length >= 2 ? minutes : '0'+ minutes}m`
+  if (days === 0 && weekdays === 0 && hours === 0 && minutes) {
+    message = `Há ${minutes.toString().length >= 2 ? minutes : '0'+ minutes}m`
   }
 
   return message.replace(/,/gi, ' ')
