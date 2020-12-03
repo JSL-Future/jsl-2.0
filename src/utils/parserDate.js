@@ -37,7 +37,7 @@ const messageDates = ({ weekdays, days, hours, minutes }) => {
     message = `Há ${minutes.toString().length >= 2 ? minutes : '0'+ minutes}m`
   }
 
-  return message.replace(/,/gi, ' ')
+  return message
 }
 
 export {
