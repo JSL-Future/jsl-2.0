@@ -1,6 +1,10 @@
 import React from 'react'
 import { Button, Input, SelectOption, Loading } from '../../Components'
 import GoBackIcon from './arrowBack.svg'
+import {
+  dataListOper,
+  dataListService,
+} from '../../utils/common'
 
 import Style from './style.module.css'
 
@@ -13,28 +17,6 @@ const createEntry = ({
   formErrors,
   loading,
 }) => {
-
-  const dataListService = [
-    { name: 'Selecione um serviço', value: '', hidden: true, disabled: false },
-    { name: 'Corretiva', value: 'Corretiva', hidden: false, disabled: false },
-    { name: 'Preventiva', value: 'Preventiva', hidden: false, disabled: false },
-    { name: 'Abastecer', value: 'Abastecer', hidden: false, disabled: false },
-    { name: 'Estacionar', value: 'Estacionar', hidden: false, disabled: false },
-    { name: 'Lavar', value: 'Lavar', hidden: false, disabled: false },
-  ]
-
-  const dataListOper = [
-    { name: 'Selecione uma operação', value: '', hidden: true, disabled: false },
-    { name: 'Mercedes-Benz', value: 'Mercedes', hidden: false, disabled: false },
-    { name: 'Ford Motor', value: 'Ford', hidden: false, disabled: false },
-    { name: 'Scania do Brasil', value: 'Scania', hidden: false, disabled: false },
-    { name: 'Lear Corporation', value: 'lear', hidden: false, disabled: false },
-    { name: 'Renault do Brasil', value: 'renault', hidden: false, disabled: false },
-    { name: 'Whirlpool', value: 'whirlpool', hidden: false, disabled: false },
-    { name: 'GM Interplantas', value: 'gmIinterplatas', hidden: false, disabled: false },
-    { name: 'GM Cegonha', value: 'gmCegonha', hidden: false, disabled: false},
-    { name: 'Volkswagem', value: 'volkswagem', hidden: false, disabled: false },
-  ]
 
   return (
     <div className={Style.container}>

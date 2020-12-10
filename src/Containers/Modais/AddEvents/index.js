@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Input,SelectOption, Loading } from '../../../Components'
 import Style from './style.module.css'
+import { dataListEvent } from '../../../utils/common'
 
 const AddEvents = ({
   handleSave,
@@ -10,16 +11,6 @@ const AddEvents = ({
   HandleBlur,
   modalLoading,
 }) => {
-
-  const dataListEvent = [
-    { name: 'Selecione um evento', value: '', hidden: true, disabled: false },
-    { name: 'Doca', value: 'dock', hidden: false, disabled: false },
-    { name: 'Pátio', value: 'courtyard', hidden: false, disabled: false },
-    { name: 'Lavar', value: 'washing', hidden: false, disabled: false },
-    { name: 'Aguardando Reparo', value: 'awaiting_repair', hidden: false, disabled: false },
-    { name: 'Liberado', value: 'check-out', hidden: false, disabled: false },
-  ]
-
   return (
     <div className={Style.container}>
       <div className={Style.content}>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, SelectOption, Loading } from '../../../Components'
 import Style from './style.module.css'
+import { dataListPriority } from '../../../utils/common'
 
 const Priority = ({
   handleSave,
@@ -9,14 +10,6 @@ const Priority = ({
   formErrors,
   modalLoading,
 }) => {
-
-  const dataListPriority = [
-    { name: 'Selecione uma prioridade', value: null, hidden: true, disabled: false },
-    { name: 'Alta', value: 'high', hidden: false, disabled: false },
-    { name: 'Normal', value: 'medium', hidden: false, disabled: false },
-    { name: 'Baixa', value: 'low', hidden: false, disabled: false },
-  ]
-
   return (
     <div className={Style.container}>
       <div className={Style.content}>
