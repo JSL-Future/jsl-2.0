@@ -8,6 +8,7 @@ import InputSearch from './InputSearch'
 import Loading from './Loading'
 import Menu from './Menu'
 import Modal from './Modal'
+import RadioButton from './RadioButton'
 import Skeleton from './Skeleton'
 import SelectOption from './SelectOption'
 
@@ -22,6 +23,7 @@ export {
   Loading,
   Menu,
   Modal,
+  RadioButton,
   Skeleton,
   SelectOption,
 }

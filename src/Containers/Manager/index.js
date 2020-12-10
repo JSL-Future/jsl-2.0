@@ -3,8 +3,9 @@ import {
   CardImplement,
   CardSkeleton,
   EmptyStateManager,
-  Filters,
 } from '../../Components'
+import FilterModal from '../FilterModal'
+
 import Styles from './style.module.css'
 
 const items = [1, 2, 3, 4, 5, 6, 7]
@@ -35,8 +36,9 @@ const Manager = ({
       <div className={Styles.header}>
         <h1>Gerenciamento</h1>
       </div>
+      <Button action={() => console.log('abrir modal filtro')}>Abrir Modal Filtro</Button>
+      <FilterModal />
       <div className={Styles.container}>
-        <Filters filterSelected={filterSelected} HandleFilter={HandleFilter} />
         {data.length === 0 && !loading && <EmptyStateManager type={filterSelected} />}
         {loading && items.map(item => (
           <div className={Styles.implementItem} key={item} >

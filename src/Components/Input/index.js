@@ -34,6 +34,7 @@ const input = (props) => {
             id={props.name}
             onChange={props.onchange}
             onBlur={props.onblur}
+            placeholder={props.placeholder}
           />
         )
       }
