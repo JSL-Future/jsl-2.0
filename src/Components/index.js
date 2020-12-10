@@ -4,7 +4,6 @@ import CardSkeleton from './CardSkeleton'
 import EmptyStateManager from './EmptyState'
 import Filters from './Filters'
 import Input from './Input'
-import InputSearch from './InputSearch'
 import Loading from './Loading'
 import Menu from './Menu'
 import Modal from './Modal'
@@ -19,7 +18,6 @@ export {
   EmptyStateManager,
   Filters,
   Input,
-  InputSearch,
   Loading,
   Menu,
   Modal,
