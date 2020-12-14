@@ -4,10 +4,15 @@ import {
   Modal,
 } from '../../Components'
 
-const FilterModal = () => (
-  <Modal show={true}>
-    <Filters />
-  </Modal>
-)
+const FilterModal = (
+) => {
+  return( 
+    <Modal show={true}>
+      <Filters
+        
+      />
+    </Modal>
+  )
+}
 
 export default FilterModal

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useCallback, useState } from 'react'
 import styles from './style.module.css'
 import {
   Button,
@@ -14,28 +14,54 @@ import {
 } from '../../utils/common'
 import CloseIcon from './closed-white.svg'
 
-const renderRadioButton =  item => (
-  <div
-    key={item.children}
-    className={(
-      item.name === 'priority'
-        ? ''
-        : styles.radioButtonItem
-    )}
-  >
-    <RadioButton
-      name={item.name}
-      value={item.children}
-    />
-  </div>
-)
+const Filters = (
+  closedModal,
+) => {
+  const renderRadioButton =  item => (
+    <div
+      key={item.children}
+      className={(
+        item.name === 'priority'
+          ? ''
+          : styles.radioButtonItem
+      )}
+    >
+      <RadioButton
+        id={item.id}
+        name={item.name}
+        onchange={onChange}
+        value={item.children}
+      />
+    </div>
+  )
+  const [form, setForm] = useState({
+    plate: '',
+    dateInitial: '',
+    dateEnd: '',
+    operation: '',
+    priority: '',
+    service: '',
+    status: '',
+  })
 
-const Filters = () => {
+  const onChange = useCallback(({ target }) => {
+    const { name, value } = target
+    setForm({
+      ...form,
+      [name]: value,
+    })    
+  }, [form])
+
+  useEffect(() => {
+    console.log(form)
+    console.log('Component: ', typeof(onChange))
+  })
+
   return (
     <Fragment>
       <div className={styles.header}>
         <div
-          onClick={() => console.log('Fechar Modal')}
+          onClick={closedModal}
           role="button"
           className={styles.closeBtn}
         >
@@ -47,37 +73,35 @@ const Filters = () => {
       <div className={styles.filterContainer}>
         <div className={styles.plateFilter}>
           <Input
-            value=""
+            value={form.plate}
             label="Placa"
-            type="number"
-            name="pedometer"
-            id="textPedometer"
-            onchange={value => console.log(value)}
+            type="text"
+            name="plate"
+            id="textPlate"
+            onchange={onChange}
           />
         </div>
 
         <div className={styles.periodFilter}>
           <div className={styles.periodFilterItem}>
             <Input
-              value=""
+              value={form.dateInitial}
               label="Data inícial"
-              type="number"
-              name="pedometer"
-              id="textPedometer"
-              onchange={value => console.log(value)}
-              placeholder="Data início"
+              type="text"
+              name="dateInitial"
+              id="textDateInitial"
+              onchange={onChange}
               mask="11/11/1111"
             />
           </div>
           <div className={styles.periodFilterItem}>
             <Input
+              value={form.dateEnd}
               label="Data fim"
-              value=""
-              type="number"
-              name="pedometer"
-              id="textPedometer"
-              onchange={value => console.log(value)}
-              placeholder="Data fim"
+              type="text"
+              name="dateEnd"
+              id="textDateEnd"
+              onchange={onChange}
               mask="11/11/1111"
             />
           </div>
@@ -86,9 +110,9 @@ const Filters = () => {
         <div className={styles.operationFilter}>
           <SelectOption
             label="Operação"
-            selectValue=""
+            selectValue={form.operation}
             selectName="operation"
-            onchange={value => console.log(value)}
+            onchange={onChange}
             options={dataListOper}
           />
         </div>

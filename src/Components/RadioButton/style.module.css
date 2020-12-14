@@ -1,3 +1,5 @@
+@import '../../assets/css/colors.css';
+
 .container {
   display: block;
   position: relative;
@@ -25,8 +27,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   background-color: #eee;
   border-radius: 50%;
 }
@@ -36,7 +38,7 @@
 }
 
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: var(--crimson-color);
 }
 
 .checkmark:after {
@@ -50,10 +52,10 @@
 }
 
 .container .checkmark:after {
- 	top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
+ 	top: 6px;
+	left: 6px;
+	width: 7px;
+	height: 7.5px;
 	border-radius: 50%;
 	background: white;
 }
