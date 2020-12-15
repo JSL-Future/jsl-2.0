@@ -4,11 +4,12 @@ import style from './style.module.css'
 
 const Button = (props) => {
   return (
-    <button 
+    <button
       className={classNames(style.button, {
         [style.buttonOutline]: props.outline
       })}
       onClick={props.action}
+      type="button"
     >
       {props.children}
     </button>

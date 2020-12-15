@@ -14,6 +14,7 @@ const Manager = (props) => {
   const [shouldRequest, setShouldRequest] = useState(true)
   const [filterSelected, setFilterSelected] = useState('Todos')
   const [loading, setLoading] = useState(true)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     if(shouldRequest && localStorage.getItem('token')) {
@@ -31,7 +32,7 @@ const Manager = (props) => {
     return props.history.push(`/detail/${id}`)
   }
 
-  const HandleFilter = async (filter) => {
+  const handleFilter = async (filter) => {
     setLoading(true)
     setFilterSelected(filter)
     try {
@@ -44,16 +45,22 @@ const Manager = (props) => {
     }
   }
 
+  const handleShowModal = () => {
+    setShowModal(!showModal)
+  }
+
   return (
    <Fragment>
       <ManagerContainer
         data={data}
         goToDetail={goToDetail}
         filterSelected={filterSelected}
-        HandleFilter={HandleFilter}
+        handleFilter={handleFilter}
         loading={loading}
         statusTranslate={statusTranslate}
         priorityTranslate={priorityTranslate}
+        showModal={showModal}
+        handleShowModal={handleShowModal}
       />
       <Menu />
    </Fragment>

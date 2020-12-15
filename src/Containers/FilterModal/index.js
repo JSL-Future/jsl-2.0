@@ -4,14 +4,17 @@ import {
   Modal,
 } from '../../Components'
 
-const FilterModal = (
+const FilterModal = ({
+  handleFilter,
+  handleShowModal,
   showModal,
-  closeModal,
-) => {
-  return( 
+}) => {
+
+  return(
     <Modal show={showModal}>
       <Filters
-        closeModal={closeModal}
+        closeModal={handleShowModal}
+        handleFilter={handleFilter}
       />
     </Modal>
   )

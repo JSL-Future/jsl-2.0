@@ -18,6 +18,8 @@ const Manager = ({
   loading,
   statusTranslate,
   priorityTranslate,
+  showModal,
+  handleShowModal,
 }) => {
   const renderCardImplement = implement => (
    <div
@@ -37,8 +39,12 @@ const Manager = ({
       <div className={Styles.header}>
         <h1>Gerenciamento</h1>
       </div>
-      <Button action={() => console.log('abrir modal filtro')}>Abrir Modal Filtro</Button>
-      <FilterModal />
+      <Button action={handleShowModal}>Abrir Modal Filtro</Button>
+      <FilterModal
+        showModal={showModal}
+        HandleFilter={HandleFilter}
+        handleShowModal={handleShowModal}
+      />
       <div className={Styles.container}>
         {data.length === 0 && !loading && <EmptyStateManager type={filterSelected} />}
         {loading && items.map(item => (

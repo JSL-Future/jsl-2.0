@@ -14,9 +14,9 @@ import {
 } from '../../utils/common'
 import CloseIcon from './closed-white.svg'
 
-const Filters = (
+const Filters = ({
   closeModal
-) => {
+}) => {
   const renderRadioButton =  item => (
     <div
       key={item.children}
@@ -49,14 +49,14 @@ const Filters = (
     setForm({
       ...form,
       [name]: value,
-    })    
+    })
   }, [form])
 
   useEffect(() => {
     console.log(form)
     console.log('Component: ', typeof(onChange))
   })
-
+  console.log(closeModal)
   return (
     <Fragment>
       <div className={styles.header}>
