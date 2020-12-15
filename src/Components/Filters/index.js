@@ -15,7 +15,7 @@ import {
 import CloseIcon from './closed-white.svg'
 
 const Filters = (
-  closedModal,
+  closeModal
 ) => {
   const renderRadioButton =  item => (
     <div
@@ -61,7 +61,7 @@ const Filters = (
     <Fragment>
       <div className={styles.header}>
         <div
-          onClick={closedModal}
+          onClick={closeModal}
           role="button"
           className={styles.closeBtn}
         >

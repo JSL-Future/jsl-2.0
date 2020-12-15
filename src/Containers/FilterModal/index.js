@@ -5,11 +5,13 @@ import {
 } from '../../Components'
 
 const FilterModal = (
+  showModal,
+  closeModal,
 ) => {
   return( 
-    <Modal show={true}>
+    <Modal show={showModal}>
       <Filters
-        
+        closeModal={closeModal}
       />
     </Modal>
   )
