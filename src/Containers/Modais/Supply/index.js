@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Input, SelectOption, Loading } from '../../../Components'
 import Style from './style.module.css'
+import { dataListFuel } from '../../../utils/common'
 
 const Supply = ({
   handleSave,
@@ -10,13 +11,6 @@ const Supply = ({
   HandleBlur,
   modalLoading,
 }) => {
-
-  const dataListFuel = [
-    { name: 'Selecione um combustível', value: '', hidden: true, disabled: false },
-    { name: 'Diesel S-10', value: 'diesel_s10', hidden: false, disabled: false },
-    { name: 'Arla', value: 'arla', hidden: false, disabled: false },
-  ]
-
   return (
     <div className={Style.container}>
       <div className={Style.content}>

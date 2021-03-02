@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react'
 import {
+  Button,
   CardImplement,
   CardSkeleton,
   EmptyStateManager,
-  Filters,
 } from '../../Components'
+import FilterModal from '../FilterModal'
+
 import Styles from './style.module.css'
 
 const items = [1, 2, 3, 4, 5, 6, 7]
@@ -16,6 +18,8 @@ const Manager = ({
   loading,
   statusTranslate,
   priorityTranslate,
+  showModal,
+  handleShowModal,
 }) => {
   const renderCardImplement = implement => (
    <div
@@ -35,8 +39,13 @@ const Manager = ({
       <div className={Styles.header}>
         <h1>Gerenciamento</h1>
       </div>
+      <Button action={handleShowModal}>Abrir Modal Filtro</Button>
+      <FilterModal
+        showModal={showModal}
+        HandleFilter={HandleFilter}
+        handleShowModal={handleShowModal}
+      />
       <div className={Styles.container}>
-        <Filters filterSelected={filterSelected} HandleFilter={HandleFilter} />
         {data.length === 0 && !loading && <EmptyStateManager type={filterSelected} />}
         {loading && items.map(item => (
           <div className={Styles.implementItem} key={item} >
