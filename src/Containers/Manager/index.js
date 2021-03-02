@@ -1,25 +1,26 @@
 import React, { Fragment } from 'react'
 import {
-  Button,
   CardImplement,
   CardSkeleton,
   EmptyStateManager,
 } from '../../Components'
 import FilterModal from '../FilterModal'
-
+import SearchSvg from './search.svg'
 import Styles from './style.module.css'
 
 const items = [1, 2, 3, 4, 5, 6, 7]
 const Manager = ({
   data,
-  filterSelected,
   goToDetail,
-  HandleFilter,
+  handleFilter,
   loading,
   statusTranslate,
   priorityTranslate,
   showModal,
   handleShowModal,
+  form,
+  onChange,
+  clearFilters,
 }) => {
   const renderCardImplement = implement => (
    <div
@@ -34,19 +35,30 @@ const Manager = ({
       />
    </div>
   )
+
   return (
     <Fragment>
       <div className={Styles.header}>
         <h1>Gerenciamento</h1>
       </div>
-      <Button action={handleShowModal}>Abrir Modal Filtro</Button>
+      {
+        data.length > 0 && (
+          <button className={Styles.filterAction} onClick={handleShowModal}>
+            <img src={SearchSvg} alt="search" />
+            Filtrar
+          </button>
+        )
+      }
       <FilterModal
         showModal={showModal}
-        HandleFilter={HandleFilter}
+        handleFilter={handleFilter}
         handleShowModal={handleShowModal}
+        form={form}
+        onChange={onChange}
+        clearFilters={clearFilters}
       />
       <div className={Styles.container}>
-        {data.length === 0 && !loading && <EmptyStateManager type={filterSelected} />}
+        {data.length === 0 && !loading && <EmptyStateManager />}
         {loading && items.map(item => (
           <div className={Styles.implementItem} key={item} >
             <CardSkeleton />

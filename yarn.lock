@@ -9228,7 +9228,7 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-maskedinput@^4.0.1:
+react-maskedinput@4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-maskedinput/-/react-maskedinput-4.0.1.tgz#e9ccfeff39c19b15ac62e4dcedc7275a3ab446df"
   integrity sha512-wWIGtJOYmFJFJl7ojJgE2oB7MKLE3QkXtB54UoXyYtvGL3Jni51a1LKAK39U/6Gh5OR3VAgFMdiPApbFw2ALrg==

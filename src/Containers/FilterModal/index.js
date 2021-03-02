@@ -8,6 +8,9 @@ const FilterModal = ({
   handleFilter,
   handleShowModal,
   showModal,
+  form,
+  onChange,
+  clearFilters,
 }) => {
 
   return(
@@ -15,6 +18,9 @@ const FilterModal = ({
       <Filters
         closeModal={handleShowModal}
         handleFilter={handleFilter}
+        form={form}
+        onChange={onChange}
+        clearFilters={clearFilters}
       />
     </Modal>
   )

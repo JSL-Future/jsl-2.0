@@ -3,15 +3,15 @@
 .header {
   display: flex;
   align-items: center;
-  background-color: #EA162C;
   padding: 18px 10px;
   box-sizing: border-box;
   border-bottom-right-radius: 50px;
+  flex-wrap: wrap;
 }
 
 .header > h1 {
   margin:0;
-  color: #fff;
+  color: #333;
   font-size: 22px;
   font-weight: bold;
 }
@@ -19,7 +19,7 @@
 .filterContainer {
   padding: 0 10px 10px 10px;
   float: left;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 140px);
   overflow-y: scroll;
   width: calc(100%);
   box-sizing: border-box;

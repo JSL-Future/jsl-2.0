@@ -5,27 +5,23 @@ const FiltersPriority = [
 ]
 
 const FiltersService = [
-  { name: 'service', children: 'Corretiva' },
-  { name: 'service', children: 'Preventiva' },
-  { name: 'service', children: 'Lavar' },
-  { name: 'service', children: 'Abastecer' },
-  { name: 'service', children: 'Estacionar' }
+  { name: 'reason', children: 'Corretiva' },
+  { name: 'reason', children: 'Preventiva' },
+  { name: 'reason', children: 'Lavar' },
+  { name: 'reason', children: 'Abastecer' },
+  { name: 'reason', children: 'Estacionar' }
 ]
 
 const FiltersStatus = [
-  { name: 'status', children: 'Entrada' },
-  { name: 'status', children: 'Doca' },
-  { name: 'status', children: 'Aguardando Reparo' },
-  { name: 'status', children: 'Pátio' },
-  { name: 'status', children: 'Lavar' },
-  { name: 'status', children: 'Liberado' },
+  { name: 'status', children: 'Entrada', value: 'check-in' },
+  { name: 'status', children: 'Saída', value: 'check-out' },
 ]
 
 const dataListOper = [
   { name: 'Selecione uma operação', value: '', hidden: true, disabled: false },
-  { name: 'Mercedes-Benz', value: 'Mercedes', hidden: false, disabled: false },
-  { name: 'Ford Motor', value: 'Ford', hidden: false, disabled: false },
-  { name: 'Scania do Brasil', value: 'Scania', hidden: false, disabled: false },
+  { name: 'Mercedes-Benz', value: 'mercedes', hidden: false, disabled: false },
+  { name: 'Ford Motor', value: 'ford', hidden: false, disabled: false },
+  { name: 'Scania do Brasil', value: 'scania', hidden: false, disabled: false },
   { name: 'Lear Corporation', value: 'lear', hidden: false, disabled: false },
   { name: 'Renault do Brasil', value: 'renault', hidden: false, disabled: false },
   { name: 'Whirlpool', value: 'whirlpool', hidden: false, disabled: false },

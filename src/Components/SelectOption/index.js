@@ -22,6 +22,7 @@ const selectOption = ({
         value={selectValue}
         name={selectName}
         onChange={onchange}
+        selece
       >
         {
           options.map((option, index) => (
@@ -30,6 +31,7 @@ const selectOption = ({
               value={option.value}
               hidden={option.hidden}
               disabled={option.disabled}
+              selected={option.value === selectValue}
             >
               {option.name}
             </option>

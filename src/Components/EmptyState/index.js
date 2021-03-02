@@ -1,18 +1,11 @@
 import React from 'react'
 import Styles from './style.module.css'
 import NoDataIcon from './no-data.svg'
-import doneCheckIcon from './done-check.svg'
 
-const EmptyState = ({
-  type,
-}) => (
+const EmptyState = () => (
   <div className={Styles.emptyStateManager}>
-    <img src={type === 'Todos' ? NoDataIcon : doneCheckIcon} alt="empty state" />
-    <h3>{(
-      type === 'Todos'
-        ? 'Nenhuma Atividade encontrada!'
-        : `Nenhuma atividade do tipo "${type.toLowerCase()}" encontrada!`
-    )}</h3>
+    <img src={NoDataIcon} alt="empty state" />
+    <h3>Nenhuma Atividade encontrada!</h3>
     <p>Clique no botão de "<b>+</b>" abaixo para criar uma atividade.</p>
   </div>
 )

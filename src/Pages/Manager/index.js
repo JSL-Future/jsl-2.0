@@ -4,17 +4,25 @@ import ManagerContainer from '../../Containers/Manager'
 import ImplementService from '../../services/implement'
 import { Menu } from '../../Components'
 import {
+  depara,
   priorityTranslate,
   statusTranslate,
 } from '../../utils/implement.translate'
 
-const Manager = (props) => {
+const filtersInitialState = {
+  plate: '',
+  operation: '',
+  priority: '',
+  service: '',
+  status: '',
+}
 
+const Manager = (props) => {
   const [data, setData] = useState([])
   const [shouldRequest, setShouldRequest] = useState(true)
-  const [filterSelected, setFilterSelected] = useState('Todos')
   const [loading, setLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
+  const [form, setForm] = useState(filtersInitialState)
 
   useEffect(() => {
     if(shouldRequest && localStorage.getItem('token')) {
@@ -32,21 +40,47 @@ const Manager = (props) => {
     return props.history.push(`/detail/${id}`)
   }
 
-  const handleFilter = async (filter) => {
+  const handleFilter = async () => {
+    const buildQuery = {
+     ...form,
+      priority: depara[form.priority],
+      status: depara[form.status],
+    }
     setLoading(true)
-    setFilterSelected(filter)
     try {
-      const filterQuery = filter === 'Todos' ? {} : { reason: filter }
-      const { data } = await ImplementService.getImplements(filterQuery)
+      const { data } = await ImplementService.getImplements(buildQuery)
       setData(data)
       setLoading(false)
+      setShowModal(false)
     } catch (error) {
       setLoading(false)
+      setShowModal(false)
+    }
+  }
+
+  const clearFilters = async () => {
+    setForm(filtersInitialState)
+    try {
+      const { data } = await ImplementService.getImplements({})
+      setData(data)
+      setLoading(false)
+      setShowModal(false)
+    } catch (error) {
+      setLoading(false)
+      setShowModal(false)
     }
   }
 
   const handleShowModal = () => {
-    setShowModal(!showModal)
+    setShowModal(true)
+  }
+
+  const onChange =({ target }) => {
+    const { name, value } = target
+    setForm({
+      ...form,
+      [name]: value,
+    })
   }
 
   return (
@@ -54,13 +88,15 @@ const Manager = (props) => {
       <ManagerContainer
         data={data}
         goToDetail={goToDetail}
-        filterSelected={filterSelected}
         handleFilter={handleFilter}
         loading={loading}
         statusTranslate={statusTranslate}
         priorityTranslate={priorityTranslate}
         showModal={showModal}
         handleShowModal={handleShowModal}
+        form={form}
+        onChange={onChange}
+        clearFilters={clearFilters}
       />
       <Menu />
    </Fragment>

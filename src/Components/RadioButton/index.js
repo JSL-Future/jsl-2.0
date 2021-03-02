@@ -11,6 +11,7 @@ const RadioButton = (props) => {
         onChange={props.onchange}
         type="radio"
         value={props.value}
+        checked={props.actived}
       />
       <span className={styles.checkmark}></span>
     </label>

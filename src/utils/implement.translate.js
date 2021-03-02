@@ -26,8 +26,17 @@ const operationTranslate = {
   volkswagem: 'Volkswagem',
 }
 
+const depara = {
+  Baixo: 'low',
+  Normal: 'medium',
+  Alta: 'high',
+  Entrada: 'check-in',
+  'Saída': 'check-out',
+}
+
 export {
   statusTranslate,
   priorityTranslate,
   operationTranslate,
+  depara,
 }
